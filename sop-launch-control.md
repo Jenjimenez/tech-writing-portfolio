@@ -119,7 +119,11 @@ High-priority leads are those who show strong interest in selling their property
 - Add to **"Call them"** Discord channel.
 - Wait for verification before adding to CRM.
 
+<p>&nbsp;</p>
+
 ---
+
+<p>&nbsp;</p>
 
 ## Daily Follow-up Tasks
 - Add all nurture leads from the previous day to the "Yes, then ghosted" drip.
@@ -133,3 +137,4 @@ High-priority leads are those who show strong interest in selling their property
 ## Review and Update Frequency
 This SOP should be reviewed quarterly to ensure it remains effective and up to date.
 
+<p>&nbsp;</p>
