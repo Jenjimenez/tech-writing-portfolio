@@ -117,8 +117,3 @@ High-priority leads are those who show strong interest in selling their property
 ## Review and Update Frequency
 This SOP should be reviewed quarterly to ensure it remains effective and up to date.
 
----
-
-## Video Links
-- [How to use Launch Control introduction](link)
-- [How to assign drips](link)
