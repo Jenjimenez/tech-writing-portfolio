@@ -1,111 +1,183 @@
-# User Guide: How to Use Whatfix for Onboarding New Users
+# User Guide: Getting Started with Whatfix on Web
 
-_Last Edit: 3/2025_
-
-## Overview
-This article explains how to use Whatfix to create onboarding experiences for new users within your application. Onboarding helps new users understand how to navigate and utilize your product effectively. By using Whatfix, you can deliver in-app guidance that is contextually relevant, interactive, and easily accessible.
-
----
-
-## Table of Contents
-1. [Prerequisites](#prerequisites)
-2. [Creating a Whatfix Flow](#creating-a-whatfix-flow)
-3. [Configuring Flow Triggers](#configuring-flow-triggers)
-4. [Testing and Deploying Your Flow](#testing-and-deploying-your-flow)
-5. [Best Practices for Onboarding](#best-practices-for-onboarding)
-6. [Troubleshooting](#troubleshooting)
-7. [Further Resources](#further-resources)
+### Table of Contents
+1. [Introduction](#introduction)
+2. [Setting Up Whatfix](#setting-up-whatfix)
+3. [Creating and Configuring Flows](#creating-and-configuring-flows)
+4. [Deploying Flows](#deploying-flows)
+5. [Analyzing Flow Performance](#analyzing-flow-performance)
+6. [Troubleshooting Common Issues](#troubleshooting-common-issues)
+7. [Additional Resources](#additional-resources)
 
 ---
 
-## Prerequisites
-Before you begin creating onboarding experiences with Whatfix, ensure you have:
-- A Whatfix account with appropriate permissions.
-- Access to the web application where you want to implement onboarding.
-- A basic understanding of Whatfix Flows and the Whatfix Editor.
+### Introduction
+Whatfix allows organizations to deliver contextual, in-app guidance to users. This article provides an overview of how to use Whatfix to create effective onboarding flows that help new users get familiar with your product quickly and efficiently.
 
 ---
 
-## Creating a Whatfix Flow
+### Setting Up Whatfix
 
-### Step 1: Log in to Whatfix
-1. Open the Whatfix application and log in with your credentials.
-2. Navigate to the **Editor** section from the main dashboard.
+#### Step 1: Creating an Account
+1. The Whatfix onboarding team will send you an invitation link to sign up. Alternatively, you can visit the [Whatfix website](https://www.whatfix.com/) to begin the sign-up process.
+2. Sign up using your work email address and create a secure password.
+3. After creating an account, log in to your Whatfix dashboard.
 
-### Step 2: Create a New Flow
-1. In the **Editor** section, click on **Create New Flow**.
-2. Choose the **Flow Type** – for onboarding, select **Interactive Walkthrough**.
-3. Name your flow (e.g., "Onboarding: Getting Started").
+#### Step 2: Choose a Delivery Method
+Whatfix content can be deployed to your application using one of the following methods:
+- **JS Embed**
+- **Browser Extension**
 
-### Step 3: Add Steps to Your Flow
-1. In the Whatfix editor, click **Add Step** and select the type of element to guide (e.g., buttons, fields, text boxes).
-2. Use **Tooltips** and **Spotlights** to focus on key elements.
-3. Provide clear instructions or tips for each step. Keep the text concise and actionable.
+> **Note**: For this guide, we will be using the **JS Embed** method.
 
-### Step 4: Customize Your Flow
-1. **Adjust step timing**: Choose whether to delay each step for a better user experience.
-2. **Add multimedia**: Enhance your flow with images or videos to further guide users.
-3. **Select your target audience**: Choose user segments or roles to customize the flow.
+#### Step 3: Use JavaScript Code to Display Whatfix Content
+> **Note**: Only an **Account Manager** can perform this task.
 
----
+Whatfix requires a single line of JavaScript code to display the content and widgets within your application. This code needs to be inserted into the header of your application so that the content can be accessed from every page.
 
-## Configuring Flow Triggers
+To obtain and deploy the JavaScript code, follow these steps:
 
-### Step 1: Choose the Trigger Type
-1. Navigate to the **Triggers** section in the flow editor.
-2. Select from various triggers:
-   - **Page Load**: Trigger the flow when a user visits a specific page.
-   - **Element Interaction**: Start the flow when a user interacts with a specific element (e.g., clicks a button).
-   - **URL Path**: Set the flow to start when a user visits a certain URL.
-
-### Step 2: Set Conditions
-- You can configure conditions to ensure the flow triggers at the right time. For instance, you might only show onboarding steps after a user logs in for the first time.
-
----
-
-## Testing and Deploying Your Flow
-
-### Step 1: Preview the Flow
-1. Use the **Preview** feature to test the flow within the Whatfix editor.
-2. Ensure that each step behaves as expected, and make adjustments as necessary.
-
-### Step 2: Deploy the Flow
-1. Once you're satisfied with the flow, click **Publish** to deploy it.
-2. You can choose to deploy it on specific pages or for specific user groups.
-
-### Step 3: Monitor Performance
-1. After deployment, monitor user interaction through the **Analytics** section in Whatfix.
-2. Track how many users complete the flow and analyze areas where users may drop off.
+1. On the **Whatfix Guidance dashboard**, click **Settings**.
+2. Click **Content Deployment**.
+3. Under the **Ready** section:
+   - Select the appropriate condition and operator.
+   - Enter the value for your **Development** or **UAT** environment. This environment is typically used for testing, reviewing, and ensuring that the content is ready for broader deployment.
+4. Under the **Production** section:
+   - Select the appropriate condition and operator.
+   - Enter the value for your **Production** environment. This is the live environment where users interact with the application and see the Whatfix content.
+5. Under the **Deployment Script** section, click **Copy** to copy the script provided.
+   
+   > **Info**: This script must be inserted in the `<head>` or `<footer>` of your application instance (either Development or Production) for the Whatfix content to be displayed on every page.
+   
+6. Click **Save** to confirm the deployment.
 
 ---
 
-## Best Practices for Onboarding
+### Creating and Configuring Flows
 
-1. **Keep It Simple**: Focus on the most important tasks users need to accomplish. Don't overwhelm them with too many steps.
-2. **Use Visuals**: Use screen annotations, arrows, and highlights to guide users through each step.
-3. **Be Concise**: Use short, clear instructions. Avoid lengthy explanations to maintain engagement.
-4. **Interactive Elements**: Engage users with interactive elements such as quizzes or checklists to encourage active participation.
-5. **Timing**: Trigger flows at key points in the user journey (e.g., immediately after sign-up or after a user completes a key action).
+#### Step 1: Launch Whatfix Studio
+1. Log in to the application where you want to create content, and then launch the **Whatfix Studio**.
+2. Click **Flow** under the content section.
+
+#### Step 2: Adding Steps to Your Flow
+1. Enter the name of the Flow.
+2. Click on **+ Add Step**.
+3. Use Studio to add configurations like position, appearance, and step completion rules.
+4. Go to where you want to start the next step and click **+Add Step** on the Studio.
+5. Repeat steps 2 to 4 to add additional steps.
+6. Click **Save Flow**.
+
+#### Step 3: Customizing the Flow
+1. Add text instructions for each step, ensuring they are clear and concise.
+2. Optionally, include images or videos to explain each action further.
+3. Customize the flow’s appearance, such as the colors, animations, or step timings.
+4. Under **CONFIGURATIONS**, expand **Appearance**. Make the following configurations:
+   - Select a Tool tip appearance.
+   - Select the tip Color.
+   - Select the Close (X) color.
+5. Expand **Position** and select the desired position of the tooltip.
+6. Under the **Step Completion Rules** section, select the desired rule.
+
+> **Note**: Display Rules enable you to configure Flows to display the tooltip only when pre-determined conditions are met.
+
+Use the following steps to add Display Rules to Flow steps:
+   a. Click ADVANCED OPTIONS.
+   b. Expand the Display Rules section and then click + Add Rule. Display Rules enable you to configure Flows to display the tooltip only when pre-determined conditions are met.
+   c. Set the desired conditions. For more information on the different conditions that can be used in Display Rules, see Visibility and Display Rule Conditions
+Add multiple conditions using + Add Rule if needed.
+
+7. Click **Save Step**.
+
+> **Note**: Click **Preview** to preview the Flow during the Flow creation on Studio. The Flow opens in a new tab and displays the steps that are created on the application. You must create and save at least one step to enable **Preview**.
 
 ---
 
-## Troubleshooting
+### Deploying Flows
 
-### Issue 1: Flow Not Triggering
-- **Cause**: Incorrect trigger settings or wrong element selection.
-- **Solution**: Double-check the trigger conditions and ensure they match the intended interaction or page.
+#### Step 1: Publishing the Flow
+1. Once on the Whatfix Guidance dashboard, click **Content**.
+2. Click **Flows**.
+3. In the **Draft** stage, select your Flow and click **Send to ready**.
+4. Go to the **Ready** stage and click on **Push to production**.
+5. Within the Whatfix Dashboard you can choose the pages where you want the flow to be deployed by editing the flows.
+6. Optionally, set user conditions, such as targeting specific user roles.
 
-### Issue 2: Steps Not Appearing Correctly
-- **Cause**: Incorrect step timings or z-index conflicts with other page elements.
-- **Solution**: Adjust the step timing and review any potential conflicts with other on-page elements.
-
-### Issue 3: User Dropped Off Mid-Flow
-- **Cause**: A complicated step or interruption in the flow.
-- **Solution**: Review the analytics to identify the drop-off point and simplify or clarify that section.
+#### Step 2: Testing the Flow
+1. After publishing, test the flow by navigating to the target page and ensuring that the flow is triggered correctly.
+2. Make any necessary adjustments to the flow based on your test results.
 
 ---
 
-## Further Resources
-- [Whatfix Knowledge Base](https://help.whatfix.com/)
-- [Whatfix Blog for Product Updates and Tips](https://www.whatfix.com/blog/)
-- [Video Tutorial: Creating Interactive Walkthroughs](link)
+### Analyzing Flow Performance
+
+#### Step 1: Accessing Analytics
+1. From the Whatfix Guidance dashboard, navigate to the **Guidance analytics** section.
+2. Click **Flows**.
+4. View key reports such as:
+   - **Completed**: How many users completed the flow.
+   - **Failed**: Number of times the Flow failed and users could not complete it. For example, broken Flow, a Flow step does not display, and more.
+   - **Exited**: Number of times users failed to complete the Flow due to their actions. The exit count is always equal to the sum of closed via tooltip, navigated away, and Flow transitions. i.e., **Exited = Close via tooltip + Navigated away + Flow transition**.
+
+#### Step 2: Analtyics by Flow
+1. Click the **By Flow**
+2. To begin, select the Flow that you want to analyze.
+3. View key reports such as:
+| **Report Name**       | **Description**                                   |
+|-----------------|---------------------------------------------------|
+| Flow Usage by Day  | The chart displays the number of times that Flow was used each day. |
+| No. of Times Flow Played | The chart shows the number of times the Flow was run and also the widget used to play the flow. |
+| Flow Completion Rate | The chart shows how many started the Flow and completed it, as well as those who could not complete it and dropped out in between. |
+| Most Exited or Failed Steps | This section shows the dropouts at each step of the Flow. If you hover the cursor over each step, the failure can be analyzed by how many times the steps weren't successful, how many times the steps were exited, and the reasons for exit. |
+| Flow History | The Flow History section shows who edited the Flow and when. |
+| Flow Feedback | The Flow Feedback section shows how many users found the Flow useful compared to those who didn't find it useful and the users who gave no feedback. |
+| Feedback Responses | This section shows the pre-defined feedback responses recorded for the Flow. Hovering the cursor over each response displays the number of users who have selected those responses. |
+| Feedback Comments | At the end of the page, Feedback Comments (if any) can be viewed verbatim. |
+
+---
+
+### Troubleshooting Common Issues
+
+#### Issue 1: Flow could not detect the element for the next step
+**Cause**:
+  - Flow may have been created using the elements captured in a non-production (developer/UAT) environment, and an attempt is made to play the Flow in the Production environment. Element IDs are different for UAT and Production environments.
+  - The underlying application has changed, or the specific element is missing.
+  - If there are multiple similar elements on the application, Whatfix fails to recognize the right element.
+**Solution**:
+  - Ensure that the Flow is created in the Production environment.
+  - Edit the Flow and reselect the element. See, Reselect Elements to manage UI changes.
+  - In case of multiple similar elements, use CSS selectors to identify the right element.
+
+#### Issue 2: Flow Steps Not Displaying Correctly
+**Issue**
+The Flow fails to work correctly when displayed to the end users. The following are some instances of a Flow breaking:
+- The Flow fails to start.
+- The Flow fails to move to the next step even after clicking on the element.
+- The Flow Tooltip appears in an incorrect position.
+- The Flow skips a step.
+**Cause**
+There may be many reasons why your Flow is not working. The following are a few reasons and some solutions that you could try, to fix the issue:
+- The step conditions for the Flow may be incorrect or the step may be optional and the conditions don't match.
+   - For example, one of the reasons could be that the step condition is being evaluated while the page is still loading. So if you are using the On click of selected element visibility rule, try switching to the On-page refresh rule.
+- Something may have changed in the underlying application, and Whatfix is unable to find the element that was selected when the flow was created.
+- Instead of simple element selection, a CSS Selector may be needed to ensure that the Flow step runs correctly.
+- The Flow may have been created in a non-production environment but is being run in the production environment.
+- The application may be taking time to load and the visibility rule that determines the content display may not be optimized. For example, the rule may be set to be triggered by the On-click of selected element because the page has not refreshed, the element that is supposed to trigger the next step has not yet been displayed, and thus, the step does not display.
+  
+
+#### Issue 3: Users Dropping Off Mid-Flow
+**Cause**
+- Over-complicated steps or unclear instructions.
+**Solution**
+- Simplify the flow by reducing the number of steps and making the instructions more straightforward.
+
+---
+
+### Additional Resources
+- [Whatfix Knowledge Base](https://support.whatfix.com/)
+- [Whatfix Blog](https://www.whatfix.com/blog/)
+- [Whatfix Tutorials](link)
+
+---
+
+### Conclusion
+Whatfix provides a powerful platform for creating in-app guidance to help users navigate your application more effectively. By following this guide, you’ll be able to set up, deploy, and analyze flows that will streamline your users’ experience. For more advanced configurations and troubleshooting, explore our resources and support documentation.
