@@ -41,10 +41,10 @@ To obtain and deploy the JavaScript code, follow these steps:
 2. Click **Content Deployment**.
 3. Under the **Ready** section:
    - Select the appropriate condition and operator.
-   - Enter the value for your **Development** or **UAT** environment. This environment is typically used for testing, reviewing, and ensuring that the content is ready for broader deployment.
+   - Enter the value for your **Development** or **UAT** environment.
 4. Under the **Production** section:
    - Select the appropriate condition and operator.
-   - Enter the value for your **Production** environment. This is the live environment where users interact with the application and see the Whatfix content.
+   - Enter the value for your **Production** environment.
 5. Under the **Deployment Script** section, click **Copy** to copy the script provided.
    
    > **Info**: This script must be inserted in the `<head>` or `<footer>` of your application instance (either Development or Production) for the Whatfix content to be displayed on every page.
@@ -99,8 +99,8 @@ Add multiple conditions using + Add Rule if needed.
 2. Click **Flows**.
 3. In the **Draft** stage, select your Flow and click **Send to ready**.
 4. Go to the **Ready** stage and click on **Push to production**.
-5. Within the Whatfix Dashboard you can choose the pages where you want the flow to be deployed by editing the flows.
-6. Optionally, set user conditions, such as targeting specific user roles.
+
+ > **Info**: Within the Whatfix Dashboard you can choose the pages where you want the flow to be deployed, set user conditions, and target specific user roles.
 
 #### Step 2: Testing the Flow
 1. After publishing, test the flow by navigating to the target page and ensuring that the flow is triggered correctly.
@@ -114,13 +114,13 @@ Add multiple conditions using + Add Rule if needed.
 1. From the Whatfix Guidance dashboard, navigate to the **Guidance analytics** section.
 2. Click **Flows**.
 4. View key reports such as:
-   - **Completed**: How many users completed the flow.
+   - **Completed**: How many users completed the Flow.
    - **Failed**: Number of times the Flow failed and users could not complete it. For example, broken Flow, a Flow step does not display, and more.
    - **Exited**: Number of times users failed to complete the Flow due to their actions. The exit count is always equal to the sum of closed via tooltip, navigated away, and Flow transitions. i.e., **Exited = Close via tooltip + Navigated away + Flow transition**.
 
 #### Step 2: Analtyics by Flow
-1. Click the **By Flow**
-2. To begin, select the Flow that you want to analyze.
+1. Click **By Flow**
+2. Select the Flow you want to analyze.
 3. View key reports such as:
 
 | **Report Name**              | **Description**                                                                                         |
