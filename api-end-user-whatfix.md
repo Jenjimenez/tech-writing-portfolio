@@ -92,10 +92,13 @@ Updates or adds one or more custom fields in the end user schema. Field names ar
 #### Request Body Schema
 array of end user schema
 ``` json
-Array [
+Array
+  [
+    {
   description: string, explanation of field purpose,
   name: string, name of field,
   type: string, data type of field
+    }
   ]
 ```
 
@@ -112,13 +115,7 @@ Content type: application/json
     "type": "string"
   }
 ]
-[
-  {
-    "description": "string",
-    "name": "string",
-    "type": "string"
-  }
-]
+
 ```
 
 #### Responses
