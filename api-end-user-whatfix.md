@@ -59,6 +59,7 @@ Pagination is performed by the use of 2 filters: cursor and limit
 - **limit**: Specifies the maximum number of records to return in the result.
 ---
 
+
 ## End User Schema
 
 APIs for managing end user schema allow you to define fields for users in your platform. The following data types are allowed:
@@ -82,6 +83,7 @@ The Get End User Schema API fetches the schema for the end users resource for yo
 
 ### Responses
 ```200 OK: Returns the schema information for the end users resource.```
+
 
 ## Data Integrations
 Updates or adds one or more custom fields in the end user schema. Field names are unique and are used to identify the fields that are required to be updated. A maximum of 50 custom fields can be added to the user schema for each account. Called from integrations UI on the dashboard.
@@ -109,9 +111,9 @@ Content type: application/json
 ]
 
 ```
-
 ### Responses
 ```200 OK: Returns the schema information for the end users resource.```
+
 
 ## Get an end user schema by field name
 Get an end user schema by field name. This is called from integrations dashboard.
@@ -125,6 +127,7 @@ Get an end user schema by field name. This is called from integrations dashboard
 
 ### Responses
 ```200 OK: Returns the schema information for the end users resource.```
+
 
 ---
 
