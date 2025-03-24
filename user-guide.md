@@ -122,16 +122,16 @@ Add multiple conditions using + Add Rule if needed.
 1. Click the **By Flow**
 2. To begin, select the Flow that you want to analyze.
 3. View key reports such as:
-| **Report Name**       | **Description**                                   |
-|-----------------|---------------------------------------------------|
-| Flow Usage by Day  | The chart displays the number of times that Flow was used each day. |
-| No. of Times Flow Played | The chart shows the number of times the Flow was run and also the widget used to play the flow. |
-| Flow Completion Rate | The chart shows how many started the Flow and completed it, as well as those who could not complete it and dropped out in between. |
-| Most Exited or Failed Steps | This section shows the dropouts at each step of the Flow. If you hover the cursor over each step, the failure can be analyzed by how many times the steps weren't successful, how many times the steps were exited, and the reasons for exit. |
-| Flow History | The Flow History section shows who edited the Flow and when. |
-| Flow Feedback | The Flow Feedback section shows how many users found the Flow useful compared to those who didn't find it useful and the users who gave no feedback. |
-| Feedback Responses | This section shows the pre-defined feedback responses recorded for the Flow. Hovering the cursor over each response displays the number of users who have selected those responses. |
-| Feedback Comments | At the end of the page, Feedback Comments (if any) can be viewed verbatim. |
+| **Report Name**              | **Description**                                                                                         |
+|------------------------------|---------------------------------------------------------------------------------------------------------|
+| Flow Usage by Day            | The chart displays the number of times that Flow was used each day.                                       |
+| No. of Times Flow Played     | The chart shows the number of times the Flow was run and also the widget used to play the flow.          |
+| Flow Completion Rate         | The chart shows how many started the Flow and completed it, as well as those who could not complete it and dropped out in between. |
+| Most Exited or Failed Steps  | This section shows the dropouts at each step of the Flow. If you hover the cursor over each step, the failure can be analyzed by how many times the steps weren't successful, how many times the steps were exited, and the reasons for exit. |
+| Flow History                 | The Flow History section shows who edited the Flow and when.                                             |
+| Flow Feedback                | The Flow Feedback section shows how many users found the Flow useful compared to those who didn't find it useful and the users who gave no feedback. |
+| Feedback Responses           | This section shows the pre-defined feedback responses recorded for the Flow. Hovering the cursor over each response displays the number of users who have selected those responses. |
+| Feedback Comments            | At the end of the page, Feedback Comments (if any) can be viewed verbatim.                              |
 
 ---
 
