@@ -1,4 +1,4 @@
-# Knowledge Base Article: How to Use Whatfix for Onboarding New Users
+# User Guide: How to Use Whatfix for Onboarding New Users
 
 _Last Edit: 3/2025_
 
