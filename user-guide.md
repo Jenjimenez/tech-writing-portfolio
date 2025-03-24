@@ -167,27 +167,27 @@ The Flow fails to work correctly when displayed to the end users. The following 
 If a step in your Flow is not functioning as expected, follow these steps to troubleshoot the issue:  
 
 1. Reselect the Element  
-- Navigate to the step that is failing and attempt to reselect the target element.  
-- For detailed instructions, refer to [Reselect Elements to Manage UI Changes](#).  
+   - Navigate to the step that is failing and attempt to reselect the target element.  
+   - For detailed instructions, refer to [Reselect Elements to Manage UI Changes](#).  
 
 2. Use a CSS Selector  
-- If element reselection does not resolve the issue, consider adding a CSS selector.  
-- For guidance on finding a CSS selector, see [How to Find the CSS Selector of an Element Using Whatfix Studio](#).  
+   - If element reselection does not resolve the issue, consider adding a CSS selector.  
+   - For guidance on finding a CSS selector, see [How to Find the CSS Selector of an Element Using Whatfix Studio](#).  
 
 3. Verify Step Conditions  
-- Ensure that the step conditions for the failed step are correctly configured.  
+   - Ensure that the step conditions for the failed step are correctly configured.  
 
 4. Check Environment Consistency  
-- Confirm that the Flow was created in an environment identical to the production environment.  
-- Element attributes may differ between UAT and production, causing unexpected behavior.  
+   - Confirm that the Flow was created in an environment identical to the production environment.  
+   - Element attributes may differ between UAT and production, causing unexpected behavior.  
 
 5. Validate Element IDs  
-- If the Flow was created in a UAT environment and your account is configured to trust element IDs, verify that the IDs are consistent across both environments.  
+   - If the Flow was created in a UAT environment and your account is configured to trust element IDs, verify that the IDs are consistent across both environments.  
 
 6. Ensure the First Step Uses a Global Element  
-- The *Always Start a Flow from Step 1* feature functions only when the first step is placed on a global element—one that is present across multiple pages.  
-- If the first step is not on a global element, enabling this feature may cause the Flow to break.  
-- Ensure that the first step is placed on a global element for seamless execution.  
+   - The *Always Start a Flow from Step 1* feature functions only when the first step is placed on a global element—one that is present across multiple pages.  
+   - If the first step is not on a global element, enabling this feature may cause the Flow to break.  
+   - Ensure that the first step is placed on a global element for seamless execution.  
 
 #### Issue 3: Users Dropping Off Mid-Flow
 **Cause**
