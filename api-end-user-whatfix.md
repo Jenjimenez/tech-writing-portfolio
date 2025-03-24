@@ -53,7 +53,7 @@ The following status codes are possible in Whatfix API Responses:
 | **429 - Too Many Requests**    | Returned if the rate limit is exceeded.                                                          |
 | **500, 502, 503, 504 - Server Errors** | Returned for server-side errors. Requests may succeed on retry.                                    |
 
-<p>&nbsp;</p>
+
 
 ## Pagination
 Pagination is performed by the use of 2 filters: cursor and limit
