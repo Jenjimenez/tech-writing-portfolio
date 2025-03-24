@@ -1,6 +1,6 @@
 # Welcome to My Technical Writing Portfolio  
 
-Hi, I'm [Your Name], a technical writer with experience in user guides, API documentation, and troubleshooting articles.  
+Hi, I'm Jennifer, a technical writer with experience in user guides, API documentation, and troubleshooting articles.  
 
 ## Featured Writing Samples  
 - [User Guide: How to Use a Password Manager](user-guide.md)  
