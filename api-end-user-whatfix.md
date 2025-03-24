@@ -29,6 +29,7 @@ The End User Schema API allows you to:
 
 ---
 
+
 ## Authentication
 
 To get authenticated you will need to create a user API token from the Whatfix dashboard and pass as header **x-whatfix-integration-key**. To know more, see [Generating the API Integration Key](link). Pass the email address of the user as the **x-whatfix-user** header.
