@@ -5,7 +5,6 @@
 The End User Schema API allows you to manage custom fields in the end user schema for your account. This API enables you to fetch, update, or add custom fields to the end user schema, which defines the data associated with users interacting with your platform.
 
 ### Table of Contents
-### Table of Contents
 - [Overview](#overview)
 - [Authentication](#authentication)
 - [Status Codes](#status-codes)
