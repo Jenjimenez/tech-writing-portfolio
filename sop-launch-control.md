@@ -28,7 +28,11 @@ This SOP is intended for team members responsible for lead outreach and qualific
 - **Follow Up Boss** (CRM system)
 - **Discord** (for internal communication)
 
+<p>&nbsp;</p>
+
 ---
+
+<p>&nbsp;</p>
 
 ## Log in to Launch Control
 1. Navigate to the Launch Control login page.
@@ -50,9 +54,11 @@ This SOP is intended for team members responsible for lead outreach and qualific
 ### Send Text Messages
 - Press **Enter** to send all text messages in bulk, or send them individually if needed.
 
+<p>&nbsp;</p>
 
 ---
 
+<p>&nbsp;</p>
 
 ## Respond and Screen for Motivation
 
