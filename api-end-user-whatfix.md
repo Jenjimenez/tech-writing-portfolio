@@ -95,7 +95,7 @@ Updates or adds one or more custom fields in the end user schema. Field names ar
 - **type**: string, data type of the field.
 
 #### Example API Call
-**PUT** /v1/accounts/{entId}/endUserSchema
+```**PUT** /v1/accounts/{entId}/endUserSchema```
 
 ### Request samples
 Content type: application/json
@@ -111,7 +111,7 @@ Content type: application/json
 ```
 
 #### Responses
-- 200 OK: Returns the schema information for the end users resource.
+```200 OK: Returns the schema information for the end users resource.```
 
 ## Get an end user schema by field name
 Get an end user schema by field name. This is called from integrations dashboard.
@@ -121,10 +121,10 @@ Get an end user schema by field name. This is called from integrations dashboard
 - **fieldName** (required): string, field name
 
 #### Example API Call
-**GET** /v1/accounts/{entId}/endUserSchema/{fieldName}
+```**GET** /v1/accounts/{entId}/endUserSchema/{fieldName}```
 
 #### Responses
-- 200 OK: Returns the schema information for the end users resource.
+```200 OK: Returns the schema information for the end users resource.```
 
 ---
 
