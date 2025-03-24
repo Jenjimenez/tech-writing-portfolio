@@ -122,6 +122,7 @@ Add multiple conditions using + Add Rule if needed.
 1. Click the **By Flow**
 2. To begin, select the Flow that you want to analyze.
 3. View key reports such as:
+
 | **Report Name**              | **Description**                                                                                         |
 |------------------------------|---------------------------------------------------------------------------------------------------------|
 | Flow Usage by Day            | The chart displays the number of times that Flow was used each day.                                       |
