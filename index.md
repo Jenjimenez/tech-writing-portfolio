@@ -8,4 +8,4 @@ Hi, I'm Jennifer, a technical writer with experience in user guides, API documen
 - [Knowledge Base: Creating Onboarding Flows with Whatfix](kb-whatfix-flows.md)
 - [Process Documentation: Standard Operating Procedure (SOP): Managing Lead Texting in Launch Control](sop-launch-control.md) 
 
-[View My Resume](resume.pdf) | [Contact Me](mailto:jenjimenezxo@gmail.com)
+[View My Resume](Jennifer_Botia_Resume_2025 (TW).pdf) | [Contact Me](mailto:jenjimenezxo@gmail.com)
