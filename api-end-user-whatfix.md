@@ -93,8 +93,8 @@ Updates or adds one or more custom fields in the end user schema. Field names ar
 array of end user schema
 ``` json
 Array [
-  description: string, explanation of field purpose
-  name: string, name of field
+  description: string, explanation of field purpose,
+  name: string, name of field,
   type: string, data type of field
   ]
 ```
