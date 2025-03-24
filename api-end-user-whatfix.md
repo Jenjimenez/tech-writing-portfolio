@@ -68,7 +68,6 @@ APIs for managing end user schema allow you to define fields for users in your p
 - **timestamp**: Timestamp in ISO-8601 format (e.g., `2001-07-04T12:08:56.235-0700`)
 - **encrypted_string**: Any string value stored in an encrypted format for security purposes (e.g., `john.doe@whatfix.com`)
 
----
 
 ### Get End User Schema
 
@@ -84,9 +83,7 @@ GET /v1/accounts/{entId}/endUserSchema
 #### Responses
 - 200 OK: Returns the schema information for the end users resource.
 
----
-
-## Data Integrations
+### Data Integrations
 Updates or adds one or more custom fields in the end user schema. Field names are unique and are used to identify the fields that are required to be updated. A maximum of 50 custom fields can be added to the user schema for each account. Called from integrations UI on the dashboard.
 
 #### PATH PARAMETERS
@@ -115,8 +112,6 @@ Content type: application/json
 
 #### Responses
 - 200 OK: Returns the schema information for the end users resource.
-
----
 
 ## Get an end user schema by field name
 Get an end user schema by field name. This is called from integrations dashboard.
