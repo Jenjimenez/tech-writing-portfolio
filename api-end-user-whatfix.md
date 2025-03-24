@@ -28,7 +28,7 @@ The End User Schema API allows you to:
 - Get a list of all end users associated with your account.
 
 ---
-
+<p>&nbsp;</p>
 
 ## Authentication
 
