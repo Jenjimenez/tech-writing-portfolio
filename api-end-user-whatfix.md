@@ -19,7 +19,7 @@ The End User Schema API allows you to manage custom fields in the end user schem
 <p>&nbsp;</p>
 ---
 
-<p>&nbsp;</p>
+
 ## Overview
 
 The End User Schema API allows you to:
