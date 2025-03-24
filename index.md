@@ -3,7 +3,7 @@
 Hi, I'm Jennifer, a technical writer with experience in user guides, API documentation, and troubleshooting articles.  
 
 ## Featured Writing Samples  
-- [User Guide: Using Whatfix to Onboard Users](user-guide.md)  
+- [User Guide: Getting Started with Whatfix](user-guide.md)  
 - [API Documentation: Weather API](api-docs.md)  
 - [Knowledge Base: Creating Onboarding Flows with Whatfix](kb-whatfix-flows.md)
 - [Process Documentation: Standard Operating Procedure (SOP): Managing Lead Texting in Launch Control](sop-launch-control.md) 
