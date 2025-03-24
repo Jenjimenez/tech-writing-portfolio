@@ -102,6 +102,7 @@ High-priority leads are those who show strong interest in selling their property
 
 ---
 
+<p>&nbsp;</p>
 
 ## Manage Leads
 
