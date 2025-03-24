@@ -155,15 +155,39 @@ The Flow fails to work correctly when displayed to the end users. The following 
 - The Flow Tooltip appears in an incorrect position.
 - The Flow skips a step.
 
-**Cause**
-There may be many reasons why your Flow is not working. The following are a few reasons and some solutions that you could try, to fix the issue:
+**Cause**:
 - The step conditions for the Flow may be incorrect or the step may be optional and the conditions don't match.
    - For example, one of the reasons could be that the step condition is being evaluated while the page is still loading. So if you are using the On click of selected element visibility rule, try switching to the On-page refresh rule.
 - Something may have changed in the underlying application, and Whatfix is unable to find the element that was selected when the flow was created.
 - Instead of simple element selection, a CSS Selector may be needed to ensure that the Flow step runs correctly.
 - The Flow may have been created in a non-production environment but is being run in the production environment.
 - The application may be taking time to load and the visibility rule that determines the content display may not be optimized. For example, the rule may be set to be triggered by the On-click of selected element because the page has not refreshed, the element that is supposed to trigger the next step has not yet been displayed, and thus, the step does not display.
-  
+
+**Solution":
+If a step in your Flow is not functioning as expected, follow these steps to troubleshoot the issue:  
+
+## 1. Reselect the Element  
+- Navigate to the step that is failing and attempt to reselect the target element.  
+- For detailed instructions, refer to [Reselect Elements to Manage UI Changes](#).  
+
+## 2. Use a CSS Selector  
+- If element reselection does not resolve the issue, consider adding a CSS selector.  
+- For guidance on finding a CSS selector, see [How to Find the CSS Selector of an Element Using Whatfix Studio](#).  
+
+## 3. Verify Step Conditions  
+- Ensure that the step conditions for the failed step are correctly configured.  
+
+## 4. Check Environment Consistency  
+- Confirm that the Flow was created in an environment identical to the production environment.  
+- Element attributes may differ between UAT and production, causing unexpected behavior.  
+
+## 5. Validate Element IDs  
+- If the Flow was created in a UAT environment and your account is configured to trust element IDs, verify that the IDs are consistent across both environments.  
+
+## 6. Ensure the First Step Uses a Global Element  
+- The *Always Start a Flow from Step 1* feature functions only when the first step is placed on a global element—one that is present across multiple pages.  
+- If the first step is not on a global element, enabling this feature may cause the Flow to break.  
+- Ensure that the first step is placed on a global element for seamless execution.  
 
 #### Issue 3: Users Dropping Off Mid-Flow
 **Cause**
