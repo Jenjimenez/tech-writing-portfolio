@@ -16,7 +16,6 @@ _Last edit: 1/19/2025_
 11. [Daily Follow-up Tasks](#daily-follow-up-tasks)
 12. [Best Practices](#best-practices)
 13. [Review and Update Frequency](#review-and-update-frequency)
-14. [Video Links](#video-links)
 
 ## Purpose
 This SOP outlines the procedure for texting potential leads, from initial contact to lead qualification. It covers logging into the system, sending batches of texts, responding to incoming messages, and screening leads for motivation. The goal is to determine which leads should be added to the CRM while ensuring efficient lead management.
