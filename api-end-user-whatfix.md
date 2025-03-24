@@ -60,8 +60,8 @@ Pagination is performed by the use of 2 filters: cursor and limit
 - **limit**: Specifies the maximum number of records to return in the result.
 
 <p>&nbsp;</p>
+
 ---
-<p>&nbsp;</p>
 
 ## End User Schema
 
@@ -134,7 +134,6 @@ Get an end user schema by field name. This is called from integrations dashboard
 
 <p>&nbsp;</p>
 ---
-<p>&nbsp;</p>
 
 ## Conclusion
 This API documentation provides you with the necessary endpoints to manage and interact with the end user schema for your Whatfix account. By using the provided API calls, you can easily add, update, and retrieve user schema data as needed.
