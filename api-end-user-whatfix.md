@@ -92,7 +92,7 @@ The Get End User Schema API fetches the schema for the end users resource for yo
 ## Data Integrations
 Updates or adds one or more custom fields in the end user schema. Field names are unique and are used to identify the fields that are required to be updated. A maximum of 50 custom fields can be added to the user schema for each account. Called from integrations UI on the dashboard.
 
-### **Path Parameters**
+### Path Parameters
 - **entId** (required): string, account ID
 
 ### Request Body Schema
