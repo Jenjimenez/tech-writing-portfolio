@@ -91,15 +91,15 @@ Updates or adds one or more custom fields in the end user schema. Field names ar
 
 #### Request Body Schema
 array of end user schema
-``` json
 Array
-  [
-    {
-  description: string, explanation of field purpose,
-  name: string, name of field,
-  type: string, data type of field
-    }
-  ]
+``` json
+[
+{
+"description": "string",
+"name": "string",
+"type": "string"
+}
+]
 ```
 
 #### Example API Call
