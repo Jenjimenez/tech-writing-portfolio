@@ -143,6 +143,7 @@ Add multiple conditions using + Add Rule if needed.
   - Flow may have been created using the elements captured in a non-production (developer/UAT) environment, and an attempt is made to play the Flow in the Production environment. Element IDs are different for UAT and Production environments.
   - The underlying application has changed, or the specific element is missing.
   - If there are multiple similar elements on the application, Whatfix fails to recognize the right element.
+
 **Solution**:
   - Ensure that the Flow is created in the Production environment.
   - Edit the Flow and reselect the element. See, Reselect Elements to manage UI changes.
@@ -190,10 +191,10 @@ If a step in your Flow is not functioning as expected, follow these steps to tro
    - Ensure that the first step is placed on a global element for seamless execution.  
 
 #### Issue 3: Users Dropping Off Mid-Flow
-**Cause**
+**Cause**:
 - Over-complicated steps or unclear instructions.
 
-**Solution**
+**Solution**:
 - Simplify the flow by reducing the number of steps and making the instructions more straightforward.
 
 ---
