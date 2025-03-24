@@ -154,6 +154,7 @@ The Flow fails to work correctly when displayed to the end users. The following 
 - The Flow fails to move to the next step even after clicking on the element.
 - The Flow Tooltip appears in an incorrect position.
 - The Flow skips a step.
+
 **Cause**
 There may be many reasons why your Flow is not working. The following are a few reasons and some solutions that you could try, to fix the issue:
 - The step conditions for the Flow may be incorrect or the step may be optional and the conditions don't match.
