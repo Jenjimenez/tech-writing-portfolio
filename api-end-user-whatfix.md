@@ -111,7 +111,7 @@ PUT /v1/accounts/{entId}/endUserSchema
 #### Responses
 - 200 OK: Returns the schema information for the end users resource.
 
---
+---
 
 ## Conclusion
 This API documentation provides you with the necessary endpoints to manage and interact with the end user schema for your Whatfix account. By using the provided API calls, you can easily add, update, and retrieve user schema data as needed.
