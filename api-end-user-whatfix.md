@@ -90,17 +90,9 @@ Updates or adds one or more custom fields in the end user schema. Field names ar
 - **entId** (required): string, account ID
 
 #### Request Body Schema
-array of end user schema
-
-``` json
-[
-  {
-"description": "string",
-"name": "string",
-"type": "string"
-  }
-]
-```
+- description: string, explanation of the field's purpose.
+- name: string, name of the field.
+- type: string, data type of the field.
 
 #### Example API Call
 **PUT** /v1/accounts/{entId}/endUserSchema
