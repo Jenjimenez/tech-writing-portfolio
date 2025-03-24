@@ -5,14 +5,18 @@
 The End User Schema API allows you to manage custom fields in the end user schema for your account. This API enables you to fetch, update, or add custom fields to the end user schema, which defines the data associated with users interacting with your platform.
 
 ### Table of Contents
+### Table of Contents
 - [Overview](#overview)
 - [Authentication](#authentication)
-- [API Endpoints](#api-endpoints)
+- [Status Codes](#status-codes)
+- [Pagination](#pagination)
+- [End User Schema](#end-user-schema)
   - [Get End User Schema](#get-end-user-schema)
   - [Update/Add Custom Fields](#updateadd-custom-fields)
   - [Get End User Schema by Field Name](#get-end-user-schema-by-field-name)
   - [Get All End Users (Paginated)](#get-all-end-users-paginated)
 - [Data Types](#data-types)
+
 
 ---
 
@@ -55,6 +59,7 @@ The following status codes are possible in Whatfix API Responses:
 Pagination is performed by the use of 2 filters: cursor and limit
 - **cursor**: Pointer to a specific row of data.
 - **limit**: Specifies the maximum number of records to return in the result.
+--
 
 ## End User Schema
 
@@ -70,13 +75,46 @@ APIs for managing end user schema allow you to define fields for users in your p
 The Get End User Schema API fetches the schema for the end users resource for your account. It returns both Whatfix-provided default fields and custom fields defined by the account user.
 
 #### PATH PARAMETERS
-- entId (required): string, account ID
-- fieldName (required): string, field name
+- **entId** (required): string, account ID
+- **fieldName** (required): string, field name
 
-### Example API Call
+#### Example API Call
 GET /v1/accounts/{entId}/endUserSchema
 
-### Responses
+#### Responses
 - 200 OK: Returns the schema information for the end users resource.
 
+--
 
+## Update/Add Custom Fields
+
+#### PATH PARAMETERS
+- **entId** (required): string, account ID
+
+#### Request Body Schema
+Array [
+  description: string, explanation of field purpose
+  name: string, name of field
+  type: string, data type of field
+  
+]
+
+#### Example API Call
+PUT /v1/accounts/{entId}/endUserSchema
+
+### Request samples
+[
+  {
+    "description": "string",
+    "name": "string",
+    "type": "string"
+  }
+]
+
+#### Responses
+- 200 OK: Returns the schema information for the end users resource.
+
+--
+
+## Conclusion
+This API documentation provides you with the necessary endpoints to manage and interact with the end user schema for your Whatfix account. By using the provided API calls, you can easily add, update, and retrieve user schema data as needed.
