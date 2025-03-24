@@ -163,7 +163,7 @@ The Flow fails to work correctly when displayed to the end users. The following 
 - The Flow may have been created in a non-production environment but is being run in the production environment.
 - The application may be taking time to load and the visibility rule that determines the content display may not be optimized. For example, the rule may be set to be triggered by the On-click of selected element because the page has not refreshed, the element that is supposed to trigger the next step has not yet been displayed, and thus, the step does not display.
 
-**Solution**":
+**Solution**:
 If a step in your Flow is not functioning as expected, follow these steps to troubleshoot the issue:  
 
 1. Reselect the Element  
