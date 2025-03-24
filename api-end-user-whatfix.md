@@ -69,32 +69,32 @@ APIs for managing end user schema allow you to define fields for users in your p
 - **encrypted_string**: Any string value stored in an encrypted format for security purposes (e.g., `john.doe@whatfix.com`)
 
 
-### Get End User Schema
+## Get End User Schema
 
 The Get End User Schema API fetches the schema for the end users resource for your account. It returns both Whatfix-provided default fields and custom fields defined by the account user.
 
-#### PATH PARAMETERS
+### PATH PARAMETERS
 - **entId** (required): string, account ID
 - **fieldName** (required): string, field name
 
-#### Example API Call
+### Example API Call
 **GET** ```/v1/accounts/{entId}/endUserSchema```
 
-#### Responses
+### Responses
 ```200 OK: Returns the schema information for the end users resource.```
 
-### Data Integrations
+## Data Integrations
 Updates or adds one or more custom fields in the end user schema. Field names are unique and are used to identify the fields that are required to be updated. A maximum of 50 custom fields can be added to the user schema for each account. Called from integrations UI on the dashboard.
 
-#### PATH PARAMETERS
+### PATH PARAMETERS
 - **entId** (required): string, account ID
 
-#### Request Body Schema
+### Request Body Schema
 - **description**: string, explanation of the field's purpose.
 - **name**: string, name of the field.
 - **type**: string, data type of the field.
 
-#### Example API Call
+### Example API Call
 **PUT** ```/v1/accounts/{entId}/endUserSchema```
 
 ### Request samples
@@ -110,20 +110,20 @@ Content type: application/json
 
 ```
 
-#### Responses
+### Responses
 ```200 OK: Returns the schema information for the end users resource.```
 
 ## Get an end user schema by field name
 Get an end user schema by field name. This is called from integrations dashboard.
 
-#### PATH PARAMETERS
+### PATH PARAMETERS
 - **entId** (required): string, account ID
 - **fieldName** (required): string, field name
 
-#### Example API Call
+### Example API Call
 **GET** ```/v1/accounts/{entId}/endUserSchema/{fieldName}```
 
-#### Responses
+### Responses
 ```200 OK: Returns the schema information for the end users resource.```
 
 ---
