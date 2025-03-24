@@ -149,8 +149,6 @@ Add multiple conditions using + Add Rule if needed.
   - In case of multiple similar elements, use CSS selectors to identify the right element.
 
 #### Issue 2: Flow Steps Not Displaying Correctly
-**Issue**:
-
 The Flow fails to work correctly when displayed to the end users. The following are some instances of a Flow breaking:
 - The Flow fails to start.
 - The Flow fails to move to the next step even after clicking on the element.
