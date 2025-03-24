@@ -121,7 +121,7 @@ Get an end user schema by field name. This is called from integrations dashboard
 - **fieldName** (required): string, field name
 
 #### Example API Call
-```**GET** /v1/accounts/{entId}/endUserSchema/{fieldName}```
+**GET**```/v1/accounts/{entId}/endUserSchema/{fieldName}```
 
 #### Responses
 ```200 OK: Returns the schema information for the end users resource.```
