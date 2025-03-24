@@ -105,6 +105,7 @@ High-priority leads are those who show strong interest in selling their property
 - Add these to the **"Call them"** Discord channel for verification by Acquisitions Manager before adding to Follow Up Boss.
 - Do not push to the CRM until verified.
 
+<p>&nbsp;</p>
 
 ---
 
