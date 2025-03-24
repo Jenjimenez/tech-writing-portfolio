@@ -58,6 +58,8 @@ The following status codes are possible in Whatfix API Responses:
 Pagination is performed by the use of 2 filters: cursor and limit
 - **cursor**: Pointer to a specific row of data.
 - **limit**: Specifies the maximum number of records to return in the result.
+
+
 ---
 
 
@@ -111,6 +113,7 @@ Content type: application/json
   }
 ]
 
+
 ```
 ### Responses
 ```200 OK: Returns the schema information for the end users resource.```
@@ -131,6 +134,7 @@ Get an end user schema by field name. This is called from integrations dashboard
 
 
 ---
+
 
 ## Conclusion
 This API documentation provides you with the necessary endpoints to manage and interact with the end user schema for your Whatfix account. By using the provided API calls, you can easily add, update, and retrieve user schema data as needed.
