@@ -34,7 +34,6 @@ The End User Schema API allows you to:
 
 To get authenticated you will need to create a user API token from the Whatfix dashboard and pass as header **x-whatfix-integration-key**. To know more, see [Generating the API Integration Key](link). Pass the email address of the user as the **x-whatfix-user** header.
 
----
 
 ## Status Codes
 The following status codes are possible in Whatfix API Responses:
@@ -59,7 +58,7 @@ The following status codes are possible in Whatfix API Responses:
 Pagination is performed by the use of 2 filters: cursor and limit
 - **cursor**: Pointer to a specific row of data.
 - **limit**: Specifies the maximum number of records to return in the result.
---
+---
 
 ## End User Schema
 
@@ -84,7 +83,7 @@ GET /v1/accounts/{entId}/endUserSchema
 #### Responses
 - 200 OK: Returns the schema information for the end users resource.
 
---
+---
 
 ## Update/Add Custom Fields
 
@@ -96,8 +95,7 @@ Array [
   description: string, explanation of field purpose
   name: string, name of field
   type: string, data type of field
-  
-]
+  ]
 
 #### Example API Call
 PUT /v1/accounts/{entId}/endUserSchema
