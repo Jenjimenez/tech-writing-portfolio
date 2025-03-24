@@ -25,14 +25,18 @@ The End User Schema API allows you to:
 - Retrieve information about specific fields by name.
 - Get a list of all end users associated with your account.
 
+<p>&nbsp;</p>
+
 
 ---
 
+<p>&nbsp;</p>
 
 ## Authentication
 
 To get authenticated you will need to create a user API token from the Whatfix dashboard and pass as header **x-whatfix-integration-key**. To know more, see [Generating the API Integration Key](link). Pass the email address of the user as the **x-whatfix-user** header.
 
+<p>&nbsp;</p>
 
 ## Status Codes
 The following status codes are possible in Whatfix API Responses:
@@ -53,15 +57,18 @@ The following status codes are possible in Whatfix API Responses:
 | **429 - Too Many Requests**    | Returned if the rate limit is exceeded.                                                          |
 | **500, 502, 503, 504 - Server Errors** | Returned for server-side errors. Requests may succeed on retry.                                    |
 
-
+<p>&nbsp;</p>
 
 ## Pagination
 Pagination is performed by the use of 2 filters: cursor and limit
 - **cursor**: Pointer to a specific row of data.
 - **limit**: Specifies the maximum number of records to return in the result.
 
+<p>&nbsp;</p>
 
 ---
+
+<p>&nbsp;</p>
 
 ## End User Schema
 
@@ -134,6 +141,8 @@ Get an end user schema by field name. This is called from integrations dashboard
 
 <p>&nbsp;</p>
 ---
+
+<p>&nbsp;</p>
 
 ## Conclusion
 This API documentation provides you with the necessary endpoints to manage and interact with the end user schema for your Whatfix account. By using the provided API calls, you can easily add, update, and retrieve user schema data as needed.
