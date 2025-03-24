@@ -185,7 +185,7 @@ If a step in your Flow is not functioning as expected, follow these steps to tro
    - If the Flow was created in a UAT environment and your account is configured to trust element IDs, verify that the IDs are consistent across both environments.  
 
 6. Ensure the First Step Uses a Global Element  
-   - The *Always Start a Flow from Step 1* feature functions only when the first step is placed on a global element—one that is present across multiple pages.  
+   - The **Always Start a Flow from Step 1** feature functions only when the first step is placed on a global element—one that is present across multiple pages.  
    - If the first step is not on a global element, enabling this feature may cause the Flow to break.  
    - Ensure that the first step is placed on a global element for seamless execution.  
 
