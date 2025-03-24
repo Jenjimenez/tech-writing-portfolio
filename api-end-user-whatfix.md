@@ -84,12 +84,14 @@ GET /v1/accounts/{entId}/endUserSchema
 
 ---
 
-## Update/Add Custom Fields
+## Data Integrations
+Updates or adds one or more custom fields in the end user schema. Field names are unique and are used to identify the fields that are required to be updated. A maximum of 50 custom fields can be added to the user schema for each account. Called from integrations UI on the dashboard.
 
 #### PATH PARAMETERS
 - **entId** (required): string, account ID
 
 #### Request Body Schema
+array of end user schema
 Array [
   description: string, explanation of field purpose
   name: string, name of field
@@ -100,6 +102,7 @@ Array [
 PUT /v1/accounts/{entId}/endUserSchema
 
 ### Request samples
+Content type: application/json
 [
   {
     "description": "string",
