@@ -70,6 +70,7 @@ High-priority leads are those who show strong interest in selling their property
 4. Notify the Acquisitions Manager, who will contact the lead for further discussion.
 
 <p>&nbsp;</p>
+
 ### Medium-Priority Leads (Require Further Action)
 
 #### Criteria for Medium-Priority Leads:
@@ -87,6 +88,7 @@ High-priority leads are those who show strong interest in selling their property
   - Add **"CAPD"** tag in Launch Control.
 
 <p>&nbsp;</p>
+
 ### Low-Priority Leads (Do Not Push Yet)
 
 #### Criteria for Low-Priority Leads:
