@@ -28,6 +28,8 @@ This SOP is intended for team members responsible for lead outreach and qualific
 - **Follow Up Boss** (CRM system)
 - **Discord** (for internal communication)
 
+---
+
 ## Log in to Launch Control
 1. Navigate to the Launch Control login page.
 2. Enter your email and password.
@@ -48,6 +50,10 @@ This SOP is intended for team members responsible for lead outreach and qualific
 ### Send Text Messages
 - Press **Enter** to send all text messages in bulk, or send them individually if needed.
 
+
+---
+
+
 ## Respond and Screen for Motivation
 
 ### High-Priority Leads (Push to CRM)
@@ -63,6 +69,7 @@ High-priority leads are those who show strong interest in selling their property
 3. Push the lead to Launch Control (CRM) to initiate follow-up actions.
 4. Notify the Acquisitions Manager, who will contact the lead for further discussion.
 
+<p>&nbsp;</p>
 ### Medium-Priority Leads (Require Further Action)
 
 #### Criteria for Medium-Priority Leads:
@@ -79,6 +86,7 @@ High-priority leads are those who show strong interest in selling their property
   - If no notes are available, ask acquisitions manager about the lead's story.
   - Add **"CAPD"** tag in Launch Control.
 
+<p>&nbsp;</p>
 ### Low-Priority Leads (Do Not Push Yet)
 
 #### Criteria for Low-Priority Leads:
@@ -88,6 +96,10 @@ High-priority leads are those who show strong interest in selling their property
 #### Steps to Process Low-Priority Leads:
 - Add these to the **"Call them"** Discord channel for verification by Acquisitions Manager before adding to Follow Up Boss.
 - Do not push to the CRM until verified.
+
+
+---
+
 
 ## Manage Leads
 
@@ -103,6 +115,8 @@ High-priority leads are those who show strong interest in selling their property
 ### Low-Priority Leads
 - Add to **"Call them"** Discord channel.
 - Wait for verification before adding to CRM.
+
+---
 
 ## Daily Follow-up Tasks
 - Add all nurture leads from the previous day to the "Yes, then ghosted" drip.
