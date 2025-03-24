@@ -95,7 +95,7 @@ Updates or adds one or more custom fields in the end user schema. Field names ar
 - **type**: string, data type of the field.
 
 #### Example API Call
-```<b>PUT</b> /v1/accounts/{entId}/endUserSchema```
+**PUT** ```/v1/accounts/{entId}/endUserSchema```
 
 ### Request samples
 Content type: application/json
