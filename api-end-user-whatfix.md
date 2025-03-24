@@ -68,6 +68,8 @@ APIs for managing end user schema allow you to define fields for users in your p
 - **timestamp**: Timestamp in ISO-8601 format (e.g., `2001-07-04T12:08:56.235-0700`)
 - **encrypted_string**: Any string value stored in an encrypted format for security purposes (e.g., `john.doe@whatfix.com`)
 
+---
+
 ### Get End User Schema
 
 The Get End User Schema API fetches the schema for the end users resource for your account. It returns both Whatfix-provided default fields and custom fields defined by the account user.
@@ -110,6 +112,21 @@ Content type: application/json
     "type": "string"
   }
 ]
+
+#### Responses
+- 200 OK: Returns the schema information for the end users resource.
+
+---
+
+## Get an end user schema by field name
+Get an end user schema by field name. This is called from integrations dashboard.
+
+#### PATH PARAMETERS
+- **entId** (required): string, account ID
+- **fieldName** (required): string, field name
+
+#### Example API Call
+GET /v1/accounts/{entId}/endUserSchema/{fieldName}
 
 #### Responses
 - 200 OK: Returns the schema information for the end users resource.
