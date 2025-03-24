@@ -16,9 +16,10 @@ The End User Schema API allows you to manage custom fields in the end user schem
   - [Get All End Users (Paginated)](#get-all-end-users-paginated)
 - [Data Types](#data-types)
 
-
+<p>&nbsp;</p>
 ---
 
+<p>&nbsp;</p>
 ## Overview
 
 The End User Schema API allows you to:
