@@ -28,7 +28,7 @@ The End User Schema API allows you to:
 - Get a list of all end users associated with your account.
 
 ---
-<p></p>
+<p>&nbsp;</p>
 
 ## Authentication
 
@@ -59,9 +59,9 @@ Pagination is performed by the use of 2 filters: cursor and limit
 - **cursor**: Pointer to a specific row of data.
 - **limit**: Specifies the maximum number of records to return in the result.
 
-
+<p>&nbsp;</p>
 ---
-
+<p>&nbsp;</p>
 
 ## End User Schema
 
@@ -72,7 +72,7 @@ APIs for managing end user schema allow you to define fields for users in your p
 - **timestamp**: Timestamp in ISO-8601 format (e.g., `2001-07-04T12:08:56.235-0700`)
 - **encrypted_string**: Any string value stored in an encrypted format for security purposes (e.g., `john.doe@whatfix.com`)
 
-
+<p>&nbsp;</p>
 ## Get End User Schema
 
 The Get End User Schema API fetches the schema for the end users resource for your account. It returns both Whatfix-provided default fields and custom fields defined by the account user.
@@ -112,9 +112,9 @@ Content type: application/json
     "type": "string"
   }
 ]
-
-
 ```
+<p>&nbsp;</p>
+
 ### Responses
 ```200 OK: Returns the schema information for the end users resource.```
 
@@ -132,9 +132,9 @@ Get an end user schema by field name. This is called from integrations dashboard
 ### Responses
 ```200 OK: Returns the schema information for the end users resource.```
 
-
+<p>&nbsp;</p>
 ---
-
+<p>&nbsp;</p>
 
 ## Conclusion
 This API documentation provides you with the necessary endpoints to manage and interact with the end user schema for your Whatfix account. By using the provided API calls, you can easily add, update, and retrieve user schema data as needed.
