@@ -1,4 +1,5 @@
-# User Guide: Getting Started with Whatfix on Web
+# User Guide: 
+# Getting Started with Whatfix on Web
 
 ### Table of Contents
 1. [Introduction](#introduction)
@@ -81,12 +82,10 @@ To obtain and deploy the JavaScript code, follow these steps:
 > **Note**: Display Rules enable you to configure Flows to display the tooltip only when pre-determined conditions are met.
 
 Use the following steps to add Display Rules to Flow steps:
-   a. Click ADVANCED OPTIONS.
-   b. Expand the Display Rules section and then click + Add Rule. Display Rules enable you to configure Flows to display the tooltip only when pre-determined conditions are met.
-   c. Set the desired conditions. For more information on the different conditions that can be used in Display Rules, see Visibility and Display Rule Conditions
-Add multiple conditions using + Add Rule if needed.
-
-7. Click **Save Step**.
+   1. Click **ADVANCED OPTIONS**.
+   2. Expand the **Display Rules** section and then click **+ Add Rule**. Display Rules enable you to configure Flows to display the tooltip only when pre-determined conditions are met.
+   3. Set the desired conditions. 
+   4. Click **Save Step**.
 
 > **Note**: Click **Preview** to preview the Flow during the Flow creation on Studio. The Flow opens in a new tab and displays the steps that are created on the application. You must create and save at least one step to enable **Preview**.
 
