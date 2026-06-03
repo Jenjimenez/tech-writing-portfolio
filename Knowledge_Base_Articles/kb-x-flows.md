@@ -3,8 +3,6 @@
 ## Overview
 x allows organizations to deliver contextual, in-app guidance to users. This article provides an overview of how to use x to create effective onboarding flows that help new users get familiar with your product quickly and efficiently.
 
----
-
 ## Table of Contents
 1. [Understanding x Flows](#understanding-x-flows)
 2. [How to Create an Onboarding Flow](#how-to-create-an-onboarding-flow)
@@ -12,12 +10,12 @@ x allows organizations to deliver contextual, in-app guidance to users. This art
 4. [Troubleshooting](#troubleshooting)
 5. [Additional Resources](#additional-resources)
 
----
+<br>
 
 ## Understanding x Flows
 A x flow is an interactive walkthrough that guides users through key tasks within an application. It is a powerful tool for onboarding, helping users to understand product features and processes without needing to refer to external documentation.
 
----
+<br>
 
 ## How to Create an Onboarding Flow
 Follow these steps to create a basic onboarding flow for your application.
@@ -31,7 +29,7 @@ Follow these steps to create a basic onboarding flow for your application.
 - Add multiple steps to your flow, such as **Tooltip** (to explain UI elements) or **Spotlight** (to highlight specific parts of the page).
 - Make sure the instructions are clear, concise, and action-oriented.
 
----
+<br>
 
 ## Best Practices for Onboarding
 
@@ -44,7 +42,7 @@ Enhance your flow with visuals like arrows, highlights, or even short videos to 
 ### 3. Set Up Contextual Help
 Make sure that flows are triggered at the most relevant moments in the user’s journey (e.g., when they first sign up or when they attempt a complex task).
 
----
+<br>
 
 ## Troubleshooting
 
@@ -56,7 +54,7 @@ Make sure that flows are triggered at the most relevant moments in the user’s 
 - **Issue**: Some steps do not display as expected.
 - **Solution**: Review the CSS or JavaScript on the page to ensure no conflicts. Adjust the timing or placement of your flow elements.
 
----
+<br>
 
 ## Additional Resources
 - [x Help Center](https://help.x.com/)
