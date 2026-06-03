@@ -16,7 +16,6 @@ The End User Schema API allows you to manage custom fields in the end user schem
   - [Get All End Users (Paginated)](#get-all-end-users-paginated)
 - [Data Types](#data-types)
 
-
 ## Overview
 
 The End User Schema API allows you to:
@@ -24,9 +23,6 @@ The End User Schema API allows you to:
 - Add or update custom fields in the schema.
 - Retrieve information about specific fields by name.
 - Get a list of all end users associated with your account.
-
-
----
 
 ## Authentication
 
@@ -60,12 +56,6 @@ Pagination is performed by the use of 2 filters: cursor and limit
 - **cursor**: Pointer to a specific row of data.
 - **limit**: Specifies the maximum number of records to return in the result.
 
-<p>&nbsp;</p>
-
----
-
-<p>&nbsp;</p>
-
 ## End User Schema
 
 APIs for managing end user schema allow you to define fields for users in your platform. The following data types are allowed:
@@ -75,7 +65,6 @@ APIs for managing end user schema allow you to define fields for users in your p
 - **timestamp**: Timestamp in ISO-8601 format (e.g., `2001-07-04T12:08:56.235-0700`)
 - **encrypted_string**: Any string value stored in an encrypted format for security purposes (e.g., `john.doe@x.com`)
 
-<p>&nbsp;</p>
 ## Get End User Schema
 
 The Get End User Schema API fetches the schema for the end users resource for your account. It returns both x-provided default fields and custom fields defined by the account user.
@@ -134,9 +123,6 @@ Get an end user schema by field name. This is called from integrations dashboard
 
 ### Responses
 ```200 OK: Returns the schema information for the end users resource.```
-
-<p>&nbsp;</p>
----
 
 <p>&nbsp;</p>
 
