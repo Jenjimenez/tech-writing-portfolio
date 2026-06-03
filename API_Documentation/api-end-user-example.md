@@ -25,10 +25,8 @@ The End User Schema API allows you to:
 - Retrieve information about specific fields by name.
 - Get a list of all end users associated with your account.
 
-<p>&nbsp;</p>
----
 
-<p>&nbsp;</p>
+---
 
 ## Authentication
 
