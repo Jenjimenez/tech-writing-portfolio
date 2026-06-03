@@ -77,8 +77,6 @@ The Get End User Schema API fetches the schema for the end users resource for yo
 ### Responses
 ```200 OK: Returns the schema information for the end users resource.```
 
-<p>&nbsp;</p>
-
 ## Data Integrations
 Updates or adds one or more custom fields in the end user schema. Field names are unique and are used to identify the fields that are required to be updated. A maximum of 50 custom fields can be added to the user schema for each account. Called from integrations UI on the dashboard.
 
@@ -107,9 +105,7 @@ Content type: application/json
 ### Responses
 ```200 OK: Returns the schema information for the end users resource.```
 
-<p>&nbsp;</p>
-
-## Get an end user schema by field name
+## Get an End User Schema by Field Name
 Get an end user schema by field name. This is called from integrations dashboard.
 
 ### Path Parameters
@@ -121,8 +117,6 @@ Get an end user schema by field name. This is called from integrations dashboard
 
 ### Responses
 ```200 OK: Returns the schema information for the end users resource.```
-
-<p>&nbsp;</p>
 
 ## Conclusion
 This API documentation provides you with the necessary endpoints to manage and interact with the end user schema for your x account. By using the provided API calls, you can easily add, update, and retrieve user schema data as needed.
