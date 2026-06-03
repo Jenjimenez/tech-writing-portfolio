@@ -34,12 +34,12 @@ The End User Schema API allows you to:
 
 ## Authentication
 
-To get authenticated you will need to create a user API token from the Whatfix dashboard and pass as header **x-whatfix-integration-key**. To know more, see [Generating the API Integration Key](link). Pass the email address of the user as the **x-whatfix-user** header.
+To get authenticated you will need to create a user API token from the x dashboard and pass as header **x-x-integration-key**. To know more, see [Generating the API Integration Key](link). Pass the email address of the user as the **x-x-user** header.
 
 <p>&nbsp;</p>
 
 ## Status Codes
-The following status codes are possible in Whatfix API Responses:
+The following status codes are possible in x API Responses:
 - 2xx: Success
 - 4xx: Request error
 - 5xx: Server-side error
@@ -51,8 +51,8 @@ The following status codes are possible in Whatfix API Responses:
 | **204 - No Content**           | Returned for DELETE requests when a resource is deleted.                                         |
 | **207 - Multistatus**          | Returned for partial success during POST/PUT/DELETE requests.                                     |
 | **400 - Bad Request**          | Returned if the API format is incorrect or if query parameters are invalid.                      |
-| **401 - Unauthorized**         | Returned if the Whatfix integration key is not valid.                                             |
-| **403 - Forbidden**            | Returned if the Whatfix integration key does not have permission for the requested resource.      |
+| **401 - Unauthorized**         | Returned if the x integration key is not valid.                                             |
+| **403 - Forbidden**            | Returned if the x integration key does not have permission for the requested resource.      |
 | **404 - Not Found**            | Returned for GET and DELETE requests when no content is found for the requested resource ID.      |
 | **429 - Too Many Requests**    | Returned if the rate limit is exceeded.                                                          |
 | **500, 502, 503, 504 - Server Errors** | Returned for server-side errors. Requests may succeed on retry.                                    |
@@ -77,12 +77,12 @@ APIs for managing end user schema allow you to define fields for users in your p
 - **double**: Numeric values (e.g., `10`, `20.78`)
 - **string**: Any string value (e.g., `employee_role`)
 - **timestamp**: Timestamp in ISO-8601 format (e.g., `2001-07-04T12:08:56.235-0700`)
-- **encrypted_string**: Any string value stored in an encrypted format for security purposes (e.g., `john.doe@whatfix.com`)
+- **encrypted_string**: Any string value stored in an encrypted format for security purposes (e.g., `john.doe@x.com`)
 
 <p>&nbsp;</p>
 ## Get End User Schema
 
-The Get End User Schema API fetches the schema for the end users resource for your account. It returns both Whatfix-provided default fields and custom fields defined by the account user.
+The Get End User Schema API fetches the schema for the end users resource for your account. It returns both x-provided default fields and custom fields defined by the account user.
 
 ### Path Parameters
 - **entId** (required): string, account ID
@@ -145,4 +145,4 @@ Get an end user schema by field name. This is called from integrations dashboard
 <p>&nbsp;</p>
 
 ## Conclusion
-This API documentation provides you with the necessary endpoints to manage and interact with the end user schema for your Whatfix account. By using the provided API calls, you can easily add, update, and retrieve user schema data as needed.
+This API documentation provides you with the necessary endpoints to manage and interact with the end user schema for your x account. By using the provided API calls, you can easily add, update, and retrieve user schema data as needed.
