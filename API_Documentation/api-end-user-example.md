@@ -28,8 +28,6 @@ The End User Schema API allows you to:
 
 To get authenticated you will need to create a user API token from the x dashboard and pass as header **x-x-integration-key**. To know more, see [Generating the API Integration Key](link). Pass the email address of the user as the **x-x-user** header.
 
-<p>&nbsp;</p>
-
 ## Status Codes
 The following status codes are possible in x API Responses:
 - 2xx: Success
