@@ -1,12 +1,12 @@
-# Knowledge Base Article: Creating Onboarding Flows with Whatfix
+# Knowledge Base Article: Creating Onboarding Flows with x
 
 ## Overview
-Whatfix allows organizations to deliver contextual, in-app guidance to users. This article provides an overview of how to use Whatfix to create effective onboarding flows that help new users get familiar with your product quickly and efficiently.
+x allows organizations to deliver contextual, in-app guidance to users. This article provides an overview of how to use x to create effective onboarding flows that help new users get familiar with your product quickly and efficiently.
 
 ---
 
 ## Table of Contents
-1. [Understanding Whatfix Flows](#understanding-whatfix-flows)
+1. [Understanding x Flows](#understanding-x-flows)
 2. [How to Create an Onboarding Flow](#how-to-create-an-onboarding-flow)
 3. [Best Practices for Onboarding](#best-practices-for-onboarding)
 4. [Troubleshooting](#troubleshooting)
@@ -14,8 +14,8 @@ Whatfix allows organizations to deliver contextual, in-app guidance to users. Th
 
 ---
 
-## Understanding Whatfix Flows
-A Whatfix flow is an interactive walkthrough that guides users through key tasks within an application. It is a powerful tool for onboarding, helping users to understand product features and processes without needing to refer to external documentation.
+## Understanding x Flows
+A x flow is an interactive walkthrough that guides users through key tasks within an application. It is a powerful tool for onboarding, helping users to understand product features and processes without needing to refer to external documentation.
 
 ---
 
@@ -23,7 +23,7 @@ A Whatfix flow is an interactive walkthrough that guides users through key tasks
 Follow these steps to create a basic onboarding flow for your application.
 
 ### 1. Logging In and Setting Up the Editor
-- Access the **Whatfix Editor** to create and manage your flows.
+- Access the **x Editor** to create and manage your flows.
 - Familiarize yourself with the different elements, including **Spotlights**, **Tooltips**, and **Checklists**, which are key to guiding users.
 
 ### 2. Creating Your First Flow
@@ -59,6 +59,6 @@ Make sure that flows are triggered at the most relevant moments in the user’s 
 ---
 
 ## Additional Resources
-- [Whatfix Help Center](https://help.whatfix.com/)
-- [Whatfix Blog](https://www.whatfix.com/blog/)
-- [Whatfix Tutorials](link)
+- [x Help Center](https://help.x.com/)
+- [x Blog](https://www.x.com/blog/)
+- [x Tutorials](link)
