@@ -1,5 +1,5 @@
 # User Guide: 
-# Getting Started with x on Web
+## Getting Started with x on Web
 
 ### Table of Contents
 1. [Introduction](#introduction)
