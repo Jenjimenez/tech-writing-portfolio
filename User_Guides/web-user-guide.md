@@ -1,9 +1,9 @@
 # User Guide: 
-# Getting Started with Whatfix on Web
+# Getting Started with x on Web
 
 ### Table of Contents
 1. [Introduction](#introduction)
-2. [Setting Up Whatfix](#setting-up-whatfix)
+2. [Setting Up x](#setting-up-x)
 3. [Creating and Configuring Flows](#creating-and-configuring-flows)
 4. [Deploying Flows](#deploying-flows)
 5. [Analyzing Flow Performance](#analyzing-flow-performance)
@@ -13,32 +13,32 @@
 ---
 
 ### Introduction
-Whatfix allows organizations to deliver contextual, in-app guidance to users. This article provides an overview of how to use Whatfix to create effective onboarding flows that help new users get familiar with your product quickly and efficiently.
+x allows organizations to deliver contextual, in-app guidance to users. This article provides an overview of how to use x to create effective onboarding flows that help new users get familiar with your product quickly and efficiently.
 
 ---
 
-### Setting Up Whatfix
+### Setting Up x
 
 #### Step 1: Creating an Account
-1. The Whatfix onboarding team will send you an invitation link to sign up. Alternatively, you can visit the [Whatfix website](https://www.whatfix.com/) to begin the sign-up process.
+1. The x onboarding team will send you an invitation link to sign up. Alternatively, you can visit the [x website](https://www.x.com/) to begin the sign-up process.
 2. Sign up using your work email address and create a secure password.
-3. After creating an account, log in to your Whatfix dashboard.
+3. After creating an account, log in to your x dashboard.
 
 #### Step 2: Choose a Delivery Method
-Whatfix content can be deployed to your application using one of the following methods:
+x content can be deployed to your application using one of the following methods:
 - **JS Embed**
 - **Browser Extension**
 
 > **Note**: For this guide, we will be using the **JS Embed** method.
 
-#### Step 3: Use JavaScript Code to Display Whatfix Content
+#### Step 3: Use JavaScript Code to Display x Content
 > **Note**: Only an **Account Manager** can perform this task.
 
-Whatfix requires a single line of JavaScript code to display the content and widgets within your application. This code needs to be inserted into the header of your application so that the content can be accessed from every page.
+x requires a single line of JavaScript code to display the content and widgets within your application. This code needs to be inserted into the header of your application so that the content can be accessed from every page.
 
 To obtain and deploy the JavaScript code, follow these steps:
 
-1. On the **Whatfix Guidance dashboard**, click **Settings**.
+1. On the **x Guidance dashboard**, click **Settings**.
 2. Click **Content Deployment**.
 3. Under the **Ready** section:
    - Select the appropriate condition and operator.
@@ -48,7 +48,7 @@ To obtain and deploy the JavaScript code, follow these steps:
    - Enter the value for your **Production** environment.
 5. Under the **Deployment Script** section, click **Copy** to copy the script provided.
    
-   > **Info**: This script must be inserted in the `<head>` or `<footer>` of your application instance (either Development or Production) for the Whatfix content to be displayed on every page.
+   > **Info**: This script must be inserted in the `<head>` or `<footer>` of your application instance (either Development or Production) for the x content to be displayed on every page.
    
 6. Click **Save** to confirm the deployment.
 
@@ -56,8 +56,8 @@ To obtain and deploy the JavaScript code, follow these steps:
 
 ### Creating and Configuring Flows
 
-#### Step 1: Launch Whatfix Studio
-1. Log in to the application where you want to create content, and then launch the **Whatfix Studio**.
+#### Step 1: Launch x Studio
+1. Log in to the application where you want to create content, and then launch the **x Studio**.
 2. Click **Flow** under the content section.
 
 #### Step 2: Adding Steps to Your Flow
@@ -94,12 +94,12 @@ Use the following steps to add Display Rules to Flow steps:
 ### Deploying Flows
 
 #### Step 1: Publishing the Flow
-1. Once on the Whatfix Guidance dashboard, click **Content**.
+1. Once on the x Guidance dashboard, click **Content**.
 2. Click **Flows**.
 3. In the **Draft** stage, select your Flow and click **Send to ready**.
 4. Go to the **Ready** stage and click on **Push to production**.
 
- > **Info**: Within the Whatfix Dashboard you can choose the pages where you want the flow to be deployed, set user conditions, and target specific user roles.
+ > **Info**: Within the x Dashboard you can choose the pages where you want the flow to be deployed, set user conditions, and target specific user roles.
 
 #### Step 2: Testing the Flow
 1. After publishing, test the flow by navigating to the target page and ensuring that the flow is triggered correctly.
@@ -110,7 +110,7 @@ Use the following steps to add Display Rules to Flow steps:
 ### Analyzing Flow Performance
 
 #### Step 1: Accessing Analytics
-1. From the Whatfix Guidance dashboard, navigate to the **Guidance analytics** section.
+1. From the x Guidance dashboard, navigate to the **Guidance analytics** section.
 2. Click **Flows**.
 4. View key reports such as:
    - **Completed**: How many users completed the Flow.
@@ -141,7 +141,7 @@ Use the following steps to add Display Rules to Flow steps:
 **Cause**:
   - Flow may have been created using the elements captured in a non-production (developer/UAT) environment, and an attempt is made to play the Flow in the Production environment. Element IDs are different for UAT and Production environments.
   - The underlying application has changed, or the specific element is missing.
-  - If there are multiple similar elements on the application, Whatfix fails to recognize the right element.
+  - If there are multiple similar elements on the application, x fails to recognize the right element.
 
 **Solution**:
   - Ensure that the Flow is created in the Production environment.
@@ -158,7 +158,7 @@ The Flow fails to work correctly when displayed to the end users. The following 
 **Cause**:
 - The step conditions for the Flow may be incorrect or the step may be optional and the conditions don't match.
    - For example, one of the reasons could be that the step condition is being evaluated while the page is still loading. So if you are using the On click of selected element visibility rule, try switching to the On-page refresh rule.
-- Something may have changed in the underlying application, and Whatfix is unable to find the element that was selected when the flow was created.
+- Something may have changed in the underlying application, and x is unable to find the element that was selected when the flow was created.
 - Instead of simple element selection, a CSS Selector may be needed to ensure that the Flow step runs correctly.
 - The Flow may have been created in a non-production environment but is being run in the production environment.
 - The application may be taking time to load and the visibility rule that determines the content display may not be optimized. For example, the rule may be set to be triggered by the On-click of selected element because the page has not refreshed, the element that is supposed to trigger the next step has not yet been displayed, and thus, the step does not display.
@@ -172,7 +172,7 @@ If a step in your Flow is not functioning as expected, follow these steps to tro
 
 2. Use a CSS Selector  
    - If element reselection does not resolve the issue, consider adding a CSS selector.  
-   - For guidance on finding a CSS selector, see [How to Find the CSS Selector of an Element Using Whatfix Studio](#).  
+   - For guidance on finding a CSS selector, see [How to Find the CSS Selector of an Element Using x Studio](#).  
 
 3. Verify Step Conditions  
    - Ensure that the step conditions for the failed step are correctly configured.  
@@ -199,11 +199,11 @@ If a step in your Flow is not functioning as expected, follow these steps to tro
 ---
 
 ### Additional Resources
-- [Whatfix Knowledge Base](https://support.whatfix.com/)
-- [Whatfix Blog](https://www.whatfix.com/blog/)
-- [Whatfix Tutorials](link)
+- [x Knowledge Base](https://support.x.com/)
+- [x Blog](https://www.x.com/blog/)
+- [x Tutorials](link)
 
 ---
 
 ### Conclusion
-Whatfix provides a powerful platform for creating in-app guidance to help users navigate your application more effectively. By following this guide, you’ll be able to set up, deploy, and analyze flows that will streamline your users’ experience. For more advanced configurations and troubleshooting, explore our resources and support documentation.
+x provides a powerful platform for creating in-app guidance to help users navigate your application more effectively. By following this guide, you’ll be able to set up, deploy, and analyze flows that will streamline your users’ experience. For more advanced configurations and troubleshooting, explore our resources and support documentation.
