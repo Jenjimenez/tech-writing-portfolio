@@ -20,5 +20,5 @@ With a background in technical content production, software implementations, and
 ## Featured Writing Samples  
 - [User Guide: Getting Started](User_Guides/web-user-guide.md)  
 - [API Documentation: End User Schema](API_Documentation/api-end-user-example.md)  
-- [Knowledge Base: Creating Onboarding Flows](Knowledge_Base_Article/kb-x-flows.md)
+- [Knowledge Base: Creating Onboarding Flows](Knowledge_Base_Articles/kb-x-flows.md)
 - [Process Documentation: Standard Operating Procedure (SOP): Managing Lead Texting in Launch Control](SOPs/sop-launch-control.md) 
