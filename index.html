@@ -164,31 +164,86 @@ layout: default
 </section>
 
 <section id="principles" class="wrap section" aria-labelledby="principles-heading">
-  <h2 id="principles-heading">My writing principles</h2>
-  <p class="section-intro">The rules I edit by. You can see each one at work in my <a href="{{ '/Pluralsight_Work/before-and-after-lab-edit.html' | relative_url }}">before-and-after lab edit</a>.</p>
-  <ul class="principles">
-    <li>
-      <p class="principle">If I didn’t test it, I don’t publish it.</p>
+  <div class="principles-head">
+    <div>
+      <h2 id="principles-heading">My writing principles</h2>
+      <p class="section-intro">The rules I edit by. You can see each one at work in my <a href="{{ '/Pluralsight_Work/before-and-after-lab-edit.html' | relative_url }}">before-and-after lab edit</a>.</p>
+    </div>
+    <div class="track-controls" hidden>
+      <button type="button" class="track-btn" data-dir="-1" aria-label="Previous principle"><span aria-hidden="true">&#8592;</span></button>
+      <button type="button" class="track-btn" data-dir="1" aria-label="Next principle"><span aria-hidden="true">&#8594;</span></button>
+    </div>
+  </div>
+
+  <ul class="principles-track" aria-label="Writing principles">
+    <li class="p-card">
+      <h3>If I didn’t test it, I don’t publish it.</h3>
       <p>I run every step and command myself, and reproduce reported errors, before content reaches a learner.</p>
+      <div class="p-visual" aria-hidden="true">
+        <div class="v-terminal">
+          <span class="v-prompt">$ terraform validate</span>
+          <span class="v-ok">Success! The configuration is valid.</span>
+        </div>
+      </div>
     </li>
-    <li>
-      <p class="principle">One step, one action.</p>
+    <li class="p-card">
+      <h3>One step, one action.</h3>
       <p>Explanations go in notes, so readers can scan the steps to see what to do and read the notes to learn why.</p>
+      <div class="p-visual" aria-hidden="true">
+        <div class="v-step"><span class="v-num">9</span><span>Click <b>Create deployment</b>.</span></div>
+        <div class="v-note"><b>Note:</b> A <b>Success</b> notification confirms the deployment was created.</div>
+      </div>
     </li>
-    <li>
-      <p class="principle">Name the control, not just the label.</p>
+    <li class="p-card">
+      <h3>Name the control, not just the label.</h3>
       <p>“Select the <strong>Aliases</strong> tab” is faster to follow than “Choose <strong>Aliases</strong>.” Readers find what they know to look for.</p>
+      <div class="p-visual" aria-hidden="true">
+        <div class="v-tabs"><span>Code</span><span>Test</span><span class="is-active">Aliases</span><span>Versions</span></div>
+        <div class="v-caption">Select the <b>Aliases</b> tab.</div>
+      </div>
     </li>
-    <li>
-      <p class="principle">Write for the person who’s stuck.</p>
+    <li class="p-card">
+      <h3>Write for the person who’s stuck.</h3>
       <p>People open documentation in the middle of a problem. Every page should help them recover, including when something goes wrong.</p>
+      <div class="p-visual" aria-hidden="true">
+        <div class="v-alert"><b>Connection closed</b>Return to CloudShell and repeat the SSH steps to reconnect.</div>
+      </div>
     </li>
-    <li>
-      <p class="principle">Feedback should say what to fix.</p>
+    <li class="p-card">
+      <h3>Feedback should say what to fix.</h3>
       <p>Review comments for authors are specific, kind, and actionable, so a revision takes one pass instead of three.</p>
+      <div class="p-visual" aria-hidden="true">
+        <div class="v-comment"><span class="initials">JB</span><span>Great flow here. Can we name the exact menu so learners don’t have to search for it?</span></div>
+      </div>
     </li>
   </ul>
 </section>
+
+<script>
+  (function () {
+    var track = document.querySelector('.principles-track');
+    var controls = document.querySelector('.track-controls');
+    if (!track || !controls) return;
+    var buttons = controls.querySelectorAll('.track-btn');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function update() {
+      var max = track.scrollWidth - track.clientWidth;
+      controls.hidden = max < 4;
+      buttons[0].disabled = track.scrollLeft < 4;
+      buttons[1].disabled = track.scrollLeft > max - 4;
+    }
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var card = track.querySelector('.p-card');
+        var step = card ? card.getBoundingClientRect().width + 16 : 300;
+        track.scrollBy({ left: step * Number(btn.dataset.dir), behavior: reduce ? 'auto' : 'smooth' });
+      });
+    });
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
 
 <section class="wrap section" aria-labelledby="tools-heading">
   <h2 id="tools-heading">Tools and technologies</h2>
