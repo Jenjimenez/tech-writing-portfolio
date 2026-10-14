@@ -55,5 +55,21 @@
       </p>
     </div>
   </footer>
+  <a class="to-top" href="#main" hidden>Back to top</a>
+  <script>
+    (function () {
+      var btn = document.querySelector('.to-top');
+      if (!btn) return;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function update() { btn.hidden = window.scrollY < 1200 || document.body.scrollHeight < window.innerHeight * 2.5; }
+      window.addEventListener('scroll', update, { passive: true });
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+        var main = document.getElementById('main'); if (main) { main.setAttribute('tabindex', '-1'); main.focus({ preventScroll: true }); }
+      });
+      update();
+    })();
+  </script>
 </body>
 </html>

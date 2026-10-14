@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+{%- assign samples = site.data.samples -%}
+{%- assign idx = -1 -%}
+{%- for s in samples -%}{%- if s.url == page.url -%}{%- assign idx = forloop.index0 -%}{%- endif -%}{%- endfor -%}
 <div class="wrap doc-wrap">
   <a class="back" href="{{ '/' | relative_url }}#work">All writing samples</a>
   <p class="print-only">From the writing portfolio of Jennifer Botia: {{ page.url | absolute_url }}</p>
@@ -13,31 +16,100 @@ layout: default
       <ul></ul>
     </nav>
   </div>
+
+  {%- if idx >= 0 %}
+  {%- assign last = samples.size | minus: 1 -%}
+  <nav class="pager" aria-label="More writing samples">
+    {%- if idx > 0 -%}
+      {%- assign p = idx | minus: 1 -%}
+      <a class="pager-link prev" href="{{ samples[p].url | relative_url }}"><span class="pager-dir">Previous sample</span><span class="pager-title">{{ samples[p].title }}</span></a>
+    {%- else -%}<span></span>{%- endif -%}
+    {%- if idx < last -%}
+      {%- assign n = idx | plus: 1 -%}
+      <a class="pager-link next" href="{{ samples[n].url | relative_url }}"><span class="pager-dir">Next sample</span><span class="pager-title">{{ samples[n].title }}</span></a>
+    {%- endif %}
+  </nav>
+  {%- endif %}
+
   <aside class="doc-end">
     <p>Want to talk about this sample or a role on your team? <a href="mailto:jenjimenezxo@gmail.com">Email me</a> or <a href="{{ '/Jennifer_Botia_2026.pdf' | relative_url }}" target="_blank" rel="noopener">view my resume<span class="sr-only"> (opens in a new tab)</span></a>.</p>
   </aside>
 </div>
+
+<dialog class="lightbox" aria-label="Enlarged screenshot">
+  <form method="dialog"><button class="lightbox-close" aria-label="Close enlarged screenshot">&times;</button></form>
+  <img alt="">
+</dialog>
+
 <script>
+  // "On this page": side menu on wide screens, collapsible menu on phones, with the current section highlighted.
   (function () {
     var isToc = function (h) { return /^table of contents$/i.test(h.textContent.trim()); };
     var inline = Array.prototype.filter.call(document.querySelectorAll('.doc h2, .doc h3'), isToc)[0];
     var h2s = Array.prototype.filter.call(document.querySelectorAll('.doc h2[id]'), function (h) { return !isToc(h); });
     if (h2s.length < 3) return;
     var sel = h2s.length <= 4 ? '.doc h2[id], .doc h3[id]' : '.doc h2[id]';
+    var heads = Array.prototype.filter.call(document.querySelectorAll(sel), function (h) { return !isToc(h); });
     var toc = document.querySelector('.toc'), list = toc.querySelector('ul');
-    document.querySelectorAll(sel).forEach(function (h) {
-      if (isToc(h)) return;
+    heads.forEach(function (h) {
       var li = document.createElement('li'), a = document.createElement('a');
       if (h.tagName === 'H3') li.className = 'sub';
       a.href = '#' + h.id; a.textContent = h.textContent;
       li.appendChild(a); list.appendChild(li);
     });
     toc.hidden = false;
+
+    var mobile = document.createElement('details');
+    mobile.className = 'toc-mobile';
+    mobile.innerHTML = '<summary>On this page</summary>';
+    var mlist = list.cloneNode(true);
+    mobile.appendChild(mlist);
+    mlist.addEventListener('click', function (e) { if (e.target.tagName === 'A') mobile.open = false; });
+    var title = document.querySelector('.doc h1');
+    var after = title && title.nextElementSibling && title.nextElementSibling.tagName === 'BLOCKQUOTE' ? title.nextElementSibling : title;
+    if (after) after.after(mobile);
+
     if (inline) {
       inline.classList.add('inline-toc');
       var next = inline.nextElementSibling;
       if (next && /^(UL|OL)$/.test(next.tagName)) next.classList.add('inline-toc');
     }
+
+    if (!('IntersectionObserver' in window)) return;
+    var links = toc.querySelectorAll('a');
+    var current = null;
+    function mark(id) {
+      if (id === current) return; current = id;
+      links.forEach(function (a) {
+        if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'location');
+        else a.removeAttribute('aria-current');
+      });
+    }
+    var visible = {};
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { visible[e.target.id] = e.isIntersecting; });
+      for (var i = 0; i < heads.length; i++) { if (visible[heads[i].id]) { mark(heads[i].id); return; } }
+    }, { rootMargin: '-80px 0px -65% 0px' });
+    heads.forEach(function (h) { io.observe(h); });
+    mark(heads[0].id);
+  })();
+</script>
+<script>
+  // Click a screenshot to see it full size.
+  (function () {
+    var box = document.querySelector('.lightbox');
+    if (!box || typeof box.showModal !== 'function') return;
+    var big = box.querySelector('img');
+    document.querySelectorAll('.doc img').forEach(function (img) {
+      img.classList.add('zoomable');
+      img.setAttribute('tabindex', '0');
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', 'Enlarge screenshot: ' + (img.alt || 'image'));
+      function open() { big.src = img.src; big.alt = img.alt; box.showModal(); }
+      img.addEventListener('click', open);
+      img.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+    });
+    box.addEventListener('click', function (e) { if (e.target === box || e.target === big) box.close(); });
   })();
 </script>
 <script>

@@ -1,0 +1,17 @@
+# Order matches the homepage. Used for the previous and next links on each sample.
+- url: /Pluralsight_Work/before-and-after-lab-edit.html
+  title: "Before and After: Editing a Hands-On AWS Lab"
+- url: /Pluralsight_Work/desktop-labs-vm-assertions.html
+  title: "Desktop Labs: VM Assertions"
+- url: /Pluralsight_Work/lab-guide-terraform-modules.html
+  title: "Lab Guide: Develop and Reuse Terraform Modules"
+- url: /Pluralsight_Work/author-onboarding-playbook.html
+  title: "Case Study: Unified Author Onboarding Playbook"
+- url: /User_Guides/web-user-guide.html
+  title: "User Guide: Getting Started with GuideFlow on Web"
+- url: /API_Documentation/api-end-user-example.html
+  title: "API Reference: End User Schema API"
+- url: /Knowledge_Base_Articles/kb-guideflow-flows.html
+  title: "Knowledge Base: Creating Onboarding Flows"
+- url: /SOPs/sop-launch-control.html
+  title: "SOP: Texting Potential Leads in Launch Control"
