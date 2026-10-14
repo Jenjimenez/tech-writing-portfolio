@@ -48,8 +48,6 @@ The following status codes are possible in GuideFlow API Responses:
 | **429 - Too Many Requests**    | Returned if the rate limit is exceeded.                                                          |
 | **500, 502, 503, 504 - Server Errors** | Returned for server-side errors. Requests may succeed on retry.                                    |
 
-<p>&nbsp;</p>
-
 ## Pagination
 Pagination uses two filters, `cursor` and `limit`:
 - **cursor**: Pointer to a specific row of data.

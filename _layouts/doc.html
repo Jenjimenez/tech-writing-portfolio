@@ -18,17 +18,25 @@ layout: default
 </div>
 <script>
   (function () {
-    var h2s = document.querySelectorAll('.doc h2[id]');
+    var isToc = function (h) { return /^table of contents$/i.test(h.textContent.trim()); };
+    var inline = Array.prototype.filter.call(document.querySelectorAll('.doc h2, .doc h3'), isToc)[0];
+    var h2s = Array.prototype.filter.call(document.querySelectorAll('.doc h2[id]'), function (h) { return !isToc(h); });
     if (h2s.length < 3) return;
     var sel = h2s.length <= 4 ? '.doc h2[id], .doc h3[id]' : '.doc h2[id]';
     var toc = document.querySelector('.toc'), list = toc.querySelector('ul');
     document.querySelectorAll(sel).forEach(function (h) {
+      if (isToc(h)) return;
       var li = document.createElement('li'), a = document.createElement('a');
       if (h.tagName === 'H3') li.className = 'sub';
       a.href = '#' + h.id; a.textContent = h.textContent;
       li.appendChild(a); list.appendChild(li);
     });
     toc.hidden = false;
+    if (inline) {
+      inline.classList.add('inline-toc');
+      var next = inline.nextElementSibling;
+      if (next && /^(UL|OL)$/.test(next.tagName)) next.classList.add('inline-toc');
+    }
   })();
 </script>
 <script>

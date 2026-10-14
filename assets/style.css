@@ -271,3 +271,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .copy-btn:hover { border-color: var(--ink); }
 @media (prefers-reduced-motion: reduce) { .doc details.template > summary::before { transition: none; } }
+
+/* The side menu replaces a sample's own table of contents on wide screens */
+@media (min-width: 1001px) { .doc .inline-toc { display: none; } }
+.doc hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }

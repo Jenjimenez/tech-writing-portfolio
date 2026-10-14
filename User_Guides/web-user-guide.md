@@ -2,7 +2,6 @@
 
 > **About this sample:** This sample is based on documentation I wrote for a digital adoption platform. Product names, URLs, and identifiers have been replaced with a fictional product, *GuideFlow*, to protect client and employer confidentiality.
 
-
 ### Table of Contents
 1. [Introduction](#introduction)
 2. [Setting Up GuideFlow](#setting-up-guideflow)
@@ -12,12 +11,8 @@
 6. [Troubleshooting Common Issues](#troubleshooting-common-issues)
 7. [Additional Resources](#additional-resources)
 
----
-
 ### Introduction
 GuideFlow allows organizations to deliver contextual, in-app guidance to users. This article provides an overview of how to use GuideFlow to create effective onboarding flows that help new users get familiar with your product quickly and efficiently.
-
----
 
 ### Setting Up GuideFlow
 
@@ -54,8 +49,6 @@ To obtain and deploy the JavaScript code, follow these steps:
    
 6. Click **Save** to confirm the deployment.
 
----
-
 ### Creating and Configuring Flows
 
 #### Step 1: Launch GuideFlow Studio
@@ -91,8 +84,6 @@ Use the following steps to add Display Rules to Flow steps:
 
 > **Note**: Click **Preview** to preview the Flow during the Flow creation on Studio. The Flow opens in a new tab and displays the steps that are created on the application. You must create and save at least one step to enable **Preview**.
 
----
-
 ### Deploying Flows
 
 #### Step 1: Publishing the Flow
@@ -106,8 +97,6 @@ Use the following steps to add Display Rules to Flow steps:
 #### Step 2: Testing the Flow
 1. After publishing, test the flow by navigating to the target page and ensuring that the flow is triggered correctly.
 2. Make any necessary adjustments to the flow based on your test results.
-
----
 
 ### Analyzing Flow Performance
 
@@ -134,8 +123,6 @@ Use the following steps to add Display Rules to Flow steps:
 | Flow Feedback                | The Flow Feedback section shows how many users found the Flow useful compared to those who didn't find it useful and the users who gave no feedback. |
 | Feedback Responses           | This section shows the pre-defined feedback responses recorded for the Flow. Hovering the cursor over each response displays the number of users who have selected those responses. |
 | Feedback Comments            | At the end of the page, Feedback Comments (if any) can be viewed verbatim.                              |
-
----
 
 ### Troubleshooting Common Issues
 
@@ -198,13 +185,9 @@ If a step in your Flow is not functioning as expected, follow these steps to tro
 **Solution**:
 - Simplify the flow by reducing the number of steps and making the instructions more straightforward.
 
----
-
 ### Additional Resources
 - [GuideFlow Knowledge Base](https://support.example.com/)
 - [GuideFlow Blog](https://www.example.com/blog/)
-
----
 
 ### Conclusion
 GuideFlow provides a powerful platform for creating in-app guidance to help users navigate your application more effectively. By following this guide, you’ll be able to set up, deploy, and analyze flows that will streamline your users’ experience. For more advanced configurations and troubleshooting, explore our resources and support documentation.
