@@ -245,15 +245,70 @@ layout: default
   })();
 </script>
 
-<section class="wrap section" aria-labelledby="tools-heading">
+<section id="tools" class="wrap section" aria-labelledby="tools-heading">
   <h2 id="tools-heading">Tools and technologies</h2>
-  <dl class="tools">
-    <div><dt>Docs and publishing</dt><dd>Markdown, Git, GitHub, GitBook, Confluence</dd></div>
-    <div><dt>Cloud and code</dt><dd>AWS, Terraform, CloudFormation, JavaScript, Java, HTML and CSS, PostgreSQL</dd></div>
-    <div><dt>APIs</dt><dd>REST, Postman, OAuth</dd></div>
-    <div><dt>Project tools</dt><dd>Jira, Asana</dd></div>
-    <div><dt>Languages</dt><dd>English and Spanish</dd></div>
-  </dl>
+  <p class="section-intro">Select a highlighted tool to open the sample where I used it.</p>
+  <div class="tool-groups">
+    <div class="tool-group">
+      <h3>Docs and publishing</h3>
+      <ul class="tag-list">
+        <li><a class="tag" href="{{ '/Pluralsight_Work/lab-guide-terraform-modules.html' | relative_url }}">Markdown<span class="tag-where">Terraform lab guide</span></a></li>
+        <li><a class="tag" href="https://github.com/Jenjimenez/tech-writing-portfolio" target="_blank" rel="noopener">Git and GitHub<span class="tag-where">source code for this site</span></a></li>
+        <li><a class="tag" href="https://github.com/Jenjimenez/tech-writing-portfolio" target="_blank" rel="noopener">Jekyll and GitHub Pages<span class="tag-where">source code for this site</span></a></li>
+        <li><a class="tag" href="{{ '/Pluralsight_Work/author-onboarding-playbook.html' | relative_url }}">Confluence<span class="tag-where">onboarding playbook</span></a></li>
+        <li><span class="tag tag-plain">GitBook</span></li>
+      </ul>
+    </div>
+    <div class="tool-group">
+      <h3>Cloud and infrastructure</h3>
+      <ul class="tag-list">
+        <li><a class="tag" href="{{ '/Pluralsight_Work/before-and-after-lab-edit.html' | relative_url }}">AWS Lambda, CodeDeploy, and CloudWatch<span class="tag-where">before-and-after lab edit</span></a></li>
+        <li><a class="tag" href="{{ '/Pluralsight_Work/lab-guide-terraform-modules.html' | relative_url }}">Terraform<span class="tag-where">Terraform lab guide</span></a></li>
+        <li><span class="tag tag-plain">AWS CloudFormation</span></li>
+      </ul>
+    </div>
+    <div class="tool-group">
+      <h3>Code and scripting</h3>
+      <ul class="tag-list">
+        <li><a class="tag" href="{{ '/Pluralsight_Work/desktop-labs-vm-assertions.html' | relative_url }}#bash-examples">Bash<span class="tag-where">VM assertions guide</span></a></li>
+        <li><a class="tag" href="{{ '/Pluralsight_Work/desktop-labs-vm-assertions.html' | relative_url }}#powershell-examples">PowerShell<span class="tag-where">VM assertions guide</span></a></li>
+        <li><a class="tag" href="{{ '/User_Guides/web-user-guide.html' | relative_url }}#add-the-deployment-script-to-your-application">JavaScript<span class="tag-where">user guide</span></a></li>
+        <li><a class="tag" href="https://github.com/Jenjimenez/tech-writing-portfolio" target="_blank" rel="noopener">HTML and CSS<span class="tag-where">source code for this site</span></a></li>
+        <li><span class="tag tag-plain">Java</span></li>
+        <li><span class="tag tag-plain">PostgreSQL</span></li>
+      </ul>
+    </div>
+    <div class="tool-group">
+      <h3>APIs</h3>
+      <ul class="tag-list">
+        <li><a class="tag" href="{{ '/API_Documentation/api-end-user-example.html' | relative_url }}">REST APIs<span class="tag-where">API reference</span></a></li>
+        <li><a class="tag" href="{{ '/API_Documentation/api-end-user-example.html' | relative_url }}#example-response">JSON<span class="tag-where">API reference</span></a></li>
+        <li><a class="tag" href="{{ '/API_Documentation/api-end-user-example.html' | relative_url }}#example-request">curl<span class="tag-where">API reference</span></a></li>
+        <li><a class="tag" href="{{ '/API_Documentation/api-end-user-example.html' | relative_url }}">Postman<span class="tag-where">API reference</span></a></li>
+        <li><span class="tag tag-plain">OAuth</span></li>
+      </ul>
+    </div>
+    <div class="tool-group">
+      <h3>Standards</h3>
+      <ul class="tag-list">
+        <li><a class="tag" href="{{ '/Pluralsight_Work/before-and-after-lab-edit.html' | relative_url }}">Google Developer Documentation Style Guide<span class="tag-where">before-and-after lab edit</span></a></li>
+      </ul>
+    </div>
+    <div class="tool-group">
+      <h3>Project tools</h3>
+      <ul class="tag-list">
+        <li><span class="tag tag-plain">Jira</span></li>
+        <li><span class="tag tag-plain">Asana</span></li>
+      </ul>
+    </div>
+    <div class="tool-group">
+      <h3>Languages</h3>
+      <ul class="tag-list">
+        <li><span class="tag tag-plain">English</span></li>
+        <li><span class="tag tag-plain">Spanish</span></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <section class="wrap section contact" aria-labelledby="contact-heading">

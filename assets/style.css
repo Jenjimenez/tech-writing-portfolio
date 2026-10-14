@@ -139,12 +139,6 @@ a:hover { text-decoration-thickness: 2px; }
 .how h3 { font-size: 1.05rem; font-weight: 600; margin: 0 0 0.4rem; }
 .how p { margin: 0; color: var(--muted); }
 
-/* Tools */
-.tools { margin: 1.25rem 0 0; display: grid; gap: 0.6rem; max-width: 48rem; }
-.tools div { display: grid; grid-template-columns: 12rem 1fr; gap: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--rule); }
-.tools dt { font-weight: 600; }
-.tools dd { margin: 0; color: var(--muted); }
-
 .contact p { max-width: var(--measure); }
 
 /* Sample pages */
@@ -201,7 +195,6 @@ a:hover { text-decoration-thickness: 2px; }
 @media (max-width: 760px) {
   .sample { grid-template-columns: 1fr; }
   .how { grid-template-columns: 1fr; gap: 1.5rem; }
-  .tools div { grid-template-columns: 1fr; gap: 0.15rem; }
 }
 
 
@@ -454,3 +447,19 @@ a:hover { text-decoration-thickness: 2px; }
   .p-card { flex: 1 1 14rem; min-height: 0; }
 }
 @media (prefers-color-scheme: dark) { .v-terminal { background: #0c1016; border: 1px solid var(--rule); } }
+
+/* Tools as grouped tags; linked tags open the sample that shows the tool in use */
+.tool-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1.75rem 2.5rem; border-top: 2px solid var(--ink); padding-top: 1.5rem; }
+.tool-group h3 { font-size: 0.95rem; font-weight: 600; margin: 0 0 0.7rem; }
+.tag-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.tag {
+  display: inline-flex; flex-direction: column; gap: 0.05rem;
+  padding: 0.4rem 0.75rem; border-radius: 4px;
+  font-size: 0.9rem; line-height: 1.3; font-weight: 500; text-decoration: none;
+}
+a.tag { color: var(--ink); background: var(--surface); border: 1px solid var(--insert); border-left-width: 3px; }
+a.tag:hover { background: var(--callout); }
+.tag-where { font-size: 0.75rem; font-weight: 400; color: var(--muted); }
+a.tag:hover .tag-where { color: var(--link); }
+.tag-plain { color: var(--muted); border: 1px dashed var(--rule); }
+@media print { .tool-groups { grid-template-columns: repeat(2, 1fr); } }
