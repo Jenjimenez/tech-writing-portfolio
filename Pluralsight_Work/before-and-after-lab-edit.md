@@ -1,5 +1,8 @@
 ---
 wide: true
+image: /assets/og-before-after.png
+image_alt: "Before and after: editing a hands-on AWS lab. A tracked change from the lab with a reviewer comment."
+description: "Six edits from my review of a published Pluralsight AWS lab, each showing the original step, my revision, and why I changed it."
 ---
 # Before and After: Editing a Hands-On AWS Lab
 

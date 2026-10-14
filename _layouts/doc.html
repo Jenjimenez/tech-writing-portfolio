@@ -3,6 +3,7 @@ layout: default
 ---
 <div class="wrap doc-wrap">
   <a class="back" href="{{ '/' | relative_url }}#work">All writing samples</a>
+  <p class="print-only">From the writing portfolio of Jennifer Botia: {{ page.url | absolute_url }}</p>
   <div class="doc-grid{% if page.wide %} wide{% endif %}">
     <article class="doc">
       {{ content }}
@@ -53,4 +54,16 @@ layout: default
     });
     d.appendChild(btn);
   });
+</script>
+<script>
+  // Open collapsed templates when printing so nothing is hidden on paper, then restore them.
+  (function () {
+    var opened = [];
+    window.addEventListener('beforeprint', function () {
+      document.querySelectorAll('.doc details:not([open])').forEach(function (d) { d.open = true; opened.push(d); });
+    });
+    window.addEventListener('afterprint', function () {
+      opened.forEach(function (d) { d.open = false; }); opened = [];
+    });
+  })();
 </script>

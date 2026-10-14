@@ -13,10 +13,10 @@
   <meta property="og:title" content="{{ share_title | strip }}">
   <meta property="og:description" content="{{ share_desc }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:image" content="{{ '/assets/og-image.png' | absolute_url }}">
+  <meta property="og:image" content="{{ page.image | default: '/assets/og-image.png' | absolute_url }}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Jennifer Botia. Technical content that works the first time. Technical writer and Technical Content Producer at Pluralsight.">
+  <meta property="og:image:alt" content="{{ page.image_alt | default: 'Jennifer Botia. Technical content that works the first time. Technical writer and Technical Content Producer at Pluralsight.' }}">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}" sizes="any">
   <link rel="icon" type="image/png" href="{{ '/assets/favicon-32.png' | relative_url }}">
@@ -34,7 +34,7 @@
       <nav aria-label="Main">
         <a href="{{ '/' | relative_url }}#work">Writing samples</a>
         <a href="{{ '/' | relative_url }}#about">About</a>
-        <a href="{{ '/Jennifer_Botia_2026.pdf' | relative_url }}">Resume</a>
+        <a href="{{ '/resume.html' | relative_url }}">Resume</a>
         <a href="mailto:jenjimenezxo@gmail.com">Contact</a>
       </nav>
     </div>
