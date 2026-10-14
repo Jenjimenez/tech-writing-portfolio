@@ -2,6 +2,8 @@
 layout: default
 ---
 <section class="hero wrap">
+  <div class="hero-grid">
+    <div class="hero-text">
   <h1>
     Technical content that
     <del aria-hidden="true">is hard to follow</del>
@@ -12,13 +14,52 @@ layout: default
     <a class="button primary" href="#work">Read my writing samples</a>
     <a class="button" href="{{ '/Jennifer_Botia_2026.pdf' | relative_url }}">Download resume (PDF)</a>
   </p>
+    </div>
+    <aside class="edit-card" aria-labelledby="edit-card-title">
+      <p class="edit-card-title" id="edit-card-title">From a lab I edited</p>
+      <p class="edit-card-lab">Release and Roll Back an AWS Cloud-Native Workload</p>
+      <div class="edit">
+        <p class="edit-text">
+          <del><span class="sr-only">Deleted: </span>In the AWS Console, open <b>Lambda</b>.</del>
+          <ins><span class="sr-only">Inserted: </span>In the AWS console, use the search bar to search for and select <b>Lambda</b> under <b>Services</b>.</ins>
+        </p>
+        <div class="edit-comment">
+          <span class="initials" aria-hidden="true">JB</span>
+          <p><span class="sr-only">Comment: </span>Tell learners how to get there, not just where. The console has more than 200 services.</p>
+        </div>
+      </div>
+      <div class="edit">
+        <p class="edit-text">
+          <del><span class="sr-only">Deleted: </span>Choose <b>Details</b>.</del>
+          <ins><span class="sr-only">Inserted: </span>Expand <b>Details</b>.</ins>
+        </p>
+        <div class="edit-comment">
+          <span class="initials" aria-hidden="true">JB</span>
+          <p><span class="sr-only">Comment: </span>Use the verb that matches the control. This is a collapsed section, not a button.</p>
+        </div>
+      </div>
+      <a class="edit-card-link" href="{{ '/Pluralsight_Work/before-and-after-lab-edit.html' | relative_url }}">See six edits from this lab, with the reasoning</a>
+    </aside>
+  </div>
 </section>
 
 <section id="work" class="wrap section" aria-labelledby="work-heading">
   <h2 id="work-heading">Writing samples from Pluralsight</h2>
-  <p class="section-intro">Each sample opens with a short note on who it's for and what I did.</p>
+  <p class="section-intro">Each sample opens with a short note on who it's for and what I did. Published labs on Pluralsight show an overview to everyone; taking the full lab needs a subscription.</p>
 
   <ol class="samples">
+    <li class="sample">
+      <div class="sample-main">
+        <h3><a href="{{ '/Pluralsight_Work/before-and-after-lab-edit.html' | relative_url }}">Before and After: Editing a Hands-On AWS Lab</a></h3>
+        <p>Six edits from my review of an AWS release-and-rollback lab, each showing the original step, my revision, and why I changed it.</p>
+        <p class="sample-live"><a href="https://www.pluralsight.com/labs/aws/release-and-roll-back-an-aws-cloud-native-workload">View the published lab on Pluralsight</a></p>
+      </div>
+      <dl class="meta">
+        <div><dt>Format</dt><dd>Editing sample</dd></div>
+        <div><dt>Audience</dt><dd>Cloud engineers</dd></div>
+        <div><dt>Topics</dt><dd>Lambda, CodeDeploy, CloudWatch</dd></div>
+      </dl>
+    </li>
     <li class="sample">
       <div class="sample-main">
         <h3><a href="{{ '/Pluralsight_Work/desktop-labs-vm-assertions.html' | relative_url }}">Desktop Labs: VM Assertions</a></h3>
@@ -34,6 +75,7 @@ layout: default
       <div class="sample-main">
         <h3><a href="{{ '/Pluralsight_Work/lab-guide-terraform-modules.html' | relative_url }}">Lab Guide: Develop and Reuse Terraform Modules</a></h3>
         <p>A hands-on AWS lab that takes learners from using a public Terraform module to building and versioning their own. I tested every step in the lab environment and validated each configuration before publication.</p>
+        <p class="sample-live"><a href="https://www.pluralsight.com/labs/aws/develop-and-reuse-terraform-modules">View the published lab on Pluralsight</a></p>
       </div>
       <dl class="meta">
         <div><dt>Format</dt><dd>Hands-on lab guide</dd></div>
@@ -104,6 +146,21 @@ layout: default
       </dl>
     </li>
   </ol>
+</section>
+
+<section id="about" class="wrap section" aria-labelledby="about-heading">
+  <h2 id="about-heading">About me</h2>
+  <div class="about">
+    <div class="about-photo">
+      <img src="{{ '/assets/jennifer-botia.jpg' | relative_url }}" alt="Jennifer Botia" width="320" height="320" onerror="this.parentNode.classList.add('no-photo'); this.remove();">
+      <span class="about-initials" aria-hidden="true">JB</span>
+    </div>
+    <div class="about-text">
+      <p>I came to technical writing from the other side of documentation: implementing software for customers. As a solution consultant at Kinaxis and a solution engineer at Whatfix, I configured and tested enterprise software, trained clients, and wrote the guides that teams relied on after go-live. That work taught me what people need from documentation when something isn't working.</p>
+      <p>Along the way, I completed a 700-hour full-stack Java bootcamp, so I'm comfortable reading code, running commands, and testing every step I write. Today at Pluralsight, I review and edit hands-on labs and courses, and I help authors turn expert knowledge into instructions that learners can follow.</p>
+      <p>I'm bilingual in English and Spanish, and I'm open to relocation.</p>
+    </div>
+  </div>
 </section>
 
 <section class="wrap section" aria-labelledby="how-heading">

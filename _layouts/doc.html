@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="wrap doc-wrap">
   <a class="back" href="{{ '/' | relative_url }}#work">All writing samples</a>
-  <div class="doc-grid">
+  <div class="doc-grid{% if page.wide %} wide{% endif %}">
     <article class="doc">
       {{ content }}
     </article>
