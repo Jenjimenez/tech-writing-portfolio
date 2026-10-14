@@ -487,3 +487,25 @@ a.tag:hover .tag-where { color: var(--link); }
 .group-empty[hidden] { display: none; }
 @media print { .sample-filter { display: none !important; } .sample[hidden] { display: grid !important; } .group-empty { display: none !important; } }
 @media (prefers-color-scheme: dark) { .filter-btn[aria-pressed="true"] .filter-count { background: rgba(0,0,0,0.12); } }
+
+.path { margin-top: 2.75rem; max-width: 64rem; }
+.path h3 { font-size: 1rem; font-weight: 600; margin: 0 0 1.1rem; }
+.path-track { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); position: relative; }
+.path-track::before { content: ""; position: absolute; left: 0.4rem; right: calc(100% / 6 - 0.4rem); top: 0.45rem; height: 2px; background: var(--rule); }
+.path-track li { position: relative; padding: 1.4rem 0.9rem 0 0; display: grid; gap: 0.15rem; align-content: start; font-size: 0.875rem; line-height: 1.35; }
+.path-track li::before { content: ""; position: absolute; top: 0.1rem; left: 0; width: 0.8rem; height: 0.8rem; border-radius: 50%; background: var(--paper); border: 2px solid var(--muted); }
+.path-track li.is-writing::before { background: var(--insert); border-color: var(--insert); }
+.path-track li.is-now::before { box-shadow: 0 0 0 4px var(--callout); }
+.path-year { color: var(--muted); font-size: 0.8rem; }
+.path-role { font-weight: 600; }
+.path-org { color: var(--muted); }
+.path-note { margin-top: 0.25rem; color: var(--insert); font-size: 0.8rem; }
+.path-legend { margin: 1.25rem 0 0; display: flex; align-items: center; gap: 0.5rem; color: var(--muted); font-size: 0.85rem; }
+.path-key { width: 0.7rem; height: 0.7rem; border-radius: 50%; background: var(--insert); display: inline-block; }
+@media (max-width: 760px) {
+  .path-track { grid-template-columns: 1fr; gap: 1.1rem; }
+  .path-track::before { left: 0.35rem; right: auto; top: 0.5rem; bottom: 0.5rem; width: 2px; height: auto; }
+  .path-track li { padding: 0 0 0 1.75rem; }
+  .path-track li::before { top: 0.15rem; }
+}
+@media print { .path-track li { break-inside: avoid; } }
