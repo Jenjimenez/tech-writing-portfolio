@@ -1,120 +1,272 @@
-# API Documentation
+# API Reference: End User Schema API
 
-> **About this sample:** This sample is based on documentation I wrote for a digital adoption platform. Product names, URLs, and identifiers have been replaced with a fictional product, *GuideFlow*, to protect client and employer confidentiality.
+> **About this sample**
+>
+> - **Type:** REST API reference
+> - **Audience:** Developers integrating their user data with GuideFlow
+> - **My role:** Documented the API while building and testing customer integrations with Postman
+>
+> This sample is based on documentation I wrote for a digital adoption platform. Product names, URLs, identifiers, and example data have been replaced with a fictional product, *GuideFlow*, to protect client and employer confidentiality. Example requests and responses are illustrative.
 
-## End User Schema API
+Use the End User Schema API to manage the custom fields that describe your users, such as their role, department, or start date. GuideFlow uses these fields to decide which users see which content.
 
-The End User Schema API allows you to manage custom fields in the end user schema for your account. This API enables you to fetch, update, or add custom fields to the end user schema, which defines the data associated with users interacting with your platform.
+With this API, you can:
 
-### Table of Contents
-- [Overview](#overview)
+- Get every field in your account's end user schema.
+- Add custom fields or update existing ones.
+- Get the details of a single field by name.
+
+## Table of contents
+
+- [Before you begin](#before-you-begin)
 - [Authentication](#authentication)
-- [Status Codes](#status-codes)
-- [Pagination](#pagination)
-- [End User Schema](#end-user-schema)
-  - [Get End User Schema](#get-end-user-schema)
-  - [Update or Add Custom Fields](#update-or-add-custom-fields)
-  - [Get End User Schema by Field Name](#get-end-user-schema-by-field-name)
-- [Conclusion](#conclusion)
+- [Data types](#data-types)
+- [Status codes](#status-codes)
+- [Errors](#errors)
+- [Get the end user schema](#get-the-end-user-schema)
+- [Add or update custom fields](#add-or-update-custom-fields)
+- [Get a field by name](#get-a-field-by-name)
 
-## Overview
+## Before you begin
 
-The End User Schema API allows you to:
-- Fetch the schema of the end user resource.
-- Add or update custom fields in the schema.
-- Retrieve information about specific fields by name.
-- Get a list of all end users associated with your account.
+- **Base URL:** All requests in this reference use `https://api.example.com`.
+- **Account ID:** Each endpoint needs your account ID, called `entId`. You can find it on the GuideFlow dashboard under **Settings** > **Account**.
+- **Format:** Requests and responses use JSON. For requests with a body, set the `Content-Type` header to `application/json`.
 
 ## Authentication
 
-To get authenticated you will need to create a user API token from the GuideFlow dashboard and pass as header **x-guideflow-integration-key**. To know more, see "Generating the API Integration Key" in the GuideFlow Help Center. Pass the email address of the user as the **GuideFlow-guideflow-user** header.
+Every request needs two headers:
 
-## Status Codes
-The following status codes are possible in GuideFlow API Responses:
-- 2xx: Success
-- 4xx: Request error
-- 5xx: Server-side error
+| Header | Value |
+| --- | --- |
+| `x-guideflow-integration-key` | Your API integration key. To create one, see "Generate an API integration key" in the GuideFlow Help Center. |
+| `x-guideflow-user` | The email address of the GuideFlow user making the request. |
 
-| **Status Code**               | **Description**                                                                                   |
-|-------------------------------|---------------------------------------------------------------------------------------------------|
-| **200 - OK**                   | Returned for GET and PUT requests when the request is processed successfully and a payload is returned. |
-| **201 - Created**              | Returned for POST and PUT requests when a new object is created.                                 |
-| **204 - No Content**           | Returned for DELETE requests when a resource is deleted.                                         |
-| **207 - Multistatus**          | Returned for partial success during POST/PUT/DELETE requests.                                     |
-| **400 - Bad Request**          | Returned if the API format is incorrect or if query parameters are invalid.                      |
-| **401 - Unauthorized**         | Returned if the GuideFlow integration key is not valid.                                             |
-| **403 - Forbidden**            | Returned if the GuideFlow integration key does not have permission for the requested resource.      |
-| **404 - Not Found**            | Returned for GET and DELETE requests when no content is found for the requested resource ID.      |
-| **429 - Too Many Requests**    | Returned if the rate limit is exceeded.                                                          |
-| **500, 502, 503, 504 - Server Errors** | Returned for server-side errors. Requests may succeed on retry.                                    |
+If either header is missing or invalid, the API returns `401 Unauthorized`.
 
-## Pagination
-Pagination uses two filters, `cursor` and `limit`:
-- **cursor**: Pointer to a specific row of data.
-- **limit**: Specifies the maximum number of records to return in the result.
+> **Important:** Treat your integration key like a password. Don't commit it to source control or include it in client-side code.
 
-## End User Schema
+## Data types
 
-APIs for managing end user schema allow you to define fields for users in your platform. The following data types are allowed:
-- **boolean**: Boolean values (e.g., `true`, `false`)
-- **double**: Numeric values (e.g., `10`, `20.78`)
-- **string**: Any string value (e.g., `employee_role`)
-- **timestamp**: Timestamp in ISO-8601 format (e.g., `2001-07-04T12:08:56.235-0700`)
-- **encrypted_string**: Any string value stored in an encrypted format for security purposes (e.g., `john.doe@example.com`)
+Each custom field has one of the following types:
 
-## Get End User Schema
+| Type | Description | Example value |
+| --- | --- | --- |
+| `boolean` | True or false. | `true` |
+| `double` | A number, with or without decimals. | `20.78` |
+| `string` | Text. | `"manager"` |
+| `timestamp` | A date and time in ISO 8601 format. | `"2001-07-04T12:08:56.235-0700"` |
+| `encrypted_string` | Text that GuideFlow stores encrypted. Use this type for sensitive values. | `"john.doe@example.com"` |
 
-The Get End User Schema API fetches the schema for the end users resource for your account. It returns both GuideFlow-provided default fields and custom fields defined by the account user.
+## Status codes
 
-### Path Parameters
-- **entId** (required): string, account ID
+| Code | Meaning |
+| --- | --- |
+| `200 OK` | The request succeeded, and the response body contains the result. |
+| `400 Bad Request` | The request body or parameters aren't valid. The response explains what to fix. |
+| `401 Unauthorized` | The integration key or user header is missing or not valid. |
+| `403 Forbidden` | The integration key doesn't have permission for this account or action. |
+| `404 Not Found` | The account or field doesn't exist. |
+| `429 Too Many Requests` | You sent too many requests in a short time. Wait, and then retry. |
+| `500`, `502`, `503`, `504` | A server error occurred. These requests often succeed if you retry after a short wait. |
 
-### Example API Call
-**GET** `/v1/accounts/{entId}/endUserSchema`
+## Errors
 
-### Responses
-`200 OK`: Returns the schema information for the end users resource.
+When a request fails, the response body includes an error code and a message that explains what went wrong:
 
-## Update or Add Custom Fields
-Updates or adds one or more custom fields in the end user schema. Field names are unique and are used to identify the fields that are required to be updated. A maximum of 50 custom fields can be added to the user schema for each account. Called from integrations UI on the dashboard.
-
-### Path Parameters
-- **entId** (required): string, account ID
-
-### Request Body Schema
-- **description**: string, explanation of the field's purpose.
-- **name**: string, name of the field.
-- **type**: string, data type of the field.
-
-### Example API Call
-**PUT** `/v1/accounts/{entId}/endUserSchema`
-
-### Request samples
-Content type: application/json
 ```json
-[
-  {
-    "description": "string",
-    "name": "string",
-    "type": "string"
+{
+  "error": {
+    "code": "FIELD_LIMIT_EXCEEDED",
+    "message": "An account can have up to 50 custom fields. This request would bring the total to 52."
   }
-]
+}
 ```
-### Responses
-`200 OK`: Returns the schema information for the end users resource.
 
-## Get End User Schema by Field Name
-Get an end user schema by field name. This is called from integrations dashboard.
+Use `code` to handle errors in your integration, and show or log `message` to help with troubleshooting. Messages can change over time, so don't build logic that depends on their exact wording.
 
-### Path Parameters
-- **entId** (required): string, account ID
-- **fieldName** (required): string, field name
+## Get the end user schema
 
-### Example API Call
-**GET** `/v1/accounts/{entId}/endUserSchema/{fieldName}`
+Returns every field in your account's end user schema, including the default fields that GuideFlow provides and any custom fields you've added.
 
-### Responses
-`200 OK`: Returns the schema information for the end users resource.
+```text
+GET /v1/accounts/{entId}/endUserSchema
+```
 
-## Conclusion
-This API documentation provides you with the necessary endpoints to manage and interact with the end user schema for your GuideFlow account. By using the provided API calls, you can easily add, update, and retrieve user schema data as needed.
+### Path parameters
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `entId` | string | Yes | Your account ID. |
+
+### Example request
+
+```bash
+curl https://api.example.com/v1/accounts/acme-123/endUserSchema \
+  -H "x-guideflow-integration-key: YOUR_INTEGRATION_KEY" \
+  -H "x-guideflow-user: admin@example.com"
+```
+
+### Example response
+
+`200 OK`
+
+```json
+{
+  "defaultFields": [
+    {
+      "name": "user_id",
+      "type": "string",
+      "description": "Unique ID for the user."
+    },
+    {
+      "name": "first_seen",
+      "type": "timestamp",
+      "description": "When GuideFlow first saw the user."
+    }
+  ],
+  "customFields": [
+    {
+      "name": "employee_role",
+      "type": "string",
+      "description": "Job role of the user."
+    },
+    {
+      "name": "is_new_hire",
+      "type": "boolean",
+      "description": "Whether the user started in the last 30 days."
+    }
+  ]
+}
+```
+
+## Add or update custom fields
+
+Adds one or more custom fields to the end user schema. If a field with the same name already exists, GuideFlow updates it instead, so you can use this endpoint for both tasks.
+
+An account can have up to 50 custom fields.
+
+```text
+PUT /v1/accounts/{entId}/endUserSchema
+```
+
+### Path parameters
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `entId` | string | Yes | Your account ID. |
+
+### Request body
+
+An array of field objects:
+
+| Property | Type | Required | Description |
+| --- | --- | --- | --- |
+| `name` | string | Yes | The field name. Must be unique in the account. Use lowercase letters, numbers, and underscores. |
+| `type` | string | Yes | One of the [data types](#data-types). |
+| `description` | string | No | What the field is for. |
+
+### Example request
+
+```bash
+curl -X PUT https://api.example.com/v1/accounts/acme-123/endUserSchema \
+  -H "x-guideflow-integration-key: YOUR_INTEGRATION_KEY" \
+  -H "x-guideflow-user: admin@example.com" \
+  -H "Content-Type: application/json" \
+  -d '[
+    {
+      "name": "department",
+      "type": "string",
+      "description": "Department the user works in."
+    },
+    {
+      "name": "start_date",
+      "type": "timestamp",
+      "description": "First day of work."
+    }
+  ]'
+```
+
+### Example response
+
+`200 OK`
+
+```json
+{
+  "updated": [
+    {
+      "name": "department",
+      "type": "string",
+      "description": "Department the user works in."
+    },
+    {
+      "name": "start_date",
+      "type": "timestamp",
+      "description": "First day of work."
+    }
+  ],
+  "customFieldCount": 4
+}
+```
+
+### Example error
+
+`400 Bad Request`, returned when a field uses a type that isn't supported:
+
+```json
+{
+  "error": {
+    "code": "INVALID_FIELD_TYPE",
+    "message": "Field 'start_date' has type 'date'. Use one of: boolean, double, string, timestamp, encrypted_string."
+  }
+}
+```
+
+## Get a field by name
+
+Returns the details of one field in the end user schema.
+
+```text
+GET /v1/accounts/{entId}/endUserSchema/{fieldName}
+```
+
+### Path parameters
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `entId` | string | Yes | Your account ID. |
+| `fieldName` | string | Yes | The name of the field to get. |
+
+### Example request
+
+```bash
+curl https://api.example.com/v1/accounts/acme-123/endUserSchema/department \
+  -H "x-guideflow-integration-key: YOUR_INTEGRATION_KEY" \
+  -H "x-guideflow-user: admin@example.com"
+```
+
+### Example response
+
+`200 OK`
+
+```json
+{
+  "name": "department",
+  "type": "string",
+  "description": "Department the user works in.",
+  "isDefault": false
+}
+```
+
+### Example error
+
+`404 Not Found`, returned when the field doesn't exist:
+
+```json
+{
+  "error": {
+    "code": "FIELD_NOT_FOUND",
+    "message": "No field named 'departmnet' exists in this account's end user schema."
+  }
+}
+```

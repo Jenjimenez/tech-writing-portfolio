@@ -1,193 +1,194 @@
 # User Guide: Getting Started with GuideFlow on Web
 
-> **About this sample:** This sample is based on documentation I wrote for a digital adoption platform. Product names, URLs, and identifiers have been replaced with a fictional product, *GuideFlow*, to protect client and employer confidentiality.
+> **About this sample**
+>
+> - **Type:** Getting-started user guide
+> - **Audience:** Customer admins and content creators setting up in-app guidance
+> - **My role:** Wrote the guide while implementing the platform for enterprise customers
+>
+> This sample is based on documentation I wrote for a digital adoption platform. Product names, URLs, and identifiers have been replaced with a fictional product, *GuideFlow*, to protect client and employer confidentiality.
 
-### Table of Contents
+## Table of contents
+
 1. [Introduction](#introduction)
-2. [Setting Up GuideFlow](#setting-up-guideflow)
-3. [Creating and Configuring Flows](#creating-and-configuring-flows)
-4. [Deploying Flows](#deploying-flows)
-5. [Analyzing Flow Performance](#analyzing-flow-performance)
-6. [Troubleshooting Common Issues](#troubleshooting-common-issues)
-7. [Additional Resources](#additional-resources)
+1. [Set up GuideFlow](#set-up-guideflow)
+1. [Create a flow](#create-a-flow)
+1. [Publish and test a flow](#publish-and-test-a-flow)
+1. [Review flow analytics](#review-flow-analytics)
+1. [Troubleshoot common issues](#troubleshoot-common-issues)
+1. [Additional resources](#additional-resources)
 
-### Introduction
-GuideFlow allows organizations to deliver contextual, in-app guidance to users. This article provides an overview of how to use GuideFlow to create effective onboarding flows that help new users get familiar with your product quickly and efficiently.
+## Introduction
 
-### Setting Up GuideFlow
+GuideFlow shows step-by-step guidance inside your web application, so users can learn a task without leaving the page they're on. A set of these steps is called a *flow*.
 
-#### Step 1: Creating an Account
-1. The GuideFlow onboarding team will send you an invitation link to sign up. Alternatively, you can visit the [GuideFlow website](https://www.example.com/) to begin the sign-up process.
-2. Sign up using your work email address and create a secure password.
-3. After creating an account, log in to your GuideFlow dashboard.
+This guide shows you how to set up GuideFlow, build and publish your first flow, and use analytics to see how users interact with it.
 
-#### Step 2: Choose a Delivery Method
-GuideFlow content can be deployed to your application using one of the following methods:
-- **JS Embed**
-- **Browser Extension**
+## Set up GuideFlow
 
-> **Note**: For this guide, we will be using the **JS Embed** method.
+### Create an account
 
-#### Step 3: Use JavaScript Code to Display GuideFlow Content
-> **Note**: Only an **Account Manager** can perform this task.
+1. Open the invitation email from the GuideFlow onboarding team and click the sign-up link. If you didn't receive an invitation, sign up on the [GuideFlow website](https://www.example.com/).
+1. Sign up with your work email address and create a password.
+1. Sign in to the GuideFlow dashboard.
 
-GuideFlow requires a single line of JavaScript code to display the content and widgets within your application. This code needs to be inserted into the header of your application so that the content can be accessed from every page.
+### Choose a delivery method
 
-To obtain and deploy the JavaScript code, follow these steps:
+GuideFlow can add content to your application in one of two ways:
 
-1. On the **GuideFlow Guidance dashboard**, click **Settings**.
-2. Click **Content Deployment**.
-3. Under the **Ready** section:
-   - Select the appropriate condition and operator.
-   - Enter the value for your **Development** or **UAT** environment.
-4. Under the **Production** section:
-   - Select the appropriate condition and operator.
-   - Enter the value for your **Production** environment.
-5. Under the **Deployment Script** section, click **Copy** to copy the script provided.
-   
-   > **Info**: This script must be inserted in the `<head>` or `<footer>` of your application instance (either Development or Production) for the GuideFlow content to be displayed on every page.
-   
-6. Click **Save** to confirm the deployment.
+- **JavaScript embed:** You add a script to your application, and GuideFlow content appears for every user automatically. This guide uses this method.
+- **Browser extension:** Each user installs an extension to see GuideFlow content.
 
-### Creating and Configuring Flows
+### Add the deployment script to your application
 
-#### Step 1: Launch GuideFlow Studio
-1. Log in to the application where you want to create content, and then launch the **GuideFlow Studio**.
-2. Click **Flow** under the content section.
+> **Note:** Only users with the **Account Manager** role can complete this task.
 
-#### Step 2: Adding Steps to Your Flow
-1. Enter the name of the Flow.
-2. Click on **+ Add Step**.
-3. Use Studio to add configurations like position, appearance, and step completion rules.
-4. Go to where you want to start the next step and click **+Add Step** on the Studio.
-5. Repeat steps 2 to 4 to add additional steps.
-6. Click **Save Flow**.
+GuideFlow uses a single line of JavaScript to display content in your application. Add it to a part of your application that loads on every page, such as the header, so that flows can appear anywhere.
 
-#### Step 3: Customizing the Flow
-1. Add text instructions for each step, ensuring they are clear and concise.
-2. Optionally, include images or videos to explain each action further.
-3. Customize the flow’s appearance, such as the colors, animations, or step timings.
-4. Under **CONFIGURATIONS**, expand **Appearance**. Make the following configurations:
-   - Select a Tool tip appearance.
-   - Select the tip Color.
-   - Select the Close (X) color.
-5. Expand **Position** and select the desired position of the tooltip.
-6. Under the **Step Completion Rules** section, select the desired rule.
+To get the script and deploy it:
 
-> **Note**: Display Rules enable you to configure Flows to display the tooltip only when pre-determined conditions are met.
+1. On the GuideFlow dashboard, click **Settings**.
+1. Click **Content Deployment**.
+1. In the **Ready** section, select a condition and an operator, and then enter the value that identifies your development or UAT environment.
+1. In the **Production** section, select a condition and an operator, and then enter the value that identifies your production environment.
+1. In the **Deployment Script** section, click **Copy**.
+1. Paste the script into the `<head>` or footer of your application for each environment.
+1. On the GuideFlow dashboard, click **Save**.
 
-Use the following steps to add Display Rules to Flow steps:
-   1. Click **ADVANCED OPTIONS**.
-   2. Expand the **Display Rules** section and then click **+ Add Rule**. Display Rules enable you to configure Flows to display the tooltip only when pre-determined conditions are met.
-   3. Set the desired conditions. 
-   4. Click **Save Step**.
+## Create a flow
 
-> **Note**: Click **Preview** to preview the Flow during the Flow creation on Studio. The Flow opens in a new tab and displays the steps that are created on the application. You must create and save at least one step to enable **Preview**.
+### Open GuideFlow Studio
 
-### Deploying Flows
+1. Sign in to the application where you want the flow to appear.
+1. Open **GuideFlow Studio**.
+1. In the content section, click **Flow**.
 
-#### Step 1: Publishing the Flow
-1. Once on the GuideFlow Guidance dashboard, click **Content**.
-2. Click **Flows**.
-3. In the **Draft** stage, select your Flow and click **Send to ready**.
-4. Go to the **Ready** stage and click on **Push to production**.
+### Add steps
 
- > **Info**: Within the GuideFlow Dashboard you can choose the pages where you want the flow to be deployed, set user conditions, and target specific user roles.
+1. Enter a name for the flow.
+1. Click **+ Add Step**.
+1. Select the element on the page that you want the step to point to.
+1. In Studio, set the step's position, appearance, and completion rule.
+1. Go to the place in your application where the next step should start, and then click **+ Add Step**.
+1. Repeat steps 3 through 5 for each step in the flow.
+1. Click **Save Flow**.
 
-#### Step 2: Testing the Flow
-1. After publishing, test the flow by navigating to the target page and ensuring that the flow is triggered correctly.
-2. Make any necessary adjustments to the flow based on your test results.
+### Customize each step
 
-### Analyzing Flow Performance
+1. Enter the step's instruction text. Keep it short and start with a verb, such as "Click **Submit** to save your request."
+1. Optional: Add an image or video to show the action.
+1. Under **Configurations**, expand **Appearance**, and then select the tooltip style, tooltip color, and close button color.
+1. Expand **Position**, and then select where the tooltip appears.
+1. In the **Step Completion Rules** section, select the action that moves the user to the next step.
 
-#### Step 1: Accessing Analytics
-1. From the GuideFlow Guidance dashboard, navigate to the **Guidance analytics** section.
-2. Click **Flows**.
-4. View key reports such as:
-   - **Completed**: How many users completed the Flow.
-   - **Failed**: Number of times the Flow failed and users could not complete it. For example, broken Flow, a Flow step does not display, and more.
-   - **Exited**: Number of times users failed to complete the Flow due to their actions. The exit count is always equal to the sum of closed via tooltip, navigated away, and Flow transitions. i.e., **Exited = Close via tooltip + Navigated away + Flow transition**.
+### Add display rules
 
-#### Step 2: Analtyics by Flow
-1. Click **By Flow**
-2. Select the Flow you want to analyze.
-3. View key reports such as:
+Display rules show a step only when conditions that you set are met, such as when a user has a specific role.
 
-| **Report Name**              | **Description**                                                                                         |
-|------------------------------|---------------------------------------------------------------------------------------------------------|
-| Flow Usage by Day            | The chart displays the number of times that Flow was used each day.                                       |
-| No. of Times Flow Played     | The chart shows the number of times the Flow was run and also the widget used to play the flow.          |
-| Flow Completion Rate         | The chart shows how many started the Flow and completed it, as well as those who could not complete it and dropped out in between. |
-| Most Exited or Failed Steps  | This section shows the dropouts at each step of the Flow. If you hover the cursor over each step, the failure can be analyzed by how many times the steps weren't successful, how many times the steps were exited, and the reasons for exit. |
-| Flow History                 | The Flow History section shows who edited the Flow and when.                                             |
-| Flow Feedback                | The Flow Feedback section shows how many users found the Flow useful compared to those who didn't find it useful and the users who gave no feedback. |
-| Feedback Responses           | This section shows the pre-defined feedback responses recorded for the Flow. Hovering the cursor over each response displays the number of users who have selected those responses. |
-| Feedback Comments            | At the end of the page, Feedback Comments (if any) can be viewed verbatim.                              |
+1. Click **Advanced Options**.
+1. Expand **Display Rules**, and then click **+ Add Rule**.
+1. Set the conditions.
+1. Click **Save Step**.
 
-### Troubleshooting Common Issues
+> **Tip:** To see the flow as users will, click **Preview**. The flow opens in a new tab. You need at least one saved step before you can preview a flow.
 
-#### Issue 1: Flow could not detect the element for the next step
-**Cause**:
-  - Flow may have been created using the elements captured in a non-production (developer/UAT) environment, and an attempt is made to play the Flow in the Production environment. Element IDs are different for UAT and Production environments.
-  - The underlying application has changed, or the specific element is missing.
-  - If there are multiple similar elements on the application, GuideFlow fails to recognize the right element.
+## Publish and test a flow
 
-**Solution**:
-  - Ensure that the Flow is created in the Production environment.
-  - Edit the Flow and reselect the element. See, Reselect Elements to manage UI changes.
-  - In case of multiple similar elements, use CSS selectors to identify the right element.
+New flows start in the **Draft** stage. Send a flow to **Ready** to test it in your development environment, and then push it to production.
 
-#### Issue 2: Flow Steps Not Displaying Correctly
-The Flow fails to work correctly when displayed to the end users. The following are some instances of a Flow breaking:
-- The Flow fails to start.
-- The Flow fails to move to the next step even after clicking on the element.
-- The Flow Tooltip appears in an incorrect position.
-- The Flow skips a step.
+### Publish the flow
 
-**Cause**:
-- The step conditions for the Flow may be incorrect or the step may be optional and the conditions don't match.
-   - For example, one of the reasons could be that the step condition is being evaluated while the page is still loading. So if you are using the On click of selected element visibility rule, try switching to the On-page refresh rule.
-- Something may have changed in the underlying application, and GuideFlow is unable to find the element that was selected when the flow was created.
-- Instead of simple element selection, a CSS Selector may be needed to ensure that the Flow step runs correctly.
-- The Flow may have been created in a non-production environment but is being run in the production environment.
-- The application may be taking time to load and the visibility rule that determines the content display may not be optimized. For example, the rule may be set to be triggered by the On-click of selected element because the page has not refreshed, the element that is supposed to trigger the next step has not yet been displayed, and thus, the step does not display.
+1. On the GuideFlow dashboard, click **Content**.
+1. Click **Flows**.
+1. In the **Draft** stage, select your flow, and then click **Send to ready**.
+1. In the **Ready** stage, select your flow, and then click **Push to production**.
 
-**Solution**:
-If a step in your Flow is not functioning as expected, follow these steps to troubleshoot the issue:  
+You can also use the dashboard to choose which pages a flow appears on and which users or roles see it.
 
-1. Reselect the Element  
-   - Navigate to the step that is failing and attempt to reselect the target element.  
-   - For detailed instructions, see "Reselect Elements to Manage UI Changes" in the GuideFlow Help Center.  
+### Test the flow
 
-2. Use a CSS Selector  
-   - If element reselection does not resolve the issue, consider adding a CSS selector.  
-   - For guidance on finding a CSS selector, see "How to Find the CSS Selector of an Element Using GuideFlow Studio" in the GuideFlow Help Center.  
+1. Go to the page where the flow should start.
+1. Complete each step as a user would, and confirm that each step appears in the right place and moves on when it should.
+1. If a step doesn't behave as expected, edit the flow, and then test it again. For help, see [Troubleshoot common issues](#troubleshoot-common-issues).
 
-3. Verify Step Conditions  
-   - Ensure that the step conditions for the failed step are correctly configured.  
+## Review flow analytics
 
-4. Check Environment Consistency  
-   - Confirm that the Flow was created in an environment identical to the production environment.  
-   - Element attributes may differ between UAT and production, causing unexpected behavior.  
+### See results for all flows
 
-5. Validate Element IDs  
-   - If the Flow was created in a UAT environment and your account is configured to trust element IDs, verify that the IDs are consistent across both environments.  
+1. On the GuideFlow dashboard, go to **Guidance analytics**.
+1. Click **Flows**.
 
-6. Ensure the First Step Uses a Global Element  
-   - The **Always Start a Flow from Step 1** feature functions only when the first step is placed on a global element—one that is present across multiple pages.  
-   - If the first step is not on a global element, enabling this feature may cause the Flow to break.  
-   - Ensure that the first step is placed on a global element for seamless execution.  
+The report shows three totals:
 
-#### Issue 3: Users Dropping Off Mid-Flow
-**Cause**:
-- Over-complicated steps or unclear instructions.
+- **Completed:** The number of times users finished the flow.
+- **Failed:** The number of times the flow stopped because of a problem, such as a step that didn't appear.
+- **Exited:** The number of times users left the flow. This total is the sum of the times users closed a tooltip, went to another page, or started a different flow.
 
-**Solution**:
-- Simplify the flow by reducing the number of steps and making the instructions more straightforward.
+### See results for one flow
 
-### Additional Resources
+1. Click **By Flow**.
+1. Select a flow.
+
+| Report | What it shows |
+| --- | --- |
+| Flow usage by day | How many times the flow was used each day. |
+| Times flow played | How many times the flow ran, and which widget users started it from. |
+| Flow completion rate | How many users started the flow, how many finished it, and how many left partway through. |
+| Most exited or failed steps | Where users dropped out. Hold the pointer over a step to see how often it failed or was exited, and why. |
+| Flow history | Who edited the flow, and when. |
+| Flow feedback | How many users rated the flow as useful or not useful, and how many left no rating. |
+| Feedback responses | How many users chose each predefined feedback response. |
+| Feedback comments | The comments users wrote, if any. |
+
+## Troubleshoot common issues
+
+### The flow can't find the element for the next step
+
+**Possible causes:**
+
+- The flow was created in a development or UAT environment and is running in production. Element IDs often differ between environments.
+- The application changed, and the element is gone or has moved.
+- The page has several similar elements, and GuideFlow can't tell which one to use.
+
+**To fix it:**
+
+- Create flows in the environment where they'll run, usually production.
+- Edit the flow and select the element again. For instructions, see "Reselect elements to manage UI changes" in the GuideFlow Help Center.
+- If the page has several similar elements, identify the right one with a CSS selector.
+
+### Steps don't appear or behave correctly
+
+Symptoms include the following:
+
+- The flow doesn't start.
+- The flow doesn't move to the next step after the user clicks the element.
+- A tooltip appears in the wrong place.
+- The flow skips a step.
+
+**Possible causes:**
+
+- The step's conditions are wrong, or the step is optional and its conditions don't match.
+- The rule that shows the step runs before the page finishes loading. For example, if a step uses the **On click of selected element** rule but the element hasn't loaded yet, the step doesn't appear.
+- The application changed, and GuideFlow can't find the element selected when the flow was created.
+- The step needs a CSS selector instead of a simple element selection.
+- The flow was created in a non-production environment and is running in production.
+
+**To fix it**, work through these checks in order:
+
+1. **Select the element again.** Edit the failing step and reselect its target element.
+1. **Add a CSS selector.** If reselecting doesn't help, add a CSS selector to the step. To learn how, see "Find the CSS selector of an element" in the GuideFlow Help Center.
+1. **Check the step conditions.** Make sure the conditions for the failing step are set correctly. If the page loads slowly, try the **On page refresh** rule instead of **On click of selected element**.
+1. **Compare environments.** Make sure the environment where you created the flow matches production. Element attributes can differ between UAT and production.
+1. **Check element IDs.** If you created the flow in UAT and your account is set to trust element IDs, confirm that the IDs match in both environments.
+1. **Start the flow on a global element.** The **Always start a flow from step 1** setting only works when the first step points to an element that appears on every page, such as the main navigation bar.
+
+### Users leave partway through a flow
+
+**Possible cause:** The flow has too many steps, or the instructions are unclear.
+
+**To fix it:** Remove steps that users don't need, and rewrite each instruction as a single, specific action. Use the **Most exited or failed steps** report to find where users leave.
+
+## Additional resources
+
 - [GuideFlow Knowledge Base](https://support.example.com/)
 - [GuideFlow Blog](https://www.example.com/blog/)
-
-### Conclusion
-GuideFlow provides a powerful platform for creating in-app guidance to help users navigate your application more effectively. By following this guide, you’ll be able to set up, deploy, and analyze flows that will streamline your users’ experience. For more advanced configurations and troubleshooting, explore our resources and support documentation.

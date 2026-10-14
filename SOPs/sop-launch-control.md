@@ -1,116 +1,104 @@
-# Standard Operating Procedure (SOP): Texting Potential Leads
+# SOP: Texting Potential Leads in Launch Control
 
-_Last edit: 1/19/2025_
+> **About this sample**
+>
+> - **Type:** Standard operating procedure
+> - **Audience:** Sales representatives and acquisitions managers at a real estate company
+> - **My role:** Wrote this procedure as a freelance technical writer
 
-## Table of Contents
+_Last updated: January 19, 2025_
+
+## Table of contents
+
 1. [Purpose](#purpose)
-2. [Intended Users](#intended-users)
-3. [Required Tools](#required-tools)
-4. [Log in to Launch Control](#log-in-to-launch-control)
-5. [Create and Send Text Messages](#create-and-send-text-messages)
-6. [Respond and Screen for Motivation](#respond-and-screen-for-motivation)
-7. [High-Priority Leads (Push to CRM)](#high-priority-leads-push-to-crm)
-8. [Medium-Priority Leads (Require Further Action)](#medium-priority-leads-require-further-action)
-9. [Low-Priority Leads (Do Not Push Yet)](#low-priority-leads-do-not-push-yet)
-10. [Manage Leads](#manage-leads)
-11. [Daily Follow-up Tasks](#daily-follow-up-tasks)
-12. [Best Practices](#best-practices)
-13. [Review and Update Frequency](#review-and-update-frequency)
+1. [Who this procedure is for](#who-this-procedure-is-for)
+1. [Tools](#tools)
+1. [Sign in to Launch Control](#sign-in-to-launch-control)
+1. [Send a batch of text messages](#send-a-batch-of-text-messages)
+1. [Screen and prioritize replies](#screen-and-prioritize-replies)
+1. [Daily follow-up tasks](#daily-follow-up-tasks)
+1. [Best practices](#best-practices)
+1. [Review schedule](#review-schedule)
 
 ## Purpose
-This SOP outlines the procedure for texting potential leads, from initial contact to lead qualification. It covers logging into the system, sending batches of texts, responding to incoming messages, and screening leads for motivation. The goal is to determine which leads should be added to the CRM while ensuring efficient lead management.
 
-## Intended Users
-This SOP is intended for team members responsible for lead outreach and qualification, including Acquisitions Managers and Sales Representatives.
+This procedure covers how to text potential sellers, from sending the first message to deciding which leads to add to the CRM. Following it keeps outreach consistent and makes sure the acquisitions manager spends time on the leads most likely to sell.
 
-## Required Tools
-- **Launch Control** (lead communication platform)
-- **Follow Up Boss** (CRM system)
-- **Discord** (for internal communication)
+## Who this procedure is for
 
-## Log in to Launch Control
-1. Navigate to the Launch Control login page.
-2. Enter your email and password.
-3. Select both checkboxes at the bottom of the sign-in form.
-4. Select **Sign in**.
+Team members who handle lead outreach and qualification, including sales representatives and acquisitions managers.
 
-## Create and Send Text Messages
+## Tools
 
-### Create a Batch
+| Tool | Used for |
+| --- | --- |
+| Launch Control | Sending text messages and tracking lead status. |
+| Follow Up Boss | The CRM where qualified leads go for follow-up. |
+| Discord | Internal communication, including the **Call them** channel. |
+
+## Sign in to Launch Control
+
+1. Go to the Launch Control sign-in page.
+1. Enter your email address and password.
+1. Select both checkboxes at the bottom of the sign-in form.
+1. Click **Sign in**.
+
+## Send a batch of text messages
+
 1. Go to **Batches**.
-2. Select **Create new**.
-3. Select the appropriate **Campaign**.
-4. Choose the **Template** and set the batch size to 150 messages.
-5. Select **Create Batch**.
+1. Click **Create new**.
+1. Select the campaign for this outreach.
+1. Select a template, and then set the batch size to 150 messages.
+1. Click **Create Batch**.
+1. Press **Enter** to send all messages in the batch. To review messages first, send them one at a time instead.
 
-### Send Text Messages
-- Press **Enter** to send all text messages in bulk, or send them individually if needed.
+## Screen and prioritize replies
 
-## Respond and Screen for Motivation
+As replies come in, sort each lead into one of three priority levels. The level decides what you do next.
 
-### High-Priority Leads (Push to CRM)
-High-priority leads are those who show strong interest in selling their property. These leads should be processed immediately to maximize conversion opportunities.
+| Priority | The lead... | What to do |
+| --- | --- | --- |
+| High | Asks for an offer and gives an email address, or confirms interest in selling and answers your first questions. | Process right away. Follow [High-priority leads](#high-priority-leads). |
+| Medium | Asks "What's your offer?" but doesn't answer follow-up questions within a day, or replies to a nurture campaign after being added to the CRM before. | Follow up. See [Medium-priority leads](#medium-priority-leads). |
+| Low | Needs details verified, such as the owner's name or a possible wrong number, or asks for a call without sharing information or agreeing to sell. | Don't add to the CRM yet. See [Low-priority leads](#low-priority-leads). |
 
-#### Criteria for High-Priority Leads:
-- They ask for an offer and provide an email address.
-- They confirm interest in selling and respond to initial questions, even if they don't provide an email.
+### High-priority leads
 
-#### Steps to Process High-Priority Leads:
-1. Mark as "Warm" in Launch Control.
-2. Add the "Push to CRM" tag to categorize the lead appropriately.
-3. Push the lead to Launch Control (CRM) to initiate follow-up actions.
-4. Notify the Acquisitions Manager, who will contact the lead for further discussion.
+1. In Launch Control, mark the lead as **Warm**.
+1. Add the **Push to CRM** tag.
+1. Push the lead to Follow Up Boss.
+1. Tell the acquisitions manager, who contacts the lead next.
 
-### Medium-Priority Leads (Require Further Action)
+### Medium-priority leads
 
-#### Criteria for Medium-Priority Leads:
-- Leads who ask, "What's your offer?" but don't answer follow-ups within a day.
-- Leads from nurture campaigns who respond after being pushed to the CRM before.
+**If the lead asked "What's your offer?" and stopped replying:**
 
-#### Steps to Process Medium-Priority Leads:
-- "What's your offer" leads:
-  - Add these to the **"Call them"** Discord channel for follow-up by the acquisitions manager.
-  - Add **"Call them"** tag in Launch Control.
-  - If no response in a day, push to drip campaigns.
-- Leads from nurture campaigns:
-  - Check Launch Control notes and respond accordingly.
-  - If no notes are available, ask acquisitions manager about the lead's story.
-  - Add **"CAPD"** tag in Launch Control.
+1. Post the lead in the **Call them** Discord channel so the acquisitions manager can call.
+1. In Launch Control, add the **Call them** tag.
+1. If the lead still hasn't replied after one day, add them to a drip campaign.
 
-### Low-Priority Leads (Do Not Push Yet)
+**If the lead replied to a nurture campaign:**
 
-#### Criteria for Low-Priority Leads:
-- Leads requiring information verification (e.g., owner’s name, wrong number).
-- Leads who ask to be called without providing information or agreeing to sell.
+1. Read the lead's notes in Launch Control, and then reply based on their history.
+1. If there are no notes, ask the acquisitions manager about the lead before you reply.
+1. In Launch Control, add the **CAPD** tag.
 
-#### Steps to Process Low-Priority Leads:
-- Add these to the **"Call them"** Discord channel for verification by Acquisitions Manager before adding to Follow Up Boss.
-- Do not push to the CRM until verified.
+### Low-priority leads
 
-## Manage Leads
+1. Post the lead in the **Call them** Discord channel so the acquisitions manager can verify their details.
+1. Wait for the acquisitions manager to confirm the lead before you add them to Follow Up Boss.
 
-### High-Priority Leads
-- Mark as "Warm" in Launch Control.
-- Add "Push to CRM" tag.
-- Push to CRM (Follow Up Boss).
+## Daily follow-up tasks
 
-### Medium-Priority Leads
-- Tag appropriately ("Call them" or "CAPD").
-- Follow up per SOP guidelines in Medium-Priority leads (Require further action).
+- Every day, add the previous day's nurture leads to the **Yes, then ghosted** drip campaign.
+- The acquisitions manager updates each lead's status in Launch Control and adds notes after calls.
 
-### Low-Priority Leads
-- Add to **"Call them"** Discord channel.
-- Wait for verification before adding to CRM.
+## Best practices
 
-## Daily Follow-up Tasks
-- Add all nurture leads from the previous day to the "Yes, then ghosted" drip.
-- The acquisitions manager will update their status in Launch Control and add relevant notes.
+- Change at least one word in each template every week so messages don't look automated.
+- Before you reply to a lead from a drip campaign, read their notes in Launch Control.
+- If you aren't sure about a lead's priority, ask the acquisitions manager.
 
-## Best Practices
-- Change one word in templates weekly to keep messages fresh.
-- Always check Launch Control notes before responding to leads from drip campaigns.
-- When in doubt about a lead's status or motivation, consult with the acquisitions manager.
+## Review schedule
 
-## Review and Update Frequency
-This SOP should be reviewed quarterly to ensure it remains effective and up to date.
-
+Review this procedure every quarter, and update it when the tools or process change.
