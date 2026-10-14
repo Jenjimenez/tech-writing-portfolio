@@ -1,0 +1,28 @@
+title: Jennifer Botia
+description: Technical writer and Technical Content Producer
+baseurl: "/tech-writing-portfolio"
+url: "https://jenjimenez.github.io"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-titles-from-headings
+  - jekyll-default-layout
+
+relative_links:
+  enabled: true
+  collections: false
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "doc"
+
+exclude:
+  - README.md

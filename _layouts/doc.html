@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<div class="wrap doc-wrap">
+  <a class="back" href="{{ '/' | relative_url }}#work">All writing samples</a>
+  <div class="doc-grid">
+    <article class="doc">
+      {{ content }}
+    </article>
+    <nav class="toc" aria-label="On this page" hidden>
+      <p class="toc-title">On this page</p>
+      <ul></ul>
+    </nav>
+  </div>
+  <aside class="doc-end">
+    <p>Want to talk about this sample or a role on your team? <a href="mailto:jenjimenezxo@gmail.com">Email me</a> or <a href="{{ '/Jennifer_Botia_2026.pdf' | relative_url }}">download my resume</a>.</p>
+  </aside>
+</div>
+<script>
+  (function () {
+    var h2s = document.querySelectorAll('.doc h2[id]');
+    if (h2s.length < 3) return;
+    var sel = h2s.length <= 4 ? '.doc h2[id], .doc h3[id]' : '.doc h2[id]';
+    var toc = document.querySelector('.toc'), list = toc.querySelector('ul');
+    document.querySelectorAll(sel).forEach(function (h) {
+      var li = document.createElement('li'), a = document.createElement('a');
+      if (h.tagName === 'H3') li.className = 'sub';
+      a.href = '#' + h.id; a.textContent = h.textContent;
+      li.appendChild(a); list.appendChild(li);
+    });
+    toc.hidden = false;
+  })();
+</script>

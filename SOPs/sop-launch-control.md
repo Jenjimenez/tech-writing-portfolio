@@ -1,11 +1,3 @@
----
-layout: sample
-title: Lead qualification and CRM handoff
-description: A workflow for qualifying leads, applying decision criteria, and coordinating follow-up
-  and CRM handoffs.
-sample_id: lead-qualification
----
-
 # Standard Operating Procedure (SOP): Texting Potential Leads
 
 _Last edit: 1/19/2025_
@@ -47,8 +39,6 @@ This SOP is intended for team members responsible for lead outreach and qualific
 2. Enter your email and password.
 3. Select both checkboxes at the bottom of the sign-in form.
 4. Select **Sign in**.
-
-![Launch Control login page](image1.png)
 
 ## Create and Send Text Messages
 

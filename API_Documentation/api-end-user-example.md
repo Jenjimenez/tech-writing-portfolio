@@ -1,12 +1,6 @@
----
-layout: sample
-title: End user schema API reference
-description: Reference documentation covering authentication, endpoint paths, parameters, and
-  JSON request examples.
-sample_id: end-user-api
----
-
 # API Documentation
+
+> **About this sample:** This sample is based on documentation I wrote for a digital adoption platform. Product names, URLs, and identifiers have been replaced with a fictional product, *GuideFlow*, to protect client and employer confidentiality.
 
 ## End User Schema API
 
@@ -19,10 +13,9 @@ The End User Schema API allows you to manage custom fields in the end user schem
 - [Pagination](#pagination)
 - [End User Schema](#end-user-schema)
   - [Get End User Schema](#get-end-user-schema)
-  - [Update/Add Custom Fields](#updateadd-custom-fields)
+  - [Update or Add Custom Fields](#update-or-add-custom-fields)
   - [Get End User Schema by Field Name](#get-end-user-schema-by-field-name)
-  - [Get All End Users (Paginated)](#get-all-end-users-paginated)
-- [Data Types](#data-types)
+- [Conclusion](#conclusion)
 
 ## Overview
 
@@ -34,10 +27,10 @@ The End User Schema API allows you to:
 
 ## Authentication
 
-To get authenticated you will need to create a user API token from the x dashboard and pass as header **x-x-integration-key**. To know more, see [Generating the API Integration Key](link). Pass the email address of the user as the **x-x-user** header.
+To get authenticated you will need to create a user API token from the GuideFlow dashboard and pass as header **x-guideflow-integration-key**. To know more, see "Generating the API Integration Key" in the GuideFlow Help Center. Pass the email address of the user as the **GuideFlow-guideflow-user** header.
 
 ## Status Codes
-The following status codes are possible in x API Responses:
+The following status codes are possible in GuideFlow API Responses:
 - 2xx: Success
 - 4xx: Request error
 - 5xx: Server-side error
@@ -49,8 +42,8 @@ The following status codes are possible in x API Responses:
 | **204 - No Content**           | Returned for DELETE requests when a resource is deleted.                                         |
 | **207 - Multistatus**          | Returned for partial success during POST/PUT/DELETE requests.                                     |
 | **400 - Bad Request**          | Returned if the API format is incorrect or if query parameters are invalid.                      |
-| **401 - Unauthorized**         | Returned if the x integration key is not valid.                                             |
-| **403 - Forbidden**            | Returned if the x integration key does not have permission for the requested resource.      |
+| **401 - Unauthorized**         | Returned if the GuideFlow integration key is not valid.                                             |
+| **403 - Forbidden**            | Returned if the GuideFlow integration key does not have permission for the requested resource.      |
 | **404 - Not Found**            | Returned for GET and DELETE requests when no content is found for the requested resource ID.      |
 | **429 - Too Many Requests**    | Returned if the rate limit is exceeded.                                                          |
 | **500, 502, 503, 504 - Server Errors** | Returned for server-side errors. Requests may succeed on retry.                                    |
@@ -58,7 +51,7 @@ The following status codes are possible in x API Responses:
 <p>&nbsp;</p>
 
 ## Pagination
-Pagination is performed by the use of 2 filters: cursor and limit
+Pagination uses two filters, `cursor` and `limit`:
 - **cursor**: Pointer to a specific row of data.
 - **limit**: Specifies the maximum number of records to return in the result.
 
@@ -69,23 +62,22 @@ APIs for managing end user schema allow you to define fields for users in your p
 - **double**: Numeric values (e.g., `10`, `20.78`)
 - **string**: Any string value (e.g., `employee_role`)
 - **timestamp**: Timestamp in ISO-8601 format (e.g., `2001-07-04T12:08:56.235-0700`)
-- **encrypted_string**: Any string value stored in an encrypted format for security purposes (e.g., `john.doe@x.com`)
+- **encrypted_string**: Any string value stored in an encrypted format for security purposes (e.g., `john.doe@example.com`)
 
 ## Get End User Schema
 
-The Get End User Schema API fetches the schema for the end users resource for your account. It returns both x-provided default fields and custom fields defined by the account user.
+The Get End User Schema API fetches the schema for the end users resource for your account. It returns both GuideFlow-provided default fields and custom fields defined by the account user.
 
 ### Path Parameters
 - **entId** (required): string, account ID
-- **fieldName** (required): string, field name
 
 ### Example API Call
-**GET** ```/v1/accounts/{entId}/endUserSchema```
+**GET** `/v1/accounts/{entId}/endUserSchema`
 
 ### Responses
-```200 OK: Returns the schema information for the end users resource.```
+`200 OK`: Returns the schema information for the end users resource.
 
-## Data Integrations
+## Update or Add Custom Fields
 Updates or adds one or more custom fields in the end user schema. Field names are unique and are used to identify the fields that are required to be updated. A maximum of 50 custom fields can be added to the user schema for each account. Called from integrations UI on the dashboard.
 
 ### Path Parameters
@@ -97,7 +89,7 @@ Updates or adds one or more custom fields in the end user schema. Field names ar
 - **type**: string, data type of the field.
 
 ### Example API Call
-**PUT** ```/v1/accounts/{entId}/endUserSchema```
+**PUT** `/v1/accounts/{entId}/endUserSchema`
 
 ### Request samples
 Content type: application/json
@@ -111,9 +103,9 @@ Content type: application/json
 ]
 ```
 ### Responses
-```200 OK: Returns the schema information for the end users resource.```
+`200 OK`: Returns the schema information for the end users resource.
 
-## Get an End User Schema by Field Name
+## Get End User Schema by Field Name
 Get an end user schema by field name. This is called from integrations dashboard.
 
 ### Path Parameters
@@ -121,10 +113,10 @@ Get an end user schema by field name. This is called from integrations dashboard
 - **fieldName** (required): string, field name
 
 ### Example API Call
-**GET** ```/v1/accounts/{entId}/endUserSchema/{fieldName}```
+**GET** `/v1/accounts/{entId}/endUserSchema/{fieldName}`
 
 ### Responses
-```200 OK: Returns the schema information for the end users resource.```
+`200 OK`: Returns the schema information for the end users resource.
 
 ## Conclusion
-This API documentation provides you with the necessary endpoints to manage and interact with the end user schema for your x account. By using the provided API calls, you can easily add, update, and retrieve user schema data as needed.
+This API documentation provides you with the necessary endpoints to manage and interact with the end user schema for your GuideFlow account. By using the provided API calls, you can easily add, update, and retrieve user schema data as needed.

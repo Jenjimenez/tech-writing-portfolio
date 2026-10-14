@@ -1,18 +1,12 @@
----
-layout: sample
-title: Create an onboarding flow
-description: A focused help article combining onboarding instructions, best practices, and common
-  troubleshooting scenarios.
-sample_id: onboarding-flows
----
+# Knowledge Base Article: Creating Onboarding Flows with GuideFlow
 
-# Knowledge Base Article: Creating Onboarding Flows with x
+> **About this sample:** This sample is based on documentation I wrote for a digital adoption platform. Product names, URLs, and identifiers have been replaced with a fictional product, *GuideFlow*, to protect client and employer confidentiality.
 
 ## Overview
-x allows organizations to deliver contextual, in-app guidance to users. This article provides an overview of how to use x to create effective onboarding flows that help new users get familiar with your product quickly and efficiently.
+GuideFlow allows organizations to deliver contextual, in-app guidance to users. This article provides an overview of how to use GuideFlow to create effective onboarding flows that help new users get familiar with your product quickly and efficiently.
 
 ## Table of Contents
-1. [Understanding x Flows](#understanding-x-flows)
+1. [Understanding GuideFlow Flows](#understanding-guideflow-flows)
 2. [How to Create an Onboarding Flow](#how-to-create-an-onboarding-flow)
 3. [Best Practices for Onboarding](#best-practices-for-onboarding)
 4. [Troubleshooting](#troubleshooting)
@@ -20,8 +14,8 @@ x allows organizations to deliver contextual, in-app guidance to users. This art
 
 <br>
 
-## Understanding x Flows
-A x flow is an interactive walkthrough that guides users through key tasks within an application. It is a powerful tool for onboarding, helping users to understand product features and processes without needing to refer to external documentation.
+## Understanding GuideFlow Flows
+A GuideFlow flow is an interactive walkthrough that guides users through key tasks within an application. It is a powerful tool for onboarding, helping users to understand product features and processes without needing to refer to external documentation.
 
 <br>
 
@@ -29,7 +23,7 @@ A x flow is an interactive walkthrough that guides users through key tasks withi
 Follow these steps to create a basic onboarding flow for your application.
 
 ### 1. Logging In and Setting Up the Editor
-- Access the **x Editor** to create and manage your flows.
+- Access the **GuideFlow Editor** to create and manage your flows.
 - Familiarize yourself with the different elements, including **Spotlights**, **Tooltips**, and **Checklists**, which are key to guiding users.
 
 ### 2. Creating Your First Flow
@@ -65,6 +59,5 @@ Make sure that flows are triggered at the most relevant moments in the user’s 
 <br>
 
 ## Additional Resources
-- [x Help Center](https://help.x.com/)
-- [x Blog](https://www.x.com/blog/)
-- [x Tutorials](link)
+- [GuideFlow Help Center](https://help.example.com/)
+- [GuideFlow Blog](https://www.example.com/blog/)
