@@ -1,0 +1,8 @@
+<article class="sample-card{% unless include.sample.featured %} sample-card--secondary{% endunless %}" aria-labelledby="title-{{ include.sample.id }}">
+  <div class="card-topline"><p class="category">{{ include.sample.category | escape }}</p><span class="document-mark" aria-hidden="true">&#8801;</span></div>
+  <h3 id="title-{{ include.sample.id }}">{{ include.sample.title | escape }}</h3>
+  <p class="card-summary">{{ include.sample.summary | escape }}</p>
+  <p class="card-audience"><strong>Audience</strong> {{ include.sample.audience | escape }}</p>
+  <ul class="skill-tags" aria-label="Writing skills demonstrated">{% for skill in include.sample.skills %}<li>{{ skill | escape }}</li>{% endfor %}</ul>
+  <a class="sample-link" href="{{ include.sample.url | relative_url }}">{{ include.sample.cta | escape }} <span aria-hidden="true">&rarr;</span></a>
+</article>

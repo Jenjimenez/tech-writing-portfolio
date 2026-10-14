@@ -1,0 +1,41 @@
+# Site identity and contact information.
+title: Jennifer Botia
+role: Technical Writer | Technical Content Producer
+description: >-
+  Technical writing portfolio featuring user guides, API reference,
+  process documentation, and knowledge-base articles.
+email: jenjimenezxo@gmail.com
+linkedin_url: https://www.linkedin.com/in/jenniferbotia/
+lang: en
+
+# Assumes the repository is named tech-writing-portfolio.
+# For a different project repository, use /YOUR-REPOSITORY-NAME.
+# For a custom domain or a USERNAME.github.io repository, use an empty string.
+baseurl: "/tech-writing-portfolio"
+# Optional: add your site origin, without the repository path or trailing slash.
+url: ""
+
+# Leave blank until an actual resume file has been added to the repository.
+# Example after uploading a file: /assets/Jennifer_Botia_Resume.pdf
+resume_path: ""
+
+# Keep the existing theme; local layouts and CSS provide the portfolio design.
+theme: jekyll-theme-minimal
+show_downloads: false
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - README.md
+  - PORTFOLIO-UPDATE-NOTES.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

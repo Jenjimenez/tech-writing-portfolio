@@ -1,20 +1,12 @@
-# TCP Author Onboarding and Messaging Playbook
+---
+layout: sample
+title: Author onboarding and messaging playbook
+description: A reusable playbook for onboarding authors, setting expectations, and guiding communication
+  across lab formats.
+sample_id: author-onboarding
+---
 
-> **Case study: Unified author onboarding templates**
->
-> **The problem:** Technical Content Producers (TCPs) onboarded authors across four lab types (Desktop, Code, Hands-on Cloud, and AI-generated labs), each with its own tooling, standards, and pitfalls. Messaging varied from producer to producer, which made the author experience inconsistent and made it easy to miss critical setup steps.
->
-> **My role:** I led the project, gathered existing templates and lab-specific requirements from the team, and drafted this playbook and its supporting documentation.
->
-> **My approach:**
-> - Mapped the TCP-to-author messaging workflow from first contact to publication.
-> - Created reusable templates for each stage (new author, post-onboarding call, returning author, check-in, and publication), with lab-specific variants.
-> - Added a review checklist for each lab type so producers check the same requirements every time.
-> - Documented the URL pattern for published labs so producers can share public links on publication day.
->
-> **The outcome:** One shared, flexible playbook that the TCP team uses to onboard authors consistently across every lab type. I maintain it as tooling and standards change, and I use it to onboard authors through scheduled meetings and recorded walkthroughs.
->
-> *Internal links and identifiers have been removed.*
+# TCP Author Onboarding and Messaging Playbook
 
 ## Intro and purpose
 
@@ -477,7 +469,7 @@ Let me know what times work for you and I’ll send you an invite!
 ### Post-onboarding call follow-up
 
 ```text
-Hi @{author}, it was so nice chatting with you today! Please let us know if you need any more information.
+Hi @{author}, it was so nice chatting with you today! Please let us know if you need anymore information.
 
 Environment considerations:
 
@@ -545,7 +537,8 @@ Example lab for your reference:
   - Solution code only contains changes requested by the task.
   - Validation is passing with properly marked solutions.
 - **Mark as AI content**
-  - Ensure the author is set to the Pluralsight AI Lab author profile.
+  - Ensure author is set to Pluralsight AI Lab.
+  - Identifier: `41fa1e02-2087-4c41-a192-13dda105f026`
   - Add AI disclosure at the end of the first step for Forge-generated labs only.
 
 ## Review process
@@ -575,7 +568,7 @@ Follow these steps to review an AI-generated lab:
 
 ## Forge AI-generated labs
 
-- Lab Test tool: GitHub Guide Link
+- Lab Test tool: Github Guide Link
 
 <br>
 
@@ -585,4 +578,4 @@ You can use text-expansion tools to add templates more easily.
 
 - Typinator for Mac
 - AutoHotkey for Windows
-- If neither of those works for you, there are [text-expander alternatives](https://alternativeto.net/category/productivity/text-expander/) for Windows, macOS, and Linux.
+- If neither of those works for you, there are alternatives for Windows, MacOS, and Linux: `https://alternativeto.net/category/productivity/text-expander/`
