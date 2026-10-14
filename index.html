@@ -43,12 +43,26 @@ layout: default
   </div>
 </section>
 
-<section id="work" class="wrap section" aria-labelledby="work-heading">
+<div id="work">
+<div class="wrap sample-filter" hidden>
+  <p class="filter-label" id="filter-label">Filter writing samples by type</p>
+  <div class="filter-buttons" role="group" aria-labelledby="filter-label">
+    <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All</button>
+    <button type="button" class="filter-btn" data-filter="lab" aria-pressed="false">Lab guides</button>
+    <button type="button" class="filter-btn" data-filter="editing" aria-pressed="false">Editing</button>
+    <button type="button" class="filter-btn" data-filter="reference" aria-pressed="false">Reference and API docs</button>
+    <button type="button" class="filter-btn" data-filter="guides" aria-pressed="false">User guides and help articles</button>
+    <button type="button" class="filter-btn" data-filter="process" aria-pressed="false">Process docs</button>
+  </div>
+  <p class="filter-status" aria-live="polite"></p>
+</div>
+
+<section id="pluralsight-work" class="wrap section sample-group" aria-labelledby="work-heading">
   <h2 id="work-heading">Writing samples from Pluralsight</h2>
   <p class="section-intro">Each sample opens with a short note on who it's for and what I did. Published labs on Pluralsight show an overview to everyone; taking the full lab needs a subscription.</p>
 
   <ol class="samples">
-    <li class="sample">
+    <li class="sample" data-types="editing lab">
       <div class="sample-main">
         <h3><a href="{{ '/Pluralsight_Work/before-and-after-lab-edit.html' | relative_url }}">Before and After: Editing a Hands-On AWS Lab</a></h3>
         <p>Six edits from my review of an AWS release-and-rollback lab, each showing the original step, my revision, and why I changed it.</p>
@@ -60,7 +74,7 @@ layout: default
         <div><dt>Topics</dt><dd>Lambda, CodeDeploy, CloudWatch</dd></div>
       </dl>
     </li>
-    <li class="sample">
+    <li class="sample" data-types="reference">
       <div class="sample-main">
         <h3><a href="{{ '/Pluralsight_Work/desktop-labs-vm-assertions.html' | relative_url }}">Desktop Labs: VM Assertions</a></h3>
         <p>A reference and how-to guide that shows lab authors how to write shell-based checks that grade a learner's work inside a virtual machine, with Bash and PowerShell examples, a testing procedure, and troubleshooting steps.</p>
@@ -71,7 +85,7 @@ layout: default
         <div><dt>Topics</dt><dd>SSH, Bash, PowerShell, exit codes</dd></div>
       </dl>
     </li>
-    <li class="sample">
+    <li class="sample" data-types="lab">
       <div class="sample-main">
         <h3><a href="{{ '/Pluralsight_Work/lab-guide-terraform-modules.html' | relative_url }}">Lab Guide: Develop and Reuse Terraform Modules</a></h3>
         <p>A hands-on AWS lab that takes learners from using a public Terraform module to building and versioning their own. I tested every step in the lab environment and validated each configuration before publication.</p>
@@ -83,7 +97,7 @@ layout: default
         <div><dt>Topics</dt><dd>Terraform, S3, Lambda, VS Code</dd></div>
       </dl>
     </li>
-    <li class="sample">
+    <li class="sample" data-types="process">
       <div class="sample-main">
         <h3><a href="{{ '/Pluralsight_Work/author-onboarding-playbook.html' | relative_url }}">Case Study: Unified Author Onboarding Playbook</a></h3>
         <p>A project I led to standardize how my team onboards authors across four lab types. It includes reusable message templates, review checklists for each lab type, and a publication workflow.</p>
@@ -97,11 +111,11 @@ layout: default
   </ol>
 </section>
 
-<section class="wrap section" aria-labelledby="earlier-heading">
+<section class="wrap section sample-group" aria-labelledby="earlier-heading">
   <h2 id="earlier-heading">Earlier writing samples</h2>
   <p class="section-intro">From my work in software implementation and freelance technical writing. Product names are anonymized.</p>
   <ol class="samples">
-    <li class="sample">
+    <li class="sample" data-types="guides">
       <div class="sample-main">
         <h3><a href="{{ '/User_Guides/web-user-guide.html' | relative_url }}">User Guide: Getting Started with GuideFlow on Web</a></h3>
         <p>A getting-started guide that walks new customers through setup, creating and deploying in-app guidance, reading analytics, and fixing common issues.</p>
@@ -112,7 +126,7 @@ layout: default
         <div><dt>Topics</dt><dd>JavaScript embed, flows, analytics</dd></div>
       </dl>
     </li>
-    <li class="sample">
+    <li class="sample" data-types="reference api">
       <div class="sample-main">
         <h3><a href="{{ '/API_Documentation/api-end-user-example.html' | relative_url }}">API Reference: End User Schema API</a></h3>
         <p>Reference documentation for managing custom user fields, with authentication, data types, error handling, and example requests and responses for each endpoint.</p>
@@ -123,7 +137,7 @@ layout: default
         <div><dt>Topics</dt><dd>REST, authentication, errors, curl</dd></div>
       </dl>
     </li>
-    <li class="sample">
+    <li class="sample" data-types="guides">
       <div class="sample-main">
         <h3><a href="{{ '/Knowledge_Base_Articles/kb-guideflow-flows.html' | relative_url }}">Knowledge Base: Creating Onboarding Flows</a></h3>
         <p>A task-based help article on building an onboarding walkthrough, with best practices for keeping flows short and a troubleshooting section.</p>
@@ -134,7 +148,7 @@ layout: default
         <div><dt>Topics</dt><dd>Onboarding flows, best practices</dd></div>
       </dl>
     </li>
-    <li class="sample">
+    <li class="sample" data-types="process">
       <div class="sample-main">
         <h3><a href="{{ '/SOPs/sop-launch-control.html' | relative_url }}">SOP: Texting Potential Leads in Launch Control</a></h3>
         <p>A standard operating procedure that takes sales staff from sending a batch of texts to qualifying leads and handing the best ones off to the CRM.</p>
@@ -147,6 +161,7 @@ layout: default
     </li>
   </ol>
 </section>
+</div>
 
 <section id="about" class="wrap section" aria-labelledby="about-heading">
   <h2 id="about-heading">About me</h2>
@@ -319,3 +334,40 @@ layout: default
     <a class="button" href="https://www.linkedin.com/in/jenniferbotia/">Connect on LinkedIn</a>
   </p>
 </section>
+
+<script>
+  (function () {
+    var bar = document.querySelector('.sample-filter');
+    if (!bar) return;
+    var buttons = bar.querySelectorAll('.filter-btn');
+    var samples = document.querySelectorAll('.sample[data-types]');
+    var groups = document.querySelectorAll('.sample-group');
+    var status = bar.querySelector('.filter-status');
+    buttons.forEach(function (btn) {
+      var f = btn.dataset.filter;
+      var n = f === 'all' ? samples.length : Array.prototype.filter.call(samples, function (s) { return s.dataset.types.split(' ').indexOf(f) > -1; }).length;
+      btn.insertAdjacentHTML('beforeend', ' <span class="filter-count">' + n + '</span>');
+      btn.addEventListener('click', function () {
+        buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+        var shown = 0;
+        samples.forEach(function (s) {
+          var match = f === 'all' || s.dataset.types.split(' ').indexOf(f) > -1;
+          s.hidden = !match; if (match) shown++;
+        });
+        groups.forEach(function (g) {
+          var empty = g.querySelector('.group-empty');
+          if (!empty) {
+            empty = document.createElement('p'); empty.className = 'group-empty';
+            empty.textContent = 'No samples in this section match this filter.';
+            g.querySelector('.samples').after(empty);
+          }
+          var none = !g.querySelector('.sample:not([hidden])');
+          empty.hidden = !none;
+          g.querySelector('.samples').classList.toggle('is-empty', none);
+        });
+        status.textContent = f === 'all' ? '' : 'Showing ' + shown + (shown === 1 ? ' sample' : ' samples') + '.';
+      });
+    });
+    bar.hidden = false;
+  })();
+</script>
