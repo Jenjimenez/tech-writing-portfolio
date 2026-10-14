@@ -1,18 +1,18 @@
-# Jennifer Botia
-### Technical Writer | Technical Content Producer
+# Jennifer Botia: Technical Writing Portfolio
 
-I turn complex technical concepts into clear, practical documentation that helps people learn, solve problems, and use technology effectively.
+Source for my technical writing portfolio, hosted with GitHub Pages:
+**https://jenjimenezxo.github.io/tech-writing-portfolio/**
 
-I currently work as a Technical Content Producer at Pluralsight, contributing to courses and hands-on learning experiences across software development, IT, AI, and cloud technologies. My work includes technical content reviews, lab validation and troubleshooting, documentation maintenance, and collaboration with authors and cross-functional teams.
+I'm a Technical Writer and Technical Content Producer at Pluralsight. This repository contains writing samples from my work at Pluralsight and earlier roles.
 
-With a background in technical content production, software implementations, and customer enablement, I bring both a technical perspective and a user-focused approach to documentation.
+## Contents
 
-**Areas of focus**
-- Technical documentation and process guides
-- Technical tutorials and step-by-step instructions
-- Hands-on lab testing and troubleshooting
-- Markdown editing and content quality assurance
-- Documentation standards and content maintenance
-- Cross-functional collaboration and project coordination
+| Folder | What's inside |
+| --- | --- |
+| `Pluralsight_Work/` | VM assertions reference guide, Terraform lab guide, and author onboarding playbook case study |
+| `User_Guides/` | Getting-started user guide (anonymized) |
+| `API_Documentation/` | REST API reference (anonymized) |
+| `Knowledge_Base_Articles/` | Task-based knowledge base article (anonymized) |
+| `SOPs/` | Standard operating procedure |
 
-[LinkedIn](https://www.linkedin.com/in/jenniferbotia/) · [Email](jenjimenezxo@gmail.com)
+[Resume](Jennifer_Botia_2026.pdf) · [LinkedIn](https://www.linkedin.com/in/jenniferbotia/) · [Email](mailto:jenjimenezxo@gmail.com)

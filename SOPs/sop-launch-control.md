@@ -40,8 +40,6 @@ This SOP is intended for team members responsible for lead outreach and qualific
 3. Select both checkboxes at the bottom of the sign-in form.
 4. Select **Sign in**.
 
-![Launch Control login page](image1.png)
-
 ## Create and Send Text Messages
 
 ### Create a Batch
