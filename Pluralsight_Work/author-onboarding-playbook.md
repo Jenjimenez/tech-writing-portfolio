@@ -22,14 +22,14 @@ This page provides standardized onboarding message templates and information for
 
 These templates are designed to be high-level and flexible.
 
-## Template best practices
+### Template best practices
 
 - **Personalize content:** Add the author’s name, lab details, and relevant links.
 - **Use a friendly tone:** Keep communication supportive and encouraging.
 - **Keep content concise:** Avoid long paragraphs. Use lists for readability.
 - **Be proactive:** Send follow-ups and check in if progress stalls.
 
-## Handy resources
+### Handy resources
 
 - Hands-on content standards
 - Slides standards and guidelines
@@ -42,6 +42,9 @@ These templates are designed to be high-level and flexible.
 ## Publication message template
 
 Use the publication template when notifying the author that their content has published. You can share the external link upon publication. See [External link structure examples](#external-link-structure-examples).
+
+<details class="template" markdown="1">
+<summary>Message template</summary>
 
 ```text
 <@author>, thank you for all your hard work! The lab is now published! 🎉
@@ -59,7 +62,9 @@ Action Items
 I’ve noted a few suggestions you can keep in mind for your next lab. You can find them in our feedback sheet under Criticality: Suggested Fix and Criticality: Future Fix.
 ```
 
-## External link structure examples
+</details>
+
+### External link structure examples
 
 Upon publication, external-facing links are not immediately generated. The following patterns allow you to share links with authors upon publication. Some discrepancies are noted below.
 
@@ -73,13 +78,15 @@ When a lab title has punctuation, the punctuation is excluded from the URL. This
 - Colons (`:`)
 - Ampersands (`&`)
 
-<br>
 
-# General templates for all lab types
+## General templates for all lab types
 
-## New author
+### New author
 
 Connect with a new author to share resources and schedule an onboarding call to walk through our tooling.
+
+<details class="template" markdown="1">
+<summary>Message template</summary>
 
 ```text
 Hi @{author}, nice to meet you!
@@ -98,9 +105,14 @@ Before the call, please review the following resources:
 I look forward to working with you!
 ```
 
-## New author: Post-onboarding call
+</details>
+
+### New author: Post-onboarding call
 
 After the initial onboarding call, share resources, expectations, and next steps.
+
+<details class="template" markdown="1">
+<summary>Message template</summary>
 
 ```text
 Hi @{author}, it was great meeting with you! Here are the resources to help you get started:
@@ -113,9 +125,14 @@ Hi @{author}, it was great meeting with you! Here are the resources to help you 
 I’ll check in with you next week to see how things are going. In the meantime, let me know if you need any help!
 ```
 
-## Returning author
+</details>
+
+### Returning author
 
 If the author has previously built a lab of this type, you may skip the tooling walkthrough. Focus instead on resources and project setup, if necessary.
+
+<details class="template" markdown="1">
+<summary>Message template</summary>
 
 ```text
 Hi @{author}, welcome back! Since you’re already familiar with the lab environment, here are some resources for your reference during this project:
@@ -126,9 +143,14 @@ Hi @{author}, welcome back! Since you’re already familiar with the lab environ
 If you’d like examples or additional resources, let me know and I’ll share them. I look forward to working with you!
 ```
 
-## Check-in message
+</details>
+
+### Check-in message
 
 Check in with authors, especially if progress has stalled.
+
+<details class="template" markdown="1">
+<summary>Message template</summary>
 
 ```text
 Hi @{author}, I hope you’re doing well!
@@ -136,17 +158,18 @@ Hi @{author}, I hope you’re doing well!
 I wanted to check in on your lab progress. If you need help, please let me know!
 ```
 
-<br>
+</details>
 
-# Desktop labs
 
-## Important information to share with authors
+## Desktop labs
+
+### Important information to share with authors
 
 - Restrict authors from accessing the lab when it is under review to prevent saving issues.
 - Bring attention to banners authors might see when a lab is not published. Let them know they can still work on the lab.
 - Remind authors that we have a single slide deck to be used for all content.
 
-## TCP checklist
+### TCP checklist
 
 - **Outline/instruction alignment**
   - Ensure the lab instructions cover all key objectives from the Outline.
@@ -157,9 +180,12 @@ I wanted to check in on your lab progress. If you need help, please let me know!
 - **Testing**
   - Test the lab as a learner.
 
-## Templates
+### Templates
 
-### New Desktop Labs author
+#### New Desktop Labs author
+
+<details class="template" markdown="1">
+<summary>Message template</summary>
 
 ```text
 Hi <@author>, welcome to Desktop Labs! I’m excited to be working with you. I’ll be assisting you throughout the production of this lab.
@@ -186,7 +212,12 @@ Here is my availability: [list times and time zone].
 Please feel free to reach out with any questions in the meantime. My office hours are Monday–Friday, [insert hours and timezone].
 ```
 
-### Returning Desktop Labs author
+</details>
+
+#### Returning Desktop Labs author
+
+<details class="template" markdown="1">
+<summary>Message template</summary>
 
 ```text
 Hi <@author>, I’m excited to be working with you again!
@@ -199,17 +230,18 @@ Resources:
 - Desktop lab standards
 ```
 
-<br>
+</details>
 
-# Code labs
 
-## Important information to share with authors
+## Code labs
+
+### Important information to share with authors
 
 - The learner environment does **not** have internet access. Ensure that all required dependencies are included in the lab environment.
 - Before requesting a review, exit the lab, as it will default to read-only mode for other users.
 - Before TCP review, test the lab using Preview mode to help avoid delays in the review process.
 
-## TCP checklist
+### TCP checklist
 
 - **Outline/instruction alignment**
   - Ensure the lab instructions cover all key objectives from the Outline.
@@ -219,9 +251,12 @@ Resources:
 - **Testing**
   - Test the lab as a learner using the **Preview** button.
 
-## Templates
+### Templates
 
-### New Code Labs author
+#### New Code Labs author
+
+<details class="template" markdown="1">
+<summary>Message template</summary>
 
 ```text
 Hi @{author}, it’s great to meet you! I’d like to set up an onboarding call to walk through the Code Labs tooling and answer your questions.
@@ -237,7 +272,12 @@ Before the call, please review the following resources:
 I look forward to working with you!
 ```
 
-### Code Labs post-onboarding call
+</details>
+
+#### Code Labs post-onboarding call
+
+<details class="template" markdown="1">
+<summary>Message template</summary>
 
 ```text
 Hi @{author}, it was great meeting with you! Here are the resources we discussed:
@@ -251,7 +291,12 @@ Hi @{author}, it was great meeting with you! Here are the resources we discussed
 I’ll check in with you next week to see how things are going. In the meantime, let me know if you need any help!
 ```
 
-### Returning Code Labs author
+</details>
+
+#### Returning Code Labs author
+
+<details class="template" markdown="1">
+<summary>Message template</summary>
 
 ```text
 Hi @{author}, welcome back! Since you’re already familiar with the Code Labs environment, here are the key resources for this project:
@@ -264,17 +309,18 @@ If you’d like examples or additional resources, let me know and I’ll share t
 I look forward to working with you!
 ```
 
-## Resources
+</details>
+
+### Resources
 
 - Guided labs pattern doc
 - Semgrep documentation: a lightweight validation option
 - Code lab onboarding doc
 
-<br>
 
-# Hands-on cloud labs
+## Hands-on cloud labs
 
-## Important information to share with authors
+### Important information to share with authors
 
 - Do **not** access the lab while it is under review, as this can cause saving issues.
 - When previewing your lab, you may see warning banners if the lab is not yet published. You can ignore these messages, as the lab will still function correctly. For example:
@@ -282,7 +328,7 @@ I look forward to working with you!
   - “This lab has been retired.”
 - Please use the most up-to-date slide deck.
 
-## TCP checklist
+### TCP checklist
 
 - **Outline/instruction alignment**
   - Ensure the lab instructions cover all key objectives from the Outline.
@@ -304,9 +350,12 @@ I look forward to working with you!
   - Test the lab as a learner using the **Preview Lab** link.
   - Follow AWS sandbox limitations.
 
-## Templates
+### Templates
 
-### New Hands-on Cloud Labs author
+#### New Hands-on Cloud Labs author
+
+<details class="template" markdown="1">
+<summary>Message template</summary>
 
 ```text
 Hi {@author}, nice to meet you!
@@ -352,7 +401,12 @@ Excited to work with you!
 Thanks @PC!
 ```
 
-### Existing Hands-on Cloud Lab update
+</details>
+
+#### Existing Hands-on Cloud Lab update
+
+<details class="template" markdown="1">
+<summary>Message template</summary>
 
 ```text
 Hi @Author, I’m looking forward to working with you on this lab!
@@ -394,7 +448,12 @@ Messaging in Slack:
 Please feel free to reach out with any questions. I’ll check in with you in a few business days to make sure everything is going smoothly!
 ```
 
-### Starter info for selected Hands-on Cloud Labs
+</details>
+
+#### Starter info for selected Hands-on Cloud Labs
+
+<details class="template" markdown="1">
+<summary>Message template</summary>
 
 ```text
 Hi @{author}, looking forward to the lab! Here's the starter info:
@@ -438,9 +497,14 @@ Let me know if you need a repo, too!
 Please feel free to reach out with any questions!
 ```
 
-## Onboarding new authors
+</details>
+
+### Onboarding new authors
 
 Use **Author your hands-on cloud lab** as a reference for your tooling walkthrough.
+
+<details class="template" markdown="1">
+<summary>Message template</summary>
 
 ```text
 Hi @{author}, so glad to have you join us! Here’s some info to get you started:
@@ -474,7 +538,12 @@ I'd love to set up a walkthrough call. On the call, we can walk through the tool
 Let me know what times work for you and I’ll send you an invite!
 ```
 
-### Post-onboarding call follow-up
+</details>
+
+#### Post-onboarding call follow-up
+
+<details class="template" markdown="1">
+<summary>Message template</summary>
 
 ```text
 Hi @{author}, it was so nice chatting with you today! Please let us know if you need any more information.
@@ -518,23 +587,24 @@ Example lab for your reference:
 - Build a Three-Tier Network VPC from Scratch in AWS
 ```
 
-## Resources
+</details>
+
+### Resources
 
 - Slides standards and guidelines
 - Video content standards
 - Hands-on cloud lab standards
 
-<br>
 
-# AI-generated labs
+## AI-generated labs
 
-## Important points
+### Important points
 
 - Check that solution code includes only code requested by the task.
 - Check for second person and active voice.
 - Add approved AI disclosure language in Forge-generated labs.
 
-## TCP checklist
+### TCP checklist
 
 - **Outline/instruction alignment**
   - Ensure the lab instructions cover all key objectives from the Outline.
@@ -548,7 +618,7 @@ Example lab for your reference:
   - Ensure the author is set to the Pluralsight AI Lab author profile.
   - Add AI disclosure at the end of the first step for Forge-generated labs only.
 
-## Review process
+### Review process
 
 Follow these steps to review an AI-generated lab:
 
@@ -561,25 +631,23 @@ Follow these steps to review an AI-generated lab:
 
 > **Note:** Share feedback with the author before making content improvements because authors often go back to the tooling and re-upload the lab, which can wipe out content changes and improvements.
 
-<br>
 
-# Resources
+## Resources
 
-## Desktop labs
+### Desktop labs
 
 - Desktop Labs Checklist
 
-## Code labs
+### Code labs
 
 - Code Labs Onboarding Guide
 
-## Forge AI-generated labs
+### Forge AI-generated labs
 
 - Lab Test tool: GitHub Guide Link
 
-<br>
 
-# Suggested tools
+## Suggested tools
 
 You can use text-expansion tools to add templates more easily.
 

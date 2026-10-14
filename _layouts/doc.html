@@ -31,3 +31,18 @@ layout: default
     toc.hidden = false;
   })();
 </script>
+<script>
+  document.querySelectorAll('.doc details.template').forEach(function (d) {
+    var code = d.querySelector('pre code');
+    if (!code || !navigator.clipboard) return;
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'copy-btn'; btn.textContent = 'Copy template';
+    btn.addEventListener('click', function () {
+      navigator.clipboard.writeText(code.textContent).then(function () {
+        btn.textContent = 'Copied';
+        setTimeout(function () { btn.textContent = 'Copy template'; }, 2000);
+      });
+    });
+    d.appendChild(btn);
+  });
+</script>
