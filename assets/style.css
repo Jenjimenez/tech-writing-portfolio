@@ -449,7 +449,7 @@ a:hover { text-decoration-thickness: 2px; }
 @media (prefers-color-scheme: dark) { .v-terminal { background: #0c1016; border: 1px solid var(--rule); } }
 
 /* Tools as grouped tags; linked tags open the sample that shows the tool in use */
-.tool-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1.75rem 2.5rem; border-top: 2px solid var(--ink); padding-top: 1.5rem; }
+.tool-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); gap: 1.75rem 2.5rem; border-top: 2px solid var(--ink); padding-top: 1.5rem; }
 .tool-group h3 { font-size: 0.95rem; font-weight: 600; margin: 0 0 0.7rem; }
 .tag-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.45rem; }
 .tag {
@@ -580,3 +580,22 @@ a.tag:hover .tag-where { color: var(--link); }
   .site-header { position: static; }
   .sample:hover { background: none; box-shadow: none; }
 }
+
+/* Case-study summary at the top of each Pluralsight sample */
+.doc .case-summary { margin: 1.5rem 0 2rem; padding: 1.25rem 1.4rem; background: var(--surface); border: 1px solid var(--rule); border-top: 3px solid var(--insert); border-radius: 6px; }
+.doc .case-summary dl { margin: 0; display: grid; gap: 0.9rem; }
+.doc .case-summary dl > div { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 0.25rem 1.25rem; }
+.doc .case-summary dt { font-weight: 600; font-size: 0.95rem; }
+.doc .case-summary dd { margin: 0; }
+.doc .case-summary dd ul { margin: 0; padding-left: 1.1rem; }
+.doc .case-summary dd li { margin-block: 0.2rem; }
+.doc .case-note { margin: 1rem 0 0; padding-top: 0.8rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.9rem; font-style: italic; }
+@media (max-width: 760px) { .doc .case-summary dl > div { grid-template-columns: 1fr; } }
+
+/* "What I tested" box */
+.doc .tested-box { margin: 0 0 2rem; padding: 1rem 1.25rem; background: var(--callout); border-left: 3px solid var(--insert); border-radius: 0 4px 4px 0; }
+.doc .tested-title { margin: 0 0 0.4rem; font-weight: 600; }
+.doc .tested-box ul { margin: 0; padding-left: 1.15rem; }
+
+.doc-updated { margin: 0.75rem 0 0; color: var(--muted); font-size: 0.875rem; }
+@media print { .doc-updated { display: block; } .doc .case-summary { break-inside: avoid; } }

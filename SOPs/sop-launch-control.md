@@ -1,3 +1,6 @@
+---
+last_updated: 2026-10-14
+---
 # SOP: Texting Potential Leads in Launch Control
 
 > **About this sample**

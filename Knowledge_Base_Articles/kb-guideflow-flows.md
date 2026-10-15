@@ -1,3 +1,6 @@
+---
+last_updated: 2026-10-14
+---
 # Knowledge Base: Creating Onboarding Flows
 
 > **About this sample**

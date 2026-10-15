@@ -2,19 +2,31 @@
 wide: true
 image: /assets/og-before-after.png
 image_alt: "Before and after: editing a hands-on AWS lab. A tracked change from the lab with a reviewer comment."
+last_updated: 2026-10-14
 description: "Six edits from my review of a published Pluralsight AWS lab, each showing the original step, my revision, and why I changed it."
 ---
 # Before and After: Editing a Hands-On AWS Lab
 
-> **About this sample**
->
-> - **Lab:** [Release and Roll Back an AWS Cloud-Native Workload](https://www.pluralsight.com/labs/aws/release-and-roll-back-an-aws-cloud-native-workload), a Pluralsight hands-on lab
-> - **Audience:** Cloud engineers practicing canary releases and rollbacks with AWS Lambda, CodeDeploy, and CloudWatch
-> - **My role:** Technical review and editing before publication: I ran the lab end to end, then revised the guide for accuracy, scannability, and Pluralsight and Google developer style
->
-> In this lab, learners release a faulty Lambda version through a CodeDeploy canary, watch a CloudWatch alarm catch the errors, and roll the release back. Below are six edits from my review, each with the original text, my revision, and why I made the change.
+<div class="case-summary">
+  <dl>
+    <div><dt>The challenge</dt><dd>The lab guide was technically sound, but it assumed learners already knew the AWS console, buried actions inside long explanations, and gave learners no way to recover if their session dropped.</dd></div>
+    <div><dt>My contribution</dt><dd>Reviewed and edited the lab guide before publication for accuracy, scannability, and Pluralsight and Google developer style.</dd></div>
+    <div><dt>The result</dt><dd>A published lab where each step is a single, specific action, expected results are clearly labeled, and learners know how to recover on their own.</dd></div>
+    <div><dt>Audience</dt><dd>Cloud engineers practicing canary releases and rollbacks with AWS Lambda, CodeDeploy, and CloudWatch.</dd></div>
+    <div><dt>The sample</dt><dd>Six edits from my review, below. <a href="https://www.pluralsight.com/labs/aws/release-and-roll-back-an-aws-cloud-native-workload">View the published lab on Pluralsight</a>.</dd></div>
+  </dl>
+</div>
 
-The original guide was technically sound. My edits focused on one question: can a learner who has never seen this console follow every step without stopping to guess?
+## What I found
+
+My review focused on one question: can a learner who has never seen this console follow every step without stopping to guess? These were the recurring issues, and each edit below addresses one of them:
+
+- Navigation that assumed learners already knew where each AWS service was.
+- Explanations inside steps that buried the action.
+- Details about how commands were engineered that learners didn't need.
+- Verbs that didn't match the type of control, such as "choose" for a collapsed section.
+- No consistent way to mark what a successful result looks like.
+- No way to recover if the workstation session dropped.
 
 ## Tell learners how to get there
 

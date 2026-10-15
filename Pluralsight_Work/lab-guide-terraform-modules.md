@@ -1,13 +1,27 @@
+---
+last_updated: 2026-10-14
+---
 # Lab Guide: Develop and Reuse Terraform Modules
 
-> **About this sample**
->
-> - **Type:** Hands-on lab guide (AWS, Terraform, VS Code)
-> - **Audience:** Learners practicing infrastructure as code in a Pluralsight hands-on cloud lab
-> - **My role:** Technical review and revision of the lab guide: tested each step in the lab environment, validated the Terraform configurations, and edited instructions for clarity and consistency
-> - **Standards:** Google Developer Documentation Style Guide and Pluralsight hands-on content standards
->
-> In this lab, learners provision an S3 bucket with a public Terraform module, connect it to a Lambda function through S3 event notifications, and then refactor that logic into a custom, versioned module stored in S3.
+<div class="case-summary">
+  <dl>
+    <div><dt>The challenge</dt><dd>The lab builds in stages, from a public module to event notifications to a custom, versioned module. A single wrong value or an outdated expected output early on can break every step that follows.</dd></div>
+    <div><dt>My contribution</dt><dd>Reviewed, tested, and revised the lab guide: ran each step in the lab environment, checked each Terraform configuration, and edited the instructions for clarity and consistency.</dd></div>
+    <div><dt>The result</dt><dd>A published lab where each stage ends with a checkpoint, so learners can confirm their work before moving on.</dd></div>
+    <div><dt>Audience</dt><dd>Learners practicing infrastructure as code in a Pluralsight hands-on cloud lab.</dd></div>
+    <div><dt>The sample</dt><dd>The full lab guide, below. <a href="https://www.pluralsight.com/labs/aws/develop-and-reuse-terraform-modules">View the published lab on Pluralsight</a>.</dd></div>
+  </dl>
+</div>
+
+<div class="tested-box" id="what-i-tested">
+  <p class="tested-title">What I tested</p>
+  <ul>
+    <li>Ran every step as a learner would, in the lab environment.</li>
+    <li>Validated each Terraform configuration before following the steps that depend on it.</li>
+    <li>Confirmed that plan and apply output match what the guide tells learners to expect, such as <code>Plan: 4 to add</code>.</li>
+    <li>Checked that the Lambda test event and CloudWatch logs show the messages the guide describes.</li>
+  </ul>
+</div>
 
 ## Getting started
 

@@ -1,13 +1,18 @@
+---
+last_updated: 2026-10-14
+---
 # Desktop Labs: VM Assertions
 
-> **About this sample**
->
-> - **Type:** Developer-facing reference and how-to documentation
-> - **Audience:** Lab authors building Desktop Labs at Pluralsight
-> - **My role:** Drafted and edited this guide for the lab author kit, and tested the workflow in Labs Builder
-> - **Standards:** Google Developer Documentation Style Guide and Pluralsight content standards
->
-> Internal links have been removed and identifying details in screenshots have been blurred.
+<div class="case-summary">
+  <dl>
+    <div><dt>The challenge</dt><dd>Desktop Labs can grade a learner’s work by running shell commands inside the lab’s virtual machine. Authors needed to know how to write, test, and troubleshoot these checks, but the details existed only as notes from the development team.</dd></div>
+    <div><dt>My contribution</dt><dd>Wrote this author-facing guide from technical notes shared by the development team, and tested the workflow myself in Labs Builder. The development team provided the screenshots.</dd></div>
+    <div><dt>The result</dt><dd>A guide for the lab author kit that explains how assertions pass and fail, with a worked example, Bash and PowerShell commands, a testing procedure, and troubleshooting steps.</dd></div>
+    <div><dt>Audience</dt><dd>Lab authors building Desktop Labs at Pluralsight.</dd></div>
+    <div><dt>The sample</dt><dd>The full guide, below.</dd></div>
+  </dl>
+  <p class="case-note">Internal links have been removed, and identifying details in screenshots have been blurred.</p>
+</div>
 
 VM assertions let you validate a learner's progress from within a Desktop Lab virtual machine (VM). You can use VM assertions to check conditions such as whether:
 
@@ -102,7 +107,7 @@ if (Test-Path "C:\Windows") { exit 0 } else { exit 1 }
 Check whether a process is running:
 
 ```powershell
-Get-Process -Name "notepad" -ErrorAction SilentlyContinue
+if (Get-Process -Name "notepad" -ErrorAction SilentlyContinue) { exit 0 } else { exit 1 }
 ```
 
 Check whether a file contains valid JSON:
@@ -120,6 +125,40 @@ try { Get-Content "C:\Users\Administrator\Desktop\config.json" -ErrorAction Stop
 The **VM Name** value must exactly match the name of a VM defined in the lab's Terraform configuration.
 
 > **Warning:** If you rename a VM after you create assertions for it, update the **VM Name** value in every assertion that references that VM. Otherwise, those assertions stop working.
+
+## Example: one assertion, start to finish
+
+This example follows a single assertion through both outcomes. The learner’s task is to install Git on the Ubuntu VM.
+
+**Shell Script Content:**
+
+```sh
+which git
+```
+
+**Failure Feedback:** Git isn’t installed yet. Install it, and then check your work again.
+
+The `which` command prints the path to a program and returns exit code `0` if the program is installed. If the program isn’t installed, it prints nothing and returns exit code `1`.
+
+| Learner’s progress | Command output | Exit code | Result |
+| :-- | :-- | :-- | :-- |
+| Hasn’t installed Git yet | Nothing | `1` | The assertion fails, and the learner sees the failure feedback. |
+| Has installed Git | `/usr/bin/git` | `0` | The assertion passes. |
+
+To confirm both outcomes before you add the assertion, run the command on the VM and print its exit code, once before you complete the task and once after:
+
+```sh
+which git; echo "exit code: $?"
+# exit code: 1
+
+sudo apt-get install -y git
+
+which git; echo "exit code: $?"
+# /usr/bin/git
+# exit code: 0
+```
+
+If the command returns `0` before the task is complete, the assertion would pass for a learner who hasn’t done the work. Choose a more specific check.
 
 ## Test VM assertions
 

@@ -1,3 +1,6 @@
+---
+last_updated: 2026-10-14
+---
 # API Reference: End User Schema API
 
 > **About this sample**

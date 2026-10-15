@@ -1,3 +1,6 @@
+---
+last_updated: 2026-10-14
+---
 # User Guide: Getting Started with GuideFlow on Web
 
 > **About this sample**

@@ -7,6 +7,9 @@ layout: default
 <div class="wrap doc-wrap">
   <a class="back" href="{{ '/' | relative_url }}#work">All writing samples</a>
   <p class="print-only">From the writing portfolio of Jennifer Botia: {{ page.url | absolute_url }}</p>
+  {%- if page.last_updated %}
+  <p class="doc-updated">Last updated <time datetime="{{ page.last_updated | date: '%Y-%m-%d' }}">{{ page.last_updated | date: '%B %-d, %Y' }}</time></p>
+  {%- endif %}
   <div class="doc-grid{% if page.wide %} wide{% endif %}">
     <article class="doc">
       {{ content }}
@@ -66,7 +69,8 @@ layout: default
     mobile.appendChild(mlist);
     mlist.addEventListener('click', function (e) { if (e.target.tagName === 'A') mobile.open = false; });
     var title = document.querySelector('.doc h1');
-    var after = title && title.nextElementSibling && title.nextElementSibling.tagName === 'BLOCKQUOTE' ? title.nextElementSibling : title;
+    var sib = title && title.nextElementSibling;
+    var after = sib && (sib.tagName === 'BLOCKQUOTE' || sib.classList.contains('case-summary')) ? sib : title;
     if (after) after.after(mobile);
 
     if (inline) {

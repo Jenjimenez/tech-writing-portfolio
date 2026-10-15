@@ -55,6 +55,26 @@
       </p>
     </div>
   </footer>
+  <script>
+    // Let keyboard users scroll wide code blocks, tables, and the principles row.
+    (function () {
+      function tag() {
+        var count = { PRE: 0, TABLE: 0 };
+        document.querySelectorAll('.doc pre, .doc table, .principles-track').forEach(function (el) {
+          var scrolls = el.scrollWidth > el.clientWidth + 1;
+          if (scrolls && !el.hasAttribute('tabindex')) {
+            el.setAttribute('tabindex', '0');
+            if (!el.hasAttribute('aria-label')) {
+              el.setAttribute('role', 'region');
+              count[el.tagName] = (count[el.tagName] || 0) + 1;
+              el.setAttribute('aria-label', (el.tagName === 'PRE' ? 'Scrollable code example ' : 'Scrollable table ') + count[el.tagName]);
+            }
+          }
+        });
+      }
+      tag(); window.addEventListener('resize', tag);
+    })();
+  </script>
   <a class="to-top" href="#main" hidden>Back to top</a>
   <script>
     (function () {

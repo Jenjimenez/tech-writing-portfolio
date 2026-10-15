@@ -1,20 +1,19 @@
+---
+last_updated: 2026-10-14
+---
 # TCP Author Onboarding and Messaging Playbook
 
-> **Case study: Unified author onboarding templates**
->
-> **The problem:** Technical Content Producers (TCPs) onboarded authors across four lab types (Desktop, Code, Hands-on Cloud, and AI-generated labs), each with its own tooling, standards, and pitfalls. Messaging varied from producer to producer, which made the author experience inconsistent and made it easy to miss critical setup steps.
->
-> **My role:** I led the project, gathered existing templates and lab-specific requirements from the team, and drafted this playbook and its supporting documentation.
->
-> **My approach:**
-> - Mapped the TCP-to-author messaging workflow from first contact to publication.
-> - Created reusable templates for each stage (new author, post-onboarding call, returning author, check-in, and publication), with lab-specific variants.
-> - Added a review checklist for each lab type so producers check the same requirements every time.
-> - Documented the URL pattern for published labs so producers can share public links on publication day.
->
-> **The outcome:** One shared, flexible playbook that the TCP team uses to onboard authors consistently across every lab type. I maintain it as tooling and standards change, and I use it to onboard authors through scheduled meetings and recorded walkthroughs.
->
-> *Internal links and identifiers have been removed.*
+<div class="case-summary">
+  <dl>
+    <div><dt>The challenge</dt><dd>Technical Content Producers (TCPs) onboard authors across four lab types: Desktop, Code, Hands-on Cloud, and AI-generated labs. Each has its own tooling, standards, and pitfalls. Messaging varied from producer to producer, which made the author experience inconsistent and made it easy to miss critical setup steps.</dd></div>
+    <div><dt>My contribution</dt><dd>Led the project. I gathered existing templates and lab-specific requirements from the team, and wrote this playbook and its supporting documentation. I maintain it as tooling and standards change, and use it to onboard authors through scheduled meetings and recorded walkthroughs.</dd></div>
+    <div><dt>What I built</dt><dd><ul><li>Reusable message templates for each stage, from first contact to publication, with variants for each lab type.</li><li>A review checklist for each lab type, so every TCP checks the same requirements.</li><li>A publication workflow, including how to share a lab’s public link on publication day.</li></ul></dd></div>
+    <div><dt>The result</dt><dd>The playbook is part of every TCP’s workflow. When TCPs are assigned a lab, and again when they publish it, they’re prompted to follow it.</dd></div>
+    <div><dt>Audience</dt><dd>TCPs and project managers on Pluralsight’s hands-on content team. It’s an internal document.</dd></div>
+    <div><dt>The sample</dt><dd>The full playbook, below.</dd></div>
+  </dl>
+  <p class="case-note">Internal links and identifiers have been removed.</p>
+</div>
 
 ## Intro and purpose
 
