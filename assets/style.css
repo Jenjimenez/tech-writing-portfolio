@@ -599,3 +599,11 @@ a.tag:hover .tag-where { color: var(--link); }
 
 .doc-updated { margin: 0.75rem 0 0; color: var(--muted); font-size: 0.875rem; }
 @media print { .doc-updated { display: block; } .doc .case-summary { break-inside: avoid; } }
+
+/* About photo: taller, rounded portrait instead of a circle */
+.about { grid-template-columns: 15rem minmax(0, 1fr); gap: 3rem; max-width: 60rem; }
+.about-photo { width: 15rem; aspect-ratio: 4 / 5; border-radius: 10px; }
+@media (max-width: 760px) {
+  .about { grid-template-columns: 1fr; gap: 1.5rem; }
+  .about-photo { width: min(18rem, 100%); }
+}
