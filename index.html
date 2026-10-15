@@ -9,7 +9,7 @@ layout: default
     <del aria-hidden="true">is hard to follow</del>
     <ins>works the first time.</ins>
   </h1>
-  <p class="lede">I’m Jennifer Botia, a technical writer and Technical Content Producer at Pluralsight, where I’ve helped publish more than 90 courses and hands-on labs across software development, cloud, IT, and AI. With a background in enterprise software implementation and a 700-hour full-stack Java bootcamp, I test every step I edit, so learners get instructions that are accurate and easy to follow.</p>
+  <p class="lede">I’m Jennifer Botia, a technical writer and currently a Technical Content Producer at Pluralsight, where I’ve helped publish more than 90 courses and hands-on labs across software development, cloud, IT, and AI. With a background in enterprise software implementation and a 700-hour full-stack Java bootcamp, I test every step I edit, so learners get instructions that are accurate and easy to follow.</p>
   <p class="actions">
     <a class="button primary" href="#work">Read my writing samples</a>
     <a class="button" href="{{ '/Jennifer_Botia_2026.pdf' | relative_url }}" target="_blank" rel="noopener">View resume (PDF)<span class="sr-only"> (opens in a new tab)</span></a>
@@ -387,11 +387,14 @@ layout: default
       { target: '.hero .lede', where: 'after', text: 'One paragraph, with the proof up front: the scale of my work, and why I can test what I edit.' },
       { target: '.edit-card', where: 'inside', text: 'Show, don’t tell. A real edit from a published lab says more than “detail-oriented” ever could.' },
       { target: '.sample-filter .filter-buttons', where: 'after', text: 'Hiring managers skim. Filters let them find the samples that match their role in one click.' },
-      { target: '#pluralsight-work .sample .meta', where: 'after', text: 'Ownership matters. Every sample says exactly what I wrote, edited, or tested, so no one has to guess.' },
+      { target: '#pluralsight-work .sample .meta', where: 'after', arrow: 'up-right', text: 'Ownership matters. Every sample says exactly what I wrote, edited, or tested, so no one has to guess.' },
       { target: '.path-legend', where: 'after', text: 'Color does one job here: the teal dots make the move into writing visible at a glance.' },
       { target: '#principles .section-intro', where: 'after', text: 'Every rule links back to a real edit, so these are claims I can prove, not just values I list.' },
       { target: '#tools .section-intro', where: 'after', text: 'A tool without proof is just a keyword. Teal tags open the sample where I used the tool; dashed ones don’t have a sample yet.' }
     ];
+    // Hand-drawn arrows that point from each note up to the part of the page it's about.
+    var ARROW_UP = '<svg class="review-arrow" viewBox="0 0 48 52" aria-hidden="true" focusable="false"><path d="M36 49c-9.5-2.8-17.4-8.6-20.6-17.8-2.3-6.6-1.6-13.6.2-21.4"/><path d="M8.4 16.6c2.6-3.4 5-6.9 7.4-10.6 2.3 3.1 5.3 6.2 8.6 8.8"/></svg>';
+    var ARROW_UP_RIGHT = '<svg class="review-arrow" viewBox="0 0 120 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M4 94c22-2 44-11 62-27 17-15 30-36 41-58"/><path d="M92 16c6-3 11-7 16-12 3 6 5 12 6 19"/></svg>';
     var made = [];
     function build() {
       notes.forEach(function (n) {
@@ -399,9 +402,10 @@ layout: default
         if (!el) return;
         var note = document.createElement('div'); note.setAttribute('role', 'note');
         note.className = 'review-note';
-        note.innerHTML = '<span class="initials" aria-hidden="true">JB</span><p><span class="review-note-label">Review note<span class="sr-only">:</span></span> ' + n.text + '</p>';
+        var arrow = n.arrow === 'up-right' ? ARROW_UP_RIGHT : ARROW_UP;
+        note.className = 'review-note' + (n.arrow === 'up-right' ? ' arrow-up-right' : '');
+        note.innerHTML = arrow + '<span class="initials" aria-hidden="true">JB</span><p><span class="review-note-label">Review note<span class="sr-only">:</span></span> ' + n.text + '</p>';
         if (n.where === 'inside') el.appendChild(note); else el.after(note);
-        el.classList.add('review-target');
         made.push(note);
       });
     }

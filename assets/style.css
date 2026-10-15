@@ -675,17 +675,26 @@ a.tag:hover .tag-where { color: var(--link); }
 .review-note {
   position: relative; z-index: 2;
   display: flex; gap: 0.65rem; align-items: flex-start;
-  max-width: 34rem; margin: 0.9rem 0 1.1rem;
+  max-width: 34rem; margin: 2.9rem 0 1.1rem;
   padding: 0.7rem 0.85rem;
   background: var(--surface);
-  border: 1px dashed var(--insert);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--insert);
   border-radius: 6px;
   font-size: 0.9rem; line-height: 1.45;
 }
 .review-note[hidden] { display: none; }
 .review-note p { margin: 0; color: var(--ink); }
 .review-note-label { display: block; font-weight: 600; font-size: 0.78rem; color: var(--insert); margin-bottom: 0.1rem; }
-.edit-card .review-note { margin: 1rem 0 0; }
-.review-on .review-target { outline: 2px dashed color-mix(in srgb, var(--insert) 55%, transparent); outline-offset: 6px; border-radius: 4px; }
+.edit-card .review-note { margin: 2.9rem 0 0; }
 @media (prefers-reduced-motion: reduce) { .review-thumb { transition: none; } }
-@media print { .review-switch, .review-note { display: none !important; } .review-on .review-target { outline: none; } }
+@media print { .review-switch, .review-note { display: none !important; } }
+
+/* Hand-drawn arrows from each review note to what it's about */
+.review-arrow {
+  position: absolute; top: -2.85rem; left: 0.7rem;
+  width: 2.9rem; height: 3.1rem; overflow: visible;
+  fill: none; stroke: var(--insert); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round;
+}
+.review-note.arrow-up-right .review-arrow { left: auto; top: -5.6rem; right: -7.4rem; width: 7.6rem; height: 6.4rem; }
+@media (max-width: 760px) { .review-note.arrow-up-right .review-arrow { top: -2.85rem; right: auto; left: 0.7rem; width: 2.9rem; height: 3.1rem; } }
