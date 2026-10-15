@@ -13,7 +13,7 @@ This site is docs-as-code, the same workflow many documentation teams use:
 - **Versioned in Git.** Every change is a commit, so the full history of each sample is visible in this repository.
 - **Published automatically.** Jekyll and GitHub Pages build the site on every push to `main`.
 
-The layout and styles are custom, in `_layouts/` and `assets/`.
+The layout and styles are custom, in `_layouts/` and `assets/`. For the decisions behind the design, writing, and accessibility, see [How I Built This Site](how-i-built-this-site.md).
 
 ## Contents
 
