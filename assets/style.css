@@ -657,3 +657,35 @@ a.tag:hover .tag-where { color: var(--link); }
 @media print { .theme-toggle { display: none !important; } }
 .theme-toggle[hidden] { display: none; }
 .site-header nav { align-items: center; }
+
+/* Review mode */
+.review-switch { margin-top: 1.25rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.9rem; }
+.review-switch[hidden] { display: none; }
+.review-toggle {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.3rem 0.2rem; border: 0; background: none; color: var(--ink);
+  font: inherit; font-weight: 600; font-size: 0.95rem; cursor: pointer;
+}
+.review-track { position: relative; width: 2.5rem; height: 1.4rem; border-radius: 999px; background: var(--rule); flex-shrink: 0; }
+.review-thumb { position: absolute; top: 0.15rem; left: 0.15rem; width: 1.1rem; height: 1.1rem; border-radius: 50%; background: var(--surface); box-shadow: 0 1px 3px rgba(0,0,0,0.3); transition: transform 0.15s ease; }
+.review-toggle[aria-pressed="true"] .review-track { background: var(--insert); }
+.review-toggle[aria-pressed="true"] .review-thumb { transform: translateX(1.1rem); }
+.review-hint { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+.review-note {
+  position: relative; z-index: 2;
+  display: flex; gap: 0.65rem; align-items: flex-start;
+  max-width: 34rem; margin: 0.9rem 0 1.1rem;
+  padding: 0.7rem 0.85rem;
+  background: var(--surface);
+  border: 1px dashed var(--insert);
+  border-radius: 6px;
+  font-size: 0.9rem; line-height: 1.45;
+}
+.review-note[hidden] { display: none; }
+.review-note p { margin: 0; color: var(--ink); }
+.review-note-label { display: block; font-weight: 600; font-size: 0.78rem; color: var(--insert); margin-bottom: 0.1rem; }
+.edit-card .review-note { margin: 1rem 0 0; }
+.review-on .review-target { outline: 2px dashed color-mix(in srgb, var(--insert) 55%, transparent); outline-offset: 6px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { .review-thumb { transition: none; } }
+@media print { .review-switch, .review-note { display: none !important; } .review-on .review-target { outline: none; } }

@@ -14,6 +14,13 @@ layout: default
     <a class="button primary" href="#work">Read my writing samples</a>
     <a class="button" href="{{ '/Jennifer_Botia_2026.pdf' | relative_url }}" target="_blank" rel="noopener">View resume (PDF)<span class="sr-only"> (opens in a new tab)</span></a>
   </p>
+  <div class="review-switch" hidden>
+    <button type="button" class="review-toggle" aria-pressed="false" aria-describedby="review-hint">
+      <span class="review-track" aria-hidden="true"><span class="review-thumb"></span></span>
+      <span>Review mode</span>
+    </button>
+    <p class="review-hint" id="review-hint">See my notes on how I wrote this page.</p>
+  </div>
     </div>
     <aside class="edit-card" aria-labelledby="edit-card-title">
       <p class="edit-card-title" id="edit-card-title">From a lab I edited</p>
@@ -365,5 +372,47 @@ layout: default
       });
     });
     bar.hidden = false;
+  })();
+</script>
+
+<script>
+  // Review mode: shows my own editing notes on this page, the way I'd comment on an author's draft.
+  (function () {
+    var wrap = document.querySelector('.review-switch');
+    if (!wrap) return;
+    var btn = wrap.querySelector('.review-toggle');
+    var hint = wrap.querySelector('.review-hint');
+    var notes = [
+      { target: '.hero h1', where: 'after', text: 'Lead with the outcome, not the job title. The strike-through shows what I do before anyone reads a word.' },
+      { target: '.hero .lede', where: 'after', text: 'One paragraph, with the proof up front: the scale of my work, and why I can test what I edit.' },
+      { target: '.edit-card', where: 'inside', text: 'Show, don’t tell. A real edit from a published lab says more than “detail-oriented” ever could.' },
+      { target: '.sample-filter .filter-buttons', where: 'after', text: 'Hiring managers skim. Filters let them find the samples that match their role in one click.' },
+      { target: '#pluralsight-work .sample .meta', where: 'after', text: 'Ownership matters. Every sample says exactly what I wrote, edited, or tested, so no one has to guess.' },
+      { target: '.path-legend', where: 'after', text: 'Color does one job here: the teal dots make the move into writing visible at a glance.' },
+      { target: '#principles .section-intro', where: 'after', text: 'Every rule links back to a real edit, so these are claims I can prove, not just values I list.' },
+      { target: '#tools .section-intro', where: 'after', text: 'A tool without proof is just a keyword. Teal tags open the sample where I used the tool; dashed ones don’t have a sample yet.' }
+    ];
+    var made = [];
+    function build() {
+      notes.forEach(function (n) {
+        var el = document.querySelector(n.target);
+        if (!el) return;
+        var note = document.createElement('div'); note.setAttribute('role', 'note');
+        note.className = 'review-note';
+        note.innerHTML = '<span class="initials" aria-hidden="true">JB</span><p><span class="review-note-label">Review note<span class="sr-only">:</span></span> ' + n.text + '</p>';
+        if (n.where === 'inside') el.appendChild(note); else el.after(note);
+        el.classList.add('review-target');
+        made.push(note);
+      });
+    }
+    btn.addEventListener('click', function () {
+      var on = btn.getAttribute('aria-pressed') !== 'true';
+      if (on && !made.length) build();
+      btn.setAttribute('aria-pressed', String(on));
+      document.body.classList.toggle('review-on', on);
+      made.forEach(function (n) { n.hidden = !on; });
+      hint.textContent = on ? 'Showing ' + made.length + ' notes. Turn review mode off to hide them.' : 'See my notes on how I wrote this page.';
+    });
+    wrap.hidden = false;
   })();
 </script>
