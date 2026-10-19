@@ -26,14 +26,17 @@ AI output gets a triage pass before anything else. If the lab doesn't work, styl
 ## The rubric
 
 **Outline and instruction alignment**
+
 - Lab instructions cover all key objectives from the lab outline.
 - Content follows internal standards and the Google Developer Documentation Style Guide.
 
 **Relevance and redundancy**
+
 - No repetition or filler.
 - Content is meaningful, with examples that build a clear learning progression.
 
 **Feedback, solution, and validation**
+
 - Feedback to the author is constructive and clear, written so it improves AI prompting, not just this draft.
 - Solution code contains only the changes the task requests.
 - Validation passes with properly marked solutions.
@@ -41,43 +44,61 @@ AI output gets a triage pass before anything else. If the lab doesn't work, styl
 
 ## In practice: a C# debugging lab
 
-The lab: **Fixing a C# Application with C# Failure Stack Traces**. Learners reproduce crashes, read stack traces, and fix bugs across five steps. Three examples of what the rubric caught:
+The lab: **Fixing a C# Application with C# Failure Stack Traces**. Learners reproduce crashes, read stack traces, and fix bugs across five steps.
 
-### The crash that couldn't crash
+### The crash that couldn't crash <span class="flag flag-required">Required fix</span>
 
-**What the AI generated:** Task 2.1 asks learners to reproduce a crash, but the starter parser doesn't throw an exception. There is nothing to investigate.
+<div class="compare" markdown="1">
+<div class="compare-col before" markdown="1">
+<p class="compare-label">What the AI generated</p>
+Task 2.1 asks learners to reproduce a crash, but the starter parser doesn't throw an exception. There is nothing to investigate.
+</div>
+<div class="compare-col after" markdown="1">
+<p class="compare-label">What I flagged</p>
+A debugging lab where the bug doesn't exist. The task is uncompletable as written: a blocker, not a style nit.
+**My feedback:** "Provide a mostly working parser with an intentional bug so learners can investigate the exception and stack trace before fixing it."
+</div>
+</div>
 
-**What I flagged:** A debugging lab where the bug doesn't exist. The task is uncompletable as written: a blocker, not a style nit. *(Rubric: validation first.)*
+> **Why it matters:** Learners can't practice debugging if there's nothing to debug.
 
-**My feedback:** "Provide a mostly working parser with an intentional bug so learners can investigate the exception and stack trace before fixing it" (Required fix).
+### Instructions for an editor the learners don't have <span class="flag flag-required">Required fix</span>
 
-**Why it matters:** Learners can't practice debugging if there's nothing to debug.
+<div class="compare" markdown="1">
+<div class="compare-col before" markdown="1">
+<p class="compare-label">What the AI generated</p>
+Steps 3–4 introduce DataTips, Watch windows, and tracepoints, none of which are available in the lab's editor.
+</div>
+<div class="compare-col after" markdown="1">
+<p class="compare-label">What I flagged</p>
+The AI described the platonic ideal of Visual Studio debugging, not the environment learners were actually in.
+**My feedback:** "Add terminal-based debugging steps so learners can investigate changing values and isolate issues while connecting the activities to the course concepts."
+</div>
+</div>
 
-### Instructions for an editor the learners don't have
+> **Why it matters:** Instructions that reference unavailable tools do more than confuse. They erode trust in every step that follows.
 
-**What the AI generated:** Steps 3–4 introduce DataTips, Watch windows, and tracepoints, none of which are available in the lab's editor.
+### Placeholder code in a debugging lab <span class="flag flag-suggested">Suggested fix</span>
 
-**What I flagged:** The AI described the platonic ideal of Visual Studio debugging, not the environment learners were actually in. *(Rubric: outline and instruction alignment.)*
+<div class="compare" markdown="1">
+<div class="compare-col before" markdown="1">
+<p class="compare-label">What the AI generated</p>
+Across steps 2–5, several starter methods return placeholder values such as <code>0</code> or <code>false</code>.
+</div>
+<div class="compare-col after" markdown="1">
+<p class="compare-label">What I flagged</p>
+Learners would spend the lab implementing functionality from scratch instead of debugging, which is the opposite of the learning objective.
+**My feedback:** "Provide more working code with intentional bugs so learners can focus on debugging rather than implementing functionality from scratch."
+</div>
+</div>
 
-**My feedback:** "Add terminal-based debugging steps so learners can investigate changing values and isolate issues while connecting the activities to the course concepts" (Required fix).
-
-**Why it matters:** Instructions that reference unavailable tools do more than confuse. They erode trust in every step that follows.
-
-### Placeholder code in a debugging lab
-
-**What the AI generated:** Across steps 2–5, several starter methods return placeholder values such as `0` or `false`.
-
-**What I flagged:** Learners would spend the lab implementing functionality from scratch instead of debugging, which is the opposite of the learning objective. *(Rubric: relevance and learning progression.)*
-
-**My feedback:** "Provide more working code with intentional bugs so learners can focus on debugging rather than implementing functionality from scratch" (Suggested fix).
-
-**Why it matters:** Every minute spent writing boilerplate is a minute not spent on the skill the lab promises to teach. This became a principle I now apply everywhere: in a debugging lab, starter code should be mostly working with intentional bugs, never empty placeholders.
+> **Why it matters:** Every minute spent writing boilerplate is a minute not spent on the skill the lab promises to teach. This became a principle I now apply everywhere: in a debugging lab, starter code should be mostly working with intentional bugs, never empty placeholders.
 
 ## The rest of the review
 
-Four more flags from the same pass:
-
-- **Task 5.1** asked learners to correct a tax calculation instead of investigating an external assembly; the activity had drifted from its learning objective. Required fix.
-- **Tasks 5.2–5.3** had no workflow for reproducing a race condition and verifying the fix with Hot Reload (which tested successfully in the lab environment). Required fix.
-- **No checkpoints:** the lab never asked learners to run the application first. I suggested introducing a run at the beginning and checkpoints throughout, so learners observe an issue, make changes, and compare results before validating. Suggested fix.
-- **`dotnet run` displayed all 10 tasks at once.** I suggested letting learners run individual scenarios so they can focus on the issue they're investigating. Suggested fix.
+| What I flagged | Severity |
+|---|---|
+| Task 5.1 asked learners to correct a tax calculation instead of investigating an external assembly; the activity had drifted from its learning objective. | Required |
+| Tasks 5.2–5.3 had no workflow for reproducing a race condition and verifying the fix with Hot Reload, which tested successfully in the lab environment. | Required |
+| The lab never asked learners to run the application first; suggested introducing a run at the beginning and checkpoints throughout, so learners observe an issue, make changes, and compare results before validating. | Suggested |
+| <code>dotnet run</code> displayed all 10 tasks at once; suggested letting learners run individual scenarios so they can focus on the issue they're investigating. | Suggested |

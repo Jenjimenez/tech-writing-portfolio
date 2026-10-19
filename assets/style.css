@@ -698,3 +698,11 @@ a.tag:hover .tag-where { color: var(--link); }
 }
 .review-note.arrow-up-right .review-arrow { left: auto; top: -5.6rem; right: -7.4rem; width: 7.6rem; height: 6.4rem; }
 @media (max-width: 760px) { .review-note.arrow-up-right .review-arrow { top: -2.85rem; right: auto; left: 0.7rem; width: 2.9rem; height: 3.1rem; } }
+
+.doc .flag { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 0.15rem 0.65rem; border-radius: 999px; vertical-align: middle; margin-left: 0.5rem; letter-spacing: 0.02em; }
+.doc .flag-required { background: #fbe9e7; color: #b3261e; border: 1px solid #efc5c1; }
+.doc .flag-suggested { background: #edf0f4; color: #566070; border: 1px solid #d8dde4; }
+@media (prefers-color-scheme: dark) {
+:root:not([data-theme="light"]) .doc .flag-required { background: #3a1f1c; color: #f08a80; border-color: #6b3a34; }
+:root:not([data-theme="light"]) .doc .flag-suggested { background: #232a35; color: #a3acba; border-color: #2e3542; }
+}
