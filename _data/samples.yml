@@ -1,3 +1,5 @@
+- url: /Pluralsight_Work/ai-lab-review.html
+  title: "Reviewing AI-Generated Labs: What I Catch and Why"
 # Order matches the homepage. Used for the previous and next links on each sample.
 - url: /Pluralsight_Work/before-and-after-lab-edit.html
   title: "AWS Lab Edit: 6 accuracy fixes before publish"
