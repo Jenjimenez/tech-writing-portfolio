@@ -56,6 +56,7 @@ Task 2.1 asks learners to reproduce a crash, but the starter parser doesn't thro
 <div class="compare-col after" markdown="1">
 <p class="compare-label">What I flagged</p>
 A debugging lab where the bug doesn't exist. The task is uncompletable as written: a blocker, not a style nit.
+
 **My feedback:** "Provide a mostly working parser with an intentional bug so learners can investigate the exception and stack trace before fixing it."
 </div>
 </div>
@@ -72,6 +73,7 @@ Steps 3–4 introduce DataTips, Watch windows, and tracepoints, none of which ar
 <div class="compare-col after" markdown="1">
 <p class="compare-label">What I flagged</p>
 The AI described the platonic ideal of Visual Studio debugging, not the environment learners were actually in.
+
 **My feedback:** "Add terminal-based debugging steps so learners can investigate changing values and isolate issues while connecting the activities to the course concepts."
 </div>
 </div>
@@ -88,6 +90,7 @@ Across steps 2–5, several starter methods return placeholder values such as <c
 <div class="compare-col after" markdown="1">
 <p class="compare-label">What I flagged</p>
 Learners would spend the lab implementing functionality from scratch instead of debugging, which is the opposite of the learning objective.
+
 **My feedback:** "Provide more working code with intentional bugs so learners can focus on debugging rather than implementing functionality from scratch."
 </div>
 </div>
