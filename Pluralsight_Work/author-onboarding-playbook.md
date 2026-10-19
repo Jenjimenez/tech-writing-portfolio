@@ -1,7 +1,7 @@
 ---
 last_updated: 2026-10-14
 ---
-# TCP Author Onboarding and Messaging Playbook
+# Onboarding Playbook: standardizing author review across 4 lab types
 
 <div class="case-summary">
   <dl>

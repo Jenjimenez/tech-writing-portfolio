@@ -1,7 +1,7 @@
 ---
 last_updated: 2026-10-14
 ---
-# Desktop Labs: VM Assertions
+# VM Assertions Guide: grading lab work with Bash and PowerShell
 
 <div class="case-summary">
   <dl>

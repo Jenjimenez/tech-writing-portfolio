@@ -1,12 +1,12 @@
 # Order matches the homepage. Used for the previous and next links on each sample.
 - url: /Pluralsight_Work/before-and-after-lab-edit.html
-  title: "Before and After: Editing a Hands-On AWS Lab"
+  title: "AWS Lab Edit: 6 accuracy fixes before publish"
 - url: /Pluralsight_Work/desktop-labs-vm-assertions.html
-  title: "Desktop Labs: VM Assertions"
+  title: "VM Assertions Guide: grading lab work with Bash and PowerShell"
 - url: /Pluralsight_Work/lab-guide-terraform-modules.html
-  title: "Lab Guide: Develop and Reuse Terraform Modules"
+  title: "Terraform Lab: from using modules to versioning your own"
 - url: /Pluralsight_Work/author-onboarding-playbook.html
-  title: "Case Study: Unified Author Onboarding Playbook"
+  title: "Onboarding Playbook: standardizing author review across 4 lab types"
 - url: /User_Guides/web-user-guide.html
   title: "User Guide: Getting Started with GuideFlow on Web"
 - url: /API_Documentation/api-end-user-example.html

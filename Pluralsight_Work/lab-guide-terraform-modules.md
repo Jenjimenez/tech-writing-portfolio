@@ -1,7 +1,7 @@
 ---
 last_updated: 2026-10-14
 ---
-# Lab Guide: Develop and Reuse Terraform Modules
+# Terraform Lab: from using modules to versioning your own
 
 <div class="case-summary">
   <dl>

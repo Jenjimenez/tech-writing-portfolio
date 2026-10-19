@@ -5,7 +5,7 @@ image_alt: "Before and after: editing a hands-on AWS lab. A tracked change from 
 last_updated: 2026-10-14
 description: "Six edits from my review of a published Pluralsight AWS lab, each showing the original step, my revision, and why I changed it."
 ---
-# Before and After: Editing a Hands-On AWS Lab
+# AWS Lab Edit: 6 accuracy fixes before publish
 
 <div class="case-summary">
   <dl>
