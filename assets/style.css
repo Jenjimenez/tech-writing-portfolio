@@ -706,3 +706,5 @@ a.tag:hover .tag-where { color: var(--link); }
 :root:not([data-theme="light"]) .doc .flag-required { background: #3a1f1c; color: #f08a80; border-color: #6b3a34; }
 :root:not([data-theme="light"]) .doc .flag-suggested { background: #232a35; color: #a3acba; border-color: #2e3542; }
 }
+
+.new-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.18rem 0.6rem; border-radius: 999px; background: var(--insert); color: var(--paper); vertical-align: middle; margin-left: 0.5rem; }

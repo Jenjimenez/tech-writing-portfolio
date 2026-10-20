@@ -1,6 +1,7 @@
 ---
 wide: true
-# TODO: add a social/OG image, e.g. /assets/og-ai-lab-review.png
+image: /assets/og-ai-lab-review.png
+image_alt: "Reviewing AI-generated labs: what I catch and why. A rubric checklist with validation items checked off."
 last_updated: 2026-10-19
 description: "How I review AI-generated hands-on labs: a triage-first rubric covering validation, solution hygiene, alignment, and style, with feedback written to improve the prompting, not just the draft."
 ---
