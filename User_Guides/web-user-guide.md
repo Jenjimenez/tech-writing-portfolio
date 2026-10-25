@@ -8,6 +8,7 @@ last_updated: 2026-10-14
 > - **Type:** Getting-started user guide
 > - **Audience:** Customer admins and content creators setting up in-app guidance
 > - **My role:** Wrote the guide while implementing the platform for enterprise customers
+- **Source:** Earlier freelance work, anonymized, not current Pluralsight work
 >
 > This sample is based on documentation I wrote for a digital adoption platform. Product names, URLs, and identifiers have been replaced with a fictional product, *GuideFlow*, to protect client and employer confidentiality.
 

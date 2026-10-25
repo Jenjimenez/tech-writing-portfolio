@@ -14,7 +14,7 @@ last_updated: 2026-10-14
   <p class="case-note">Internal links have been removed, and identifying details in screenshots have been blurred.</p>
 </div>
 
-VM assertions let you validate a learner's progress from within a Desktop Lab virtual machine (VM). You can use VM assertions to check conditions such as whether:
+VM assertions let you validate a learner's progress from within a Desktop Lab virtual machine (VM). These checks are how a lab proves itself before publication, in the same way a docs pipeline proves a page before deploy. You can use VM assertions to check conditions such as whether:
 
 - A file exists.
 - A process is running.

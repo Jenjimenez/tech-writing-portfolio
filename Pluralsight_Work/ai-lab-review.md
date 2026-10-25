@@ -2,7 +2,7 @@
 wide: true
 image: /assets/og-ai-lab-review.png
 image_alt: "Reviewing AI-generated labs: what I catch and why. A rubric checklist with validation items checked off."
-last_updated: 2026-10-19
+last_updated: 2026-10-25
 description: "How I review AI-generated hands-on labs: a triage-first rubric covering validation, solution hygiene, alignment, and style, with feedback written to improve the prompting, not just the draft."
 ---
 
@@ -12,7 +12,7 @@ description: "How I review AI-generated hands-on labs: a triage-first rubric cov
   <dl>
     <div><dt>The challenge</dt><dd>AI-generated labs read fluently but hide accuracy gaps: solutions that do more than the task asks, validation that doesn't actually pass, instructions that drift from the lab outline, or describe tools the lab environment doesn't have.</dd></div>
     <div><dt>My contribution</dt><dd>Review AI-generated software-development labs against a structured rubric: validation and solution hygiene first, then alignment, relevance, and style, with feedback written to be constructive and clear enough to improve the AI prompting itself.</dd></div>
-    <div><dt>The result</dt><dd>On one C# debugging lab: 7 issues flagged across 5 steps (4 required fixes, 3 suggested improvements), caught in review before learners ever saw them.</dd></div>
+    <div><dt>The result</dt><dd>On one C# debugging lab: 7 issues flagged across 5 steps in the first round (4 required fixes, 3 suggested improvements), caught in review before learners ever saw them. After a second round of review and code testing, all of the suggested and required changes were implemented, and the lab is now published.</dd></div>
     <div><dt>Audience</dt><dd>Pluralsight learners, who get labs that work, and lab authors, who get feedback they can act on in one pass.</dd></div>
   </dl>
 </div>
@@ -97,6 +97,69 @@ Learners would spend the lab implementing functionality from scratch instead of 
 </div>
 
 > **Why it matters:** Every minute spent writing boilerplate is a minute not spent on the skill the lab promises to teach. This became a principle I now apply everywhere: in a debugging lab, starter code should be mostly working with intentional bugs, never empty placeholders.
+
+
+## Error taxonomy: how I grade what I find
+
+Not every flag is equal. Required means the lab does not work, teaches the wrong thing, or misleads a learner. Suggested means the lab works, but a change would help learners focus or trust the steps.
+
+| Category | Severity | Example from this lab |
+|---|---|---|
+| Validation failure | Required | A debugging task where the starter code does not throw an exception, so there is nothing to debug. |
+| Environment mismatch | Required | Steps that use DataTips, Watch windows, and tracepoints that are not available in the lab editor. |
+| Instruction drift from the objective | Required | A task that asks learners to correct a tax calculation instead of investigating an external assembly. |
+| Solution hygiene | Required | Starter methods that return placeholder values such as 0 or false, instead of mostly working code with an intentional bug. |
+| Workflow gap | Required | No workflow for reproducing a race condition and verifying the fix with Hot Reload. |
+| Style and standards | Required | Code font, spacing, and wording that do not follow the Google Developer Documentation Style Guide, or language that guarantees behavior the code cannot guarantee. |
+| Learner focus | Suggested | Learners see all 10 tasks at once, or start without running the application first, so they cannot observe an issue, change it, and compare results. |
+
+## How I work with AI
+
+- I use AI output as a first draft to review, not as a finished lab to publish.
+- I never let AI output go unchecked on validation, code, or safety steps. If I did not test it, I do not publish it.
+- I write feedback so the next draft improves, not just this draft. That means naming the exact step, the exact wording or code to change, and why it matters for the learner.
+- I do not claim prompt engineering expertise beyond that structured feedback. My skill is evaluation: testing, judging accuracy, and writing feedback an author, or a prompting loop, can act on in one pass.
+
+## What happened next: second round, code testing, and publication
+
+After the first round, I reviewed the lab again and tested the code. The second round was mostly standards, wording, and learner setup, not new blockers. All of these changes were implemented, and the lab is now published.
+
+**Learner setup**
+
+- Kept these files open for learners on startup: src/OrderLineParser.cs, src/DefectClassifier.cs, and src/Probe.cs, so learners start in the code they will debug instead of searching for it.
+- Kept Checkpoint as a step, but bolded it and capitalized the first letter of the sentence. Example: "4. Checkpoint: Move the Probe.Watch line to just after your reset and rerun. It reads 0 for every order, and all five orders match their expected totals. Then remove the Probe.Watch line."
+
+**Readability and standards**
+
+- Added spacing where needed to break up large blocks of text.
+- Updated and added code font where needed to align with Google style conventions.
+
+**Objective and wording, before and after**
+
+Objective title, before: "Debug into an external assembly via its symbols and IL"
+Objective title, after: "Investigate an external .NET assembly using IL and stack traces"
+
+Hot Reload fallback, before: "If `dotnet watch` ever says it can't apply a change in place and asks to restart, answer `y`. The soak starts again with your change."
+Hot Reload fallback, after: "If `dotnet watch` can't apply a change without restarting, follow the prompt to restart the application. However, the goal of this exercise is to apply and verify the fix in the same running process using Hot Reload."
+
+External assembly explanation, before: "In an IDE you'd load symbols for the assembly and step into its decompiled source. The `inspect` command shows you the same information from the terminal:"
+External assembly explanation, after: "In an IDE, you could use matching symbols to debug the assembly's original source or decompilation to investigate code without the source. In this lab, the `inspect` command provides assembly information, IL, and runtime evidence from the terminal:"
+
+**Accuracy language: removing guarantees the code cannot make**
+
+Performance claim, replaced: "Summing tens of thousands of decimals takes well under a millisecond, so the parallel loop isn't buying anything."
+Performance claim, with: "A sequential loop is sufficient for this workload, so the parallel loop isn't necessary."
+
+State leaking, replaced: "That shape (correct at first, wrong later) means state is leaking between calls."
+State leaking, with: "That pattern (correct at first, wrong later) suggests state may be leaking between calls."
+
+Below expected, replaced: "It's below the expected figure and different every round..."
+Below expected, with: "It can fall below the expected figure and vary between rounds..."
+
+Race conditions, before: "Races reproduce under load, not by inspection, and they're different on every run"
+Race conditions, with: "Race conditions can be difficult to reproduce because their behavior depends on execution timing. Running the application under load can help reveal them."
+
+That second round is why the feedback loop matters. The first round caught whether the lab worked at all. The second round caught whether the language was accurate, consistent, and easy to follow, and whether learners started in the right place.
 
 ## The rest of the review
 
