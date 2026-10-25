@@ -9,7 +9,7 @@ layout: default
     <del aria-hidden="true">is hard to follow</del>
     <ins>works the first time.</ins>
   </h1>
-  <p class="lede">I’m Jennifer Botia, a technical writer and Technical Content Producer at Pluralsight. I create tutorials, API docs, and hands-on labs for developer audiences, and I test every step I edit, so instructions work the first time.</p>
+  <p class="lede">I’m Jennifer Botia, a technical writer and Technical Content Producer at Pluralsight. I review AI-generated labs for accuracy, and I create tutorials, API docs, and hands-on labs that learners can follow the first time.</p>
   <p class="actions">
     <a class="button primary" href="#work">Read my writing samples</a>
     <a class="button" href="{{ '/Jennifer_Botia_2026.pdf' | relative_url }}" target="_blank" rel="noopener">View resume (PDF)<span class="sr-only"> (opens in a new tab)</span></a>
@@ -50,6 +50,11 @@ layout: default
   </div>
 </section>
 
+<section class="wrap" aria-labelledby="principles-strip-heading">
+  <h2 id="principles-strip-heading" class="sr-only">My writing principles</h2>
+  <p>If I didn’t test it, I don’t publish it. One step, one action. Write for the person who’s stuck. <a href="#principles">See all my writing principles</a>.</p>
+</section>
+
 <div id="work">
 <div class="wrap sample-filter" hidden>
   <p class="filter-label" id="filter-label">Filter writing samples by skill</p>
@@ -59,6 +64,7 @@ layout: default
     <button type="button" class="filter-btn" data-filter="devdocs" aria-pressed="false">Developer documentation</button>
     <button type="button" class="filter-btn" data-filter="learning" aria-pressed="false">Learning and user guidance</button>
     <button type="button" class="filter-btn" data-filter="ops" aria-pressed="false">Content operations</button>
+    <button type="button" class="filter-btn" data-filter="ai" aria-pressed="false">AI evaluation</button>
   </div>
   <p class="filter-status" aria-live="polite"></p>
 </div>
@@ -68,7 +74,7 @@ layout: default
   <p class="section-intro">Each sample opens with a short note on who it's for and what I did. Published labs on Pluralsight show an overview to everyone; taking the full lab needs a subscription.</p>
 
   <ol class="samples">
-    <li class="sample" data-types="editing devdocs">
+    <li class="sample" data-types="editing devdocs ai">
       <div class="sample-main">
         <h3><a href="{{ '/Pluralsight_Work/ai-lab-review.html' | relative_url }}">Reviewing AI-Generated Labs: What I Catch and Why</a> <span class="new-badge">New</span></h3>
         <p>My rubric for reviewing AI-generated hands-on labs (validation first, then alignment and style), illustrated with 7 fixes from a C# debugging lab, each written as feedback to improve the prompting.</p>
@@ -132,17 +138,6 @@ layout: default
   <h2 id="earlier-heading">Earlier writing samples</h2>
   <p class="section-intro">From my work in software implementation and freelance technical writing. Product names are anonymized.</p>
   <ol class="samples">
-    <li class="sample" data-types="learning">
-      <div class="sample-main">
-        <h3><a href="{{ '/User_Guides/web-user-guide.html' | relative_url }}">User Guide: Getting Started with GuideFlow on Web</a></h3>
-        <p>A getting-started guide that walks new customers through setup, creating and deploying in-app guidance, reading analytics, and fixing common issues.</p>
-      </div>
-      <dl class="meta">
-        <div><dt>Audience</dt><dd>Admins and content creators</dd></div>
-        <div><dt>My role</dt><dd>Wrote</dd></div>
-        <div><dt>Topics</dt><dd>JavaScript embed, flows, analytics</dd></div>
-      </dl>
-    </li>
     <li class="sample" data-types="devdocs">
       <div class="sample-main">
         <h3><a href="{{ '/API_Documentation/api-end-user-example.html' | relative_url }}">API Reference: End User Schema API</a></h3>
@@ -156,6 +151,17 @@ layout: default
     </li>
     <li class="sample" data-types="learning">
       <div class="sample-main">
+        <h3><a href="{{ '/User_Guides/web-user-guide.html' | relative_url }}">User Guide: Getting Started with GuideFlow on Web</a></h3>
+        <p>A getting-started guide that walks new customers through setup, creating and deploying in-app guidance, reading analytics, and fixing common issues.</p>
+      </div>
+      <dl class="meta">
+        <div><dt>Audience</dt><dd>Admins and content creators</dd></div>
+        <div><dt>My role</dt><dd>Wrote</dd></div>
+        <div><dt>Topics</dt><dd>JavaScript embed, flows, analytics</dd></div>
+      </dl>
+    </li>
+    <li class="sample" data-types="learning">
+      <div class="sample-main">
         <h3><a href="{{ '/Knowledge_Base_Articles/kb-guideflow-flows.html' | relative_url }}">Knowledge Base: Creating Onboarding Flows</a></h3>
         <p>A task-based help article on building an onboarding walkthrough, with best practices for keeping flows short and a troubleshooting section.</p>
       </div>
@@ -163,17 +169,6 @@ layout: default
         <div><dt>Audience</dt><dd>Content creators</dd></div>
         <div><dt>My role</dt><dd>Wrote</dd></div>
         <div><dt>Topics</dt><dd>Onboarding flows, best practices</dd></div>
-      </dl>
-    </li>
-    <li class="sample" data-types="ops">
-      <div class="sample-main">
-        <h3><a href="{{ '/SOPs/sop-launch-control.html' | relative_url }}">SOP: Texting Potential Leads in Launch Control</a></h3>
-        <p>A standard operating procedure that takes sales staff from sending a batch of texts to qualifying leads and handing the best ones off to the CRM.</p>
-      </div>
-      <dl class="meta">
-        <div><dt>Audience</dt><dd>Sales and acquisitions teams</dd></div>
-        <div><dt>My role</dt><dd>Wrote</dd></div>
-        <div><dt>Topics</dt><dd>Lead outreach, CRM handoff</dd></div>
       </dl>
     </li>
   </ol>
@@ -307,7 +302,7 @@ layout: default
       <ul class="tag-list">
         <li><a class="tag" href="{{ '/Pluralsight_Work/before-and-after-lab-edit.html' | relative_url }}">AWS Lambda, CodeDeploy, and CloudWatch<span class="tag-where">before-and-after lab edit</span></a></li>
         <li><a class="tag" href="{{ '/Pluralsight_Work/lab-guide-terraform-modules.html' | relative_url }}">Terraform<span class="tag-where">Terraform lab guide</span></a></li>
-        <li><span class="tag tag-plain">AWS CloudFormation</span></li>
+        <li><a class="tag" href="{{ '/Pluralsight_Work/before-and-after-lab-edit.html' | relative_url }}">AWS CloudFormation<span class="tag-where">before-and-after lab edit</span></a></li>
         <li><a class="tag" href="{{ '/Pluralsight_Work/desktop-labs-vm-assertions.html' | relative_url }}#bash-examples">Bash<span class="tag-where">VM assertions guide</span></a></li>
         <li><a class="tag" href="{{ '/Pluralsight_Work/desktop-labs-vm-assertions.html' | relative_url }}#powershell-examples">PowerShell<span class="tag-where">VM assertions guide</span></a></li>
         <li><a class="tag" href="{{ '/API_Documentation/api-end-user-example.html' | relative_url }}#example-request">REST APIs and curl<span class="tag-where">API reference</span></a></li>
@@ -331,9 +326,7 @@ layout: default
       <ul class="tag-list">
         <li><a class="tag" href="{{ '/Pluralsight_Work/author-onboarding-playbook.html' | relative_url }}">Author onboarding<span class="tag-where">onboarding playbook</span></a></li>
         <li><a class="tag" href="{{ '/Pluralsight_Work/author-onboarding-playbook.html' | relative_url }}">Review checklists<span class="tag-where">onboarding playbook</span></a></li>
-        <li><span class="tag tag-plain">Jira</span></li>
-        <li><span class="tag tag-plain">Asana</span></li>
-        <li><span class="tag tag-plain">English and Spanish</span></li>
+
       </ul>
     </div>
   </div>

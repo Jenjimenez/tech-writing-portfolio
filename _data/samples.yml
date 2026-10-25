@@ -9,11 +9,9 @@
   title: "Terraform Lab: from using modules to versioning your own"
 - url: /Pluralsight_Work/author-onboarding-playbook.html
   title: "Onboarding Playbook: standardizing author review across 4 lab types"
-- url: /User_Guides/web-user-guide.html
-  title: "User Guide: Getting Started with GuideFlow on Web"
 - url: /API_Documentation/api-end-user-example.html
   title: "API Reference: End User Schema API"
+- url: /User_Guides/web-user-guide.html
+  title: "User Guide: Getting Started with GuideFlow on Web"
 - url: /Knowledge_Base_Articles/kb-guideflow-flows.html
   title: "Knowledge Base: Creating Onboarding Flows"
-- url: /SOPs/sop-launch-control.html
-  title: "SOP: Texting Potential Leads in Launch Control"
