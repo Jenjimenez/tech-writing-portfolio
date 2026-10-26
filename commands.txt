@@ -1,0 +1,19 @@
+Portfolio scannable AI page, v6
+================================
+Files in this zip:
+- Pluralsight_Work/ai-lab-review.md
+  This is the live file to copy over Pluralsight_Work/ai-lab-review.md in your repo.
+  It includes: skim guide, taxonomy in a collapsible block, second round in 4 collapsible sections with compare cards, code font for file names and commands, bold for UI labels and changed words, and no emojis.
+- preview-v6.html
+  Preview only, do NOT copy this to your repo. Open it in a browser to see how the page looks.
+  Note: the 4-step process cards in the preview are HTML/CSS in the preview file only. The markdown file has the process as a short text line, not as cards. If you want those cards live, that needs a separate HTML/CSS addition to the markdown page and to style.css, which is not in this zip.
+- commands.txt
+  This file.
+
+Commands, run in Terminal in your repo folder, after unzipping:
+git status --short
+git --no-pager diff -- Pluralsight_Work/ai-lab-review.md
+git add Pluralsight_Work/ai-lab-review.md
+git commit -m "Restructure AI lab review for scannability: collapsible taxonomy and second round, code font, highlighted changes, no emojis"
+git push origin HEAD
+git status

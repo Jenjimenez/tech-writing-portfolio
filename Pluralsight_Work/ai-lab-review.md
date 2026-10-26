@@ -17,6 +17,10 @@ description: "How I review AI-generated hands-on labs: a triage-first rubric cov
   </dl>
 </div>
 
+**How to read this page, in 2 minutes:** process below, then 3 worked examples, then the published outcome. Expand any section for the full before and after.
+
+**The process, at a glance:** 1. Triage: does the lab work at all? 2. First round: 7 flags across 5 steps, 4 required and 3 suggested, before learners saw it. 3. Second round: code testing, standards, and wording. 4. Outcome: all changes implemented, lab published.
+
 ## How I review: blockers first, content second
 
 AI output gets a triage pass before anything else. If the lab doesn't work, style notes can wait.
@@ -99,7 +103,8 @@ Learners would spend the lab implementing functionality from scratch instead of 
 > **Why it matters:** Every minute spent writing boilerplate is a minute not spent on the skill the lab promises to teach. This became a principle I now apply everywhere: in a debugging lab, starter code should be mostly working with intentional bugs, never empty placeholders.
 
 
-## Error taxonomy: how I grade what I find
+<details class="template" markdown="1">
+<summary>Error taxonomy: how I grade what I find</summary>
 
 Not every flag is equal. Required means the lab does not work, teaches the wrong thing, or misleads a learner. Suggested means the lab works, but a change would help learners focus or trust the steps.
 
@@ -113,6 +118,8 @@ Not every flag is equal. Required means the lab does not work, teaches the wrong
 | Style and standards | Required | Code font, spacing, and wording that do not follow the Google Developer Documentation Style Guide, or language that guarantees behavior the code cannot guarantee. |
 | Learner focus | Suggested | Learners see all 10 tasks at once, or start without running the application first, so they cannot observe an issue, change it, and compare results. |
 
+</details>
+
 ## How I work with AI
 
 - I use AI output as a first draft to review, not as a finished lab to publish.
@@ -122,42 +129,110 @@ Not every flag is equal. Required means the lab does not work, teaches the wrong
 
 ## What happened next: second round, code testing, and publication
 
-After the first round, I reviewed the lab again and tested the code. The second round was mostly standards, wording, and learner setup, not new blockers. All of these changes were implemented, and the lab is now published.
+After the first round, I reviewed the lab again and tested the code. The second round was mostly standards, wording, and learner setup, not new blockers. All of these changes were implemented, and the lab is now published. Expand a section for the before and after.
 
-**Learner setup**
+<details class="template" markdown="1">
+<summary>Learner setup</summary>
 
-- Kept these files open for learners on startup: src/OrderLineParser.cs, src/DefectClassifier.cs, and src/Probe.cs, so learners start in the code they will debug instead of searching for it.
-- Kept Checkpoint as a step, but bolded it and capitalized the first letter of the sentence. Example: "4. Checkpoint: Move the Probe.Watch line to just after your reset and rerun. It reads 0 for every order, and all five orders match their expected totals. Then remove the Probe.Watch line."
+- Kept these files open for learners on startup: `src/OrderLineParser.cs`, `src/DefectClassifier.cs`, and `src/Probe.cs`, so learners start in the code they will debug instead of searching for it.
+- Kept **Checkpoint** as a step, but bolded it and capitalized the first letter of the sentence. Example: "4. Checkpoint: Move the `Probe.Watch` line to just after your reset and rerun. It reads 0 for every order, and all five orders match their expected totals. Then remove the `Probe.Watch` line."
 
-**Readability and standards**
+</details>
+
+<details class="template" markdown="1">
+<summary>Readability and standards</summary>
 
 - Added spacing where needed to break up large blocks of text.
 - Updated and added code font where needed to align with Google style conventions.
 
-**Objective and wording, before and after**
+</details>
 
-Objective title, before: "Debug into an external assembly via its symbols and IL"
-Objective title, after: "Investigate an external .NET assembly using IL and stack traces"
+<details class="template" markdown="1">
+<summary>Objective and wording</summary>
 
-Hot Reload fallback, before: "If `dotnet watch` ever says it can't apply a change in place and asks to restart, answer `y`. The soak starts again with your change."
-Hot Reload fallback, after: "If `dotnet watch` can't apply a change without restarting, follow the prompt to restart the application. However, the goal of this exercise is to apply and verify the fix in the same running process using Hot Reload."
+<div class="compare" markdown="1">
+<div class="compare-col before" markdown="1">
+<p class="compare-label">Before: objective title</p>
+Debug into an external assembly via its symbols and IL
+</div>
+<div class="compare-col after" markdown="1">
+<p class="compare-label">After: objective title</p>
+Investigate an external .NET assembly using IL and stack traces
+</div>
+</div>
 
-External assembly explanation, before: "In an IDE you'd load symbols for the assembly and step into its decompiled source. The `inspect` command shows you the same information from the terminal:"
-External assembly explanation, after: "In an IDE, you could use matching symbols to debug the assembly's original source or decompilation to investigate code without the source. In this lab, the `inspect` command provides assembly information, IL, and runtime evidence from the terminal:"
+<div class="compare" markdown="1">
+<div class="compare-col before" markdown="1">
+<p class="compare-label">Before: Hot Reload fallback</p>
+If `dotnet watch` ever says it can't apply a change in place and asks to restart, answer `y`. The soak starts again with your change.
+</div>
+<div class="compare-col after" markdown="1">
+<p class="compare-label">After: Hot Reload fallback</p>
+If `dotnet watch` can't apply a change without restarting, follow the prompt to restart the application. However, the goal of this exercise is to apply and verify the fix in the same running process using Hot Reload.
+</div>
+</div>
 
-**Accuracy language: removing guarantees the code cannot make**
+<div class="compare" markdown="1">
+<div class="compare-col before" markdown="1">
+<p class="compare-label">Before: external assembly explanation</p>
+In an IDE you'd load symbols for the assembly and step into its decompiled source. The `inspect` command shows you the same information from the terminal:
+</div>
+<div class="compare-col after" markdown="1">
+<p class="compare-label">After: external assembly explanation</p>
+In an IDE, you could use matching symbols to debug the assembly's original source or decompilation to investigate code without the source. In this lab, the `inspect` command provides assembly information, IL, and runtime evidence from the terminal:
+</div>
+</div>
 
-Performance claim, replaced: "Summing tens of thousands of decimals takes well under a millisecond, so the parallel loop isn't buying anything."
-Performance claim, with: "A sequential loop is sufficient for this workload, so the parallel loop isn't necessary."
+</details>
 
-State leaking, replaced: "That shape (correct at first, wrong later) means state is leaking between calls."
-State leaking, with: "That pattern (correct at first, wrong later) suggests state may be leaking between calls."
+<details class="template" markdown="1">
+<summary>Accuracy language: removing guarantees the code cannot make</summary>
 
-Below expected, replaced: "It's below the expected figure and different every round..."
-Below expected, with: "It can fall below the expected figure and vary between rounds..."
+<div class="compare" markdown="1">
+<div class="compare-col before" markdown="1">
+<p class="compare-label">Before: performance claim</p>
+Summing tens of thousands of decimals takes **well under a millisecond**, so the parallel loop isn't buying anything.
+</div>
+<div class="compare-col after" markdown="1">
+<p class="compare-label">After: performance claim</p>
+A sequential loop is **sufficient** for this workload, so the parallel loop isn't necessary.
+</div>
+</div>
 
-Race conditions, before: "Races reproduce under load, not by inspection, and they're different on every run"
-Race conditions, with: "Race conditions can be difficult to reproduce because their behavior depends on execution timing. Running the application under load can help reveal them."
+<div class="compare" markdown="1">
+<div class="compare-col before" markdown="1">
+<p class="compare-label">Before: state leaking</p>
+That **shape** (correct at first, wrong later) **means** state is leaking between calls.
+</div>
+<div class="compare-col after" markdown="1">
+<p class="compare-label">After: state leaking</p>
+That **pattern** (correct at first, wrong later) **suggests** state **may be** leaking between calls.
+</div>
+</div>
+
+<div class="compare" markdown="1">
+<div class="compare-col before" markdown="1">
+<p class="compare-label">Before: below expected</p>
+It's **below the expected figure** and **different every round**...
+</div>
+<div class="compare-col after" markdown="1">
+<p class="compare-label">After: below expected</p>
+It **can fall below** the expected figure and **vary between rounds**...
+</div>
+</div>
+
+<div class="compare" markdown="1">
+<div class="compare-col before" markdown="1">
+<p class="compare-label">Before: race conditions</p>
+**Races reproduce under load**, not by inspection, and they're **different on every run**
+</div>
+<div class="compare-col after" markdown="1">
+<p class="compare-label">After: race conditions</p>
+Race conditions **can be difficult to reproduce** because their behavior depends on execution timing. Running the application under load **can help reveal** them.
+</div>
+</div>
+
+</details>
 
 That second round is why the feedback loop matters. The first round caught whether the lab worked at all. The second round caught whether the language was accurate, consistent, and easy to follow, and whether learners started in the right place.
 

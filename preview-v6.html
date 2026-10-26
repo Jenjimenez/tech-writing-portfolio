@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preview v6: Reviewing AI-Generated Labs, scannable version</title>
+<style>
+:root{--paper:#f6f7f9;--surface:#ffffff;--ink:#1b2433;--muted:#566070;--rule:#d8dde4;--link:#0e5f63;--insert:#0e6e6b;--delete:#b3261e;--callout:#eef4f4;--code-bg:#f1f3f6;--serif:"Source Serif 4",Georgia,serif;--sans:"Public Sans",system-ui,sans-serif}
+*{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.6}
+a{color:var(--link)} .wrap{width:min(100% - 2.5rem,64rem);margin-inline:auto}
+h1{font-family:var(--serif);font-size:clamp(2rem,5vw,3rem);line-height:1.15;margin:1.5rem 0 1rem}
+h2{font-family:var(--serif);margin:2.5rem 0 .75rem} h3{margin:1.5rem 0 .5rem}
+.preview-note{background:#fff3cd;border:1px solid #e6c87a;border-radius:6px;padding:.9rem 1.1rem;margin:1.5rem 0;font-size:.95rem}
+.case-summary{margin:1.5rem 0 2rem;padding:1.25rem 1.4rem;background:var(--surface);border:1px solid var(--rule);border-top:3px solid var(--insert);border-radius:6px}
+.case-summary dl{margin:0;display:grid;gap:.9rem} .case-summary dl>div{display:grid;grid-template-columns:9.5rem minmax(0,1fr);gap:.25rem 1.25rem}
+.case-summary dt{font-weight:600} .case-summary dd{margin:0}
+@media(max-width:760px){.case-summary dl>div{grid-template-columns:1fr}}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:1.5rem 0}
+.process>div{background:var(--surface);border:1px solid var(--rule);border-top:3px solid var(--insert);border-radius:6px;padding:1.1rem 1.1rem 1.25rem}
+.process-top{display:flex;align-items:center;justify-content:flex-start;gap:.5rem;margin-bottom:.9rem;background:transparent;border:none;padding:0}
+.process-top .icon-svg{margin:0}
+.step-num{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--muted)}
+.process h3{margin:0 0 .35rem;font-size:1.15rem}
+.process p{margin:0;color:var(--muted);font-size:.95rem;line-height:1.5}
+@media(max-width:760px){.process{grid-template-columns:1fr 1fr}}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+.compare-col{border:1px solid var(--rule);border-radius:4px;padding:.9rem 1rem;background:var(--surface);font-size:.95rem}
+.compare-col.before{border-top:3px solid var(--delete)} .compare-col.after{border-top:3px solid var(--insert)}
+.compare-label{margin:0 0 .5rem;font-weight:600;font-size:.85rem} .before .compare-label{color:var(--delete)} .after .compare-label{color:var(--insert)}
+@media(max-width:760px){.compare{grid-template-columns:1fr}}
+details.template{margin:.75rem 0 1.5rem;border:1px solid var(--rule);border-radius:4px;background:var(--surface)}
+details.template>summary{cursor:pointer;padding:.9rem 1.1rem;font-weight:600;list-style:none}
+details.template>summary::-webkit-details-marker{display:none}
+details.template>summary::before{content:"+";display:inline-block;margin-right:.6rem;color:var(--link);font-weight:700}
+details.template[open]>summary::before{content:"-"}
+details.template>div,details.template>table{margin:0 1.1rem 1.1rem}
+details.template .compare{margin:1rem 0}
+table{border-collapse:collapse;width:100%;font-size:.95rem} th,td{border:1px solid var(--rule);padding:.6rem;text-align:left;vertical-align:top}
+.flag{display:inline-block;background:var(--callout);border:1px solid var(--rule);border-radius:999px;padding:.15rem .6rem;font-size:.85rem;font-weight:600}
+blockquote{margin:1rem 0;padding:.9rem 1.1rem;background:var(--callout);border-left:3px solid var(--insert)}
+mark{background:#fff3a3;padding:0 .25rem;border-radius:3px;font-weight:600}
+.icon-svg{width:28px;height:28px;stroke:var(--insert);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:block;margin-bottom:.25rem}
+.summary-icon-svg{width:20px;height:20px;stroke:var(--insert);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-4px;margin-right:.5rem}
+.key{font-weight:700;color:var(--ink)}
+code{background:var(--code-bg);padding:.1rem .3rem;border-radius:3px}
+</style>
+</head>
+<body>
+<main class="wrap">
+<p class="preview-note"><strong>Preview v6 only. No emojis, clean line icons. Process steps are in boxes, but the icon and number row is not in a box.</strong> This is not your live site. It uses the same colors, compare cards, and collapsible blocks as your current site, so what you see here is close to how the restructured page would look live. Click the collapsible headings to open and close them. In this preview, the Accuracy language section is left open so you can see the compare cards inside it. On the live version, all four second round sections would start closed.</p>
+
+<p><strong>Google style changes in v2:</strong> code font for file names, commands, and code values; bold for UI labels like <strong>Checkpoint</strong>; highlighted words in yellow for the exact change in each before and after pair, so a reader sees what changed without reading the whole sentence twice; icons only as visual anchors, not as decoration on every line.</p>
+
+<h1>Reviewing AI-Generated Labs: What I Catch and Why</h1>
+
+<div class="case-summary">
+<dl>
+<div><dt>The challenge</dt><dd>AI-generated labs read fluently but hide accuracy gaps: solutions that do more than the task asks, validation that does not actually pass, instructions that drift from the lab outline, or describe tools the lab environment does not have.</dd></div>
+<div><dt>My contribution</dt><dd>Review AI-generated software-development labs against a structured rubric: validation and solution hygiene first, then alignment, relevance, and style, with feedback written to be constructive and clear enough to improve the AI prompting itself.</dd></div>
+<div><dt>The result</dt><dd>On one C# debugging lab: 7 issues flagged across 5 steps in the first round (4 required fixes, 3 suggested improvements), caught in review before learners ever saw them. After a second round of review and code testing, all of the suggested and required changes were implemented, and the lab is now published.</dd></div>
+<div><dt>Audience</dt><dd>Pluralsight learners, who get labs that work, and lab authors, who get feedback they can act on in one pass.</dd></div>
+</dl>
+</div>
+
+<p><strong>How to read this page, in 2 minutes:</strong> process below, then 3 worked examples, then the published outcome. Expand any section for the full before and after.</p>
+
+<div class="process">
+<div><div class="process-top"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span class="step-num">01</span></div><h3>Triage</h3><p>Does the lab work at all?</p></div>
+<div><div class="process-top"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 22V4"/><path d="M4 4h13l-2.5 4L17 12H4"/></svg><span class="step-num">02</span></div><h3>First round</h3><p>7 flags, 4 required and 3 suggested</p></div>
+<div><div class="process-top"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2h4"/><path d="M10 2v6l-5 12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2L14 8V2"/><path d="M8 15h8"/></svg><span class="step-num">03</span></div><h3>Second round</h3><p>Code testing, standards, wording</p></div>
+<div><div class="process-top"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span class="step-num">04</span></div><h3>Published</h3><p>All changes implemented, lab published</p></div>
+</div>
+
+<h2>How I review: blockers first, content second</h2>
+<ol>
+<li><strong>Run validation.</strong> Do all tasks and validations pass? Does the solution code contain only what the task requests?</li>
+<li><strong>Review content</strong> once major blockers are resolved, against the rubric below.</li>
+</ol>
+
+<h2>In practice: a C# debugging lab</h2>
+<p>The lab: <strong>Fixing a C# Application with C# Failure Stack Traces</strong>. Learners reproduce crashes, read stack traces, and fix bugs across five steps.</p>
+
+<h3>The crash that couldn't crash <span class="flag">Required fix</span></h3>
+<div class="compare">
+<div class="compare-col before"><p class="compare-label">What the AI generated</p><p>Task 2.1 asks learners to reproduce a crash, but the starter parser does not throw an exception. There is nothing to investigate.</p></div>
+<div class="compare-col after"><p class="compare-label">What I flagged</p><p>A debugging lab where the bug does not exist. The task is uncompletable as written: a blocker, not a style nit.</p><p><strong>My feedback:</strong> "Provide a mostly working parser with an intentional bug so learners can investigate the exception and stack trace before fixing it."</p></div>
+</div>
+<blockquote><strong>Why it matters:</strong> Learners cannot practice debugging if there is nothing to debug.</blockquote>
+
+<details class="template">
+<summary><svg class="summary-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L22 20H2L12 3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg>Error taxonomy: how I grade what I find</summary>
+<div>
+<p>Not every flag is equal. Required means the lab does not work, teaches the wrong thing, or misleads a learner. Suggested means the lab works, but a change would help learners focus or trust the steps.</p>
+<table>
+<tr><th>Category</th><th>Severity</th><th>Example from this lab</th></tr>
+<tr><td>Validation failure</td><td>Required</td><td>A debugging task where the starter code does not throw an exception</td></tr>
+<tr><td>Environment mismatch</td><td>Required</td><td>Steps that use tools not available in the lab editor</td></tr>
+<tr><td>Instruction drift</td><td>Required</td><td>A task that drifts from its learning objective</td></tr>
+<tr><td>Style and standards</td><td>Required</td><td>Language that guarantees behavior the code cannot guarantee</td></tr>
+<tr><td>Learner focus</td><td>Suggested</td><td>Learners see all 10 tasks at once, with no run first</td></tr>
+</table>
+<p><em>Full table has 7 categories in the real page. This preview shows 5 to keep the example short.</em></p>
+</div>
+</details>
+
+<h2>How I work with AI</h2>
+<ul>
+<li>I use AI output as a first draft to review, not as a finished lab to publish.</li>
+<li>I never let AI output go unchecked on validation, code, or safety steps.</li>
+<li>I write feedback so the next draft improves, not just this draft.</li>
+<li>I do not claim prompt engineering expertise beyond that structured feedback.</li>
+</ul>
+
+<h2>What happened next: second round, code testing, and publication</h2>
+<p>After the first round, I reviewed the lab again and tested the code. The second round was mostly standards, wording, and learner setup, not new blockers. All of these changes were implemented, and the lab is now published. Expand a section for the before and after.</p>
+
+<details class="template">
+<summary><svg class="summary-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg>Learner setup</summary>
+<div><ul><li>Kept these files open for learners on startup: <code>src/OrderLineParser.cs</code>, <code>src/DefectClassifier.cs</code>, and <code>src/Probe.cs</code></li><li>Kept <strong>Checkpoint</strong> as a step, but bolded it and capitalized the first letter of the sentence.</li></ul></div>
+</details>
+
+<details class="template">
+<summary><svg class="summary-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M14 6l4 4"/></svg>Readability and standards</summary>
+<div><ul><li>Added spacing where needed to break up large blocks of text.</li><li>Updated and added code font where needed to align with Google style conventions.</li></ul></div>
+</details>
+
+<details class="template">
+<summary><svg class="summary-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>Objective and wording</summary>
+<div><p>3 compare cards in the real page: objective title, Hot Reload fallback, and external assembly explanation.</p></div>
+</details>
+
+<details class="template" open>
+<summary><svg class="summary-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M5 21h14"/><path d="M12 6L5 9l2 6a3 3 0 0 0 6 0l2-6L12 6z" opacity="0"/><path d="M8 21l-3-9M16 21l3-9"/><path d="M5 12h6M13 12h6"/></svg>Accuracy language: removing guarantees the code cannot make</summary>
+<div>
+<div class="compare">
+<div class="compare-col before"><p class="compare-label">Before: performance claim</p><p>Summing tens of thousands of decimals takes <mark>well under a millisecond</mark>, so the parallel loop isn't buying anything.</p></div>
+<div class="compare-col after"><p class="compare-label">After: performance claim</p><p>A sequential loop is <mark>sufficient</mark> for this workload, so the parallel loop isn't necessary.</p></div>
+</div>
+<div class="compare">
+<div class="compare-col before"><p class="compare-label">Before: state leaking</p><p>That <mark>shape</mark> (correct at first, wrong later) <mark>means</mark> state is leaking between calls.</p></div>
+<div class="compare-col after"><p class="compare-label">After: state leaking</p><p>That <mark>pattern</mark> (correct at first, wrong later) <mark>suggests</mark> state <mark>may be</mark> leaking between calls.</p></div>
+</div>
+<p><em>Two more compare cards follow in the real page: below expected, and race conditions.</em></p>
+</div>
+</details>
+
+<p>That second round is why the feedback loop matters. The first round caught whether the lab worked at all. The second round caught whether the language was accurate, consistent, and easy to follow, and whether learners started in the right place.</p>
+
+<p><em>End of preview. The full restructured page, with all 7 taxonomy rows, all 3 objective and wording cards, and all 4 accuracy cards, is in the file I sent in the previous message.</em></p>
+</main>
+</body>
+</html>
