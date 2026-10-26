@@ -708,3 +708,9 @@ a.tag:hover .tag-where { color: var(--link); }
 }
 
 .new-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.18rem 0.6rem; border-radius: 999px; background: var(--insert); color: var(--paper); vertical-align: middle; margin-left: 0.5rem; }
+
+.doc details.template > p { margin: 0 1.1rem 1rem; }
+.doc details.template > ul { margin: 0 1.1rem 1.1rem; padding-left: 1.1rem; }
+.doc details.template > table { margin: 0 1.1rem 1.1rem; }
+.doc details.template .compare { margin: 1rem 1.1rem; }
+.doc details.template > :last-child { margin-bottom: 1.1rem; }
