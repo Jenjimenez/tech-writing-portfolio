@@ -1,0 +1,11 @@
+/* Process cards and clean line icons for the AI lab review page, v6 live */
+.doc .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0; }
+.doc .process > div { background: var(--surface); border: 1px solid var(--rule); border-top: 3px solid var(--insert); border-radius: 6px; padding: 1.1rem 1.1rem 1.25rem; }
+.doc .process-top { display: flex; align-items: center; justify-content: flex-start; gap: 0.5rem; margin-bottom: 0.9rem; background: transparent; border: none; padding: 0; }
+.doc .process-top .icon-svg { margin: 0; flex-shrink: 0; }
+.doc .step-num { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--muted); }
+.doc .process h3 { margin: 0 0 0.35rem; font-size: 1.15rem; }
+.doc .process p { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+.doc .icon-svg { width: 28px; height: 28px; stroke: var(--insert); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; display: block; }
+.doc .summary-icon-svg { width: 20px; height: 20px; stroke: var(--insert); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+@media (max-width: 760px) { .doc .process { grid-template-columns: 1fr 1fr; } }
