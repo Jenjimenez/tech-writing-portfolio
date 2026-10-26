@@ -19,7 +19,7 @@ The layout and styles are custom, in `_layouts/` and `assets/`. For the decision
 
 | Folder | What's inside |
 | --- | --- |
-| `Pluralsight_Work/` | Before-and-after lab edit, VM assertions reference guide, Terraform lab guide, and author onboarding playbook case study |
+| `Pluralsight_Work/` | AI Generated Labs Review, Before-and-after lab edit, VM assertions reference guide, Terraform lab guide, and author onboarding playbook case study |
 | `User_Guides/` | Getting-started user guide (anonymized) |
 | `API_Documentation/` | REST API reference (anonymized) |
 | `Knowledge_Base_Articles/` | Task-based knowledge base article (anonymized) |
