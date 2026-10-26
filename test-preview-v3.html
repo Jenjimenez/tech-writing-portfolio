@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TEST ONLY - AI process cards v3, do not copy to repo</title>
+<style>
+:root { --paper:#f6f7f9; --surface:#ffffff; --ink:#1b2433; --muted:#566070; --rule:#d8dde4; --link:#0e5f63; --insert:#0e6e6b; --serif:Georgia,serif; --sans:system-ui,sans-serif; }
+@media (prefers-color-scheme: dark) { :root { --paper:#12161d; --surface:#1a1f28; --ink:#e5e8ed; --muted:#a3acba; --rule:#2e3542; --insert:#6fd0c9; } }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); line-height:1.6; padding:2rem; }
+.doc { max-width:54rem; margin:0 auto; }
+.doc details.template { border:1px solid var(--rule); border-radius:4px; background:var(--surface); }
+.doc details.template > summary { cursor:pointer; padding:.65rem 1rem; font-weight:600; display:flex; align-items:center; gap:.6rem; }
+</style>
+<style>
+.doc .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0; }
+.doc .process > div { background: var(--surface); border: 1px solid var(--rule); border-top: 3px solid var(--insert); border-radius: 6px; padding: 1.1rem 1.1rem 1.25rem; min-width: 0; }
+.doc .process-top { display: flex; align-items: center; justify-content: flex-start; gap: 0.5rem; margin-bottom: 0.9rem; background: transparent; border: none; padding: 0; }
+.doc .process-top .icon-svg { margin: 0; flex-shrink: 0; }
+.doc .step-num { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--muted); }
+.doc .process h3 { margin: 0 0 0.35rem; font-size: 1.15rem; }
+.doc .process p { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+.doc .icon-svg { width: 28px; height: 28px; stroke: var(--insert); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; display: block; }
+.doc .summary-icon-svg { width: 20px; height: 20px; stroke: var(--insert); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+@media (max-width: 760px) { .doc .process { grid-template-columns: 1fr 1fr; } }
+</style>
+</head><body><main class="doc">
+<p><strong>TEST ONLY.</strong> This is the exact v3 process markup and embedded style, with your site colours. Open this file in a browser. If the 4 cards are in boxes in a row, with small teal line icons, and the summary below shows a small teal icon, then v3 is correct. Do not copy this test file to the repo.</p>
+<div class="process">
+<div><div class="process-top"><svg class="icon-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span class="step-num">01</span></div><h3>Triage</h3><p>Does the lab work at all?</p></div>
+<div><div class="process-top"><svg class="icon-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M4 22V4"/><path d="M4 4h13l-2.5 4L17 12H4"/></svg><span class="step-num">02</span></div><h3>First round</h3><p>7 flags, 4 required and 3 suggested</p></div>
+<div><div class="process-top"><svg class="icon-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M10 2h4"/><path d="M10 2v6l-5 12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2L14 8V2"/><path d="M8 15h8"/></svg><span class="step-num">03</span></div><h3>Second round</h3><p>Code testing, standards, wording</p></div>
+<div><div class="process-top"><svg class="icon-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span class="step-num">04</span></div><h3>Published</h3><p>All changes implemented, lab published</p></div>
+</div>
+<details class="template">
+<summary><svg class="summary-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 3L22 20H2L12 3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg>Error taxonomy: how I grade what I find</summary>
+</main></body></html>

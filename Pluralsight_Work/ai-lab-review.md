@@ -19,11 +19,24 @@ description: "How I review AI-generated hands-on labs: a triage-first rubric cov
 
 **How to read this page, in 2 minutes:** process below, then 3 worked examples, then the published outcome. Expand any section for the full before and after.
 
+<style>
+.doc .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0; }
+.doc .process > div { background: var(--surface); border: 1px solid var(--rule); border-top: 3px solid var(--insert); border-radius: 6px; padding: 1.1rem 1.1rem 1.25rem; min-width: 0; }
+.doc .process-top { display: flex; align-items: center; justify-content: flex-start; gap: 0.5rem; margin-bottom: 0.9rem; background: transparent; border: none; padding: 0; }
+.doc .process-top .icon-svg { margin: 0; flex-shrink: 0; }
+.doc .step-num { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--muted); }
+.doc .process h3 { margin: 0 0 0.35rem; font-size: 1.15rem; }
+.doc .process p { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+.doc .icon-svg { width: 28px; height: 28px; stroke: var(--insert); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; display: block; }
+.doc .summary-icon-svg { width: 20px; height: 20px; stroke: var(--insert); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+@media (max-width: 760px) { .doc .process { grid-template-columns: 1fr 1fr; } }
+</style>
+
 <div class="process">
-<div><div class="process-top"><svg class="icon-svg" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span class="step-num">01</span></div><h3>Triage</h3><p>Does the lab work at all?</p></div>
-<div><div class="process-top"><svg class="icon-svg" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 22V4"/><path d="M4 4h13l-2.5 4L17 12H4"/></svg><span class="step-num">02</span></div><h3>First round</h3><p>7 flags, 4 required and 3 suggested</p></div>
-<div><div class="process-top"><svg class="icon-svg" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2h4"/><path d="M10 2v6l-5 12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2L14 8V2"/><path d="M8 15h8"/></svg><span class="step-num">03</span></div><h3>Second round</h3><p>Code testing, standards, wording</p></div>
-<div><div class="process-top"><svg class="icon-svg" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span class="step-num">04</span></div><h3>Published</h3><p>All changes implemented, lab published</p></div>
+<div><div class="process-top"><svg class="icon-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span class="step-num">01</span></div><h3>Triage</h3><p>Does the lab work at all?</p></div>
+<div><div class="process-top"><svg class="icon-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M4 22V4"/><path d="M4 4h13l-2.5 4L17 12H4"/></svg><span class="step-num">02</span></div><h3>First round</h3><p>7 flags, 4 required and 3 suggested</p></div>
+<div><div class="process-top"><svg class="icon-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M10 2h4"/><path d="M10 2v6l-5 12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2L14 8V2"/><path d="M8 15h8"/></svg><span class="step-num">03</span></div><h3>Second round</h3><p>Code testing, standards, wording</p></div>
+<div><div class="process-top"><svg class="icon-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span class="step-num">04</span></div><h3>Published</h3><p>All changes implemented, lab published</p></div>
 </div>
 
 ## How I review: blockers first, content second
@@ -109,7 +122,7 @@ Learners would spend the lab implementing functionality from scratch instead of 
 
 
 <details class="template" markdown="1">
-<summary><svg class="summary-icon-svg" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L22 20H2L12 3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg>Error taxonomy: how I grade what I find</summary>
+<summary><svg class="summary-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 3L22 20H2L12 3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg>Error taxonomy: how I grade what I find</summary>
 
 Not every flag is equal. Required means the lab does not work, teaches the wrong thing, or misleads a learner. Suggested means the lab works, but a change would help learners focus or trust the steps.
 
@@ -137,7 +150,7 @@ Not every flag is equal. Required means the lab does not work, teaches the wrong
 After the first round, I reviewed the lab again and tested the code. The second round was mostly standards, wording, and learner setup, not new blockers. All of these changes were implemented, and the lab is now published. Expand a section for the before and after.
 
 <details class="template" markdown="1">
-<summary><svg class="summary-icon-svg" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg>Learner setup</summary>
+<summary><svg class="summary-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg>Learner setup</summary>
 
 - Kept these files open for learners on startup: `src/OrderLineParser.cs`, `src/DefectClassifier.cs`, and `src/Probe.cs`, so learners start in the code they will debug instead of searching for it.
 - Kept **Checkpoint** as a step, but bolded it and capitalized the first letter of the sentence. Example: "4. Checkpoint: Move the `Probe.Watch` line to just after your reset and rerun. It reads 0 for every order, and all five orders match their expected totals. Then remove the `Probe.Watch` line."
@@ -145,7 +158,7 @@ After the first round, I reviewed the lab again and tested the code. The second 
 </details>
 
 <details class="template" markdown="1">
-<summary><svg class="summary-icon-svg" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M14 6l4 4"/></svg>Readability and standards</summary>
+<summary><svg class="summary-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M14 6l4 4"/></svg>Readability and standards</summary>
 
 - Added spacing where needed to break up large blocks of text.
 - Updated and added code font where needed to align with Google style conventions.
@@ -153,7 +166,7 @@ After the first round, I reviewed the lab again and tested the code. The second 
 </details>
 
 <details class="template" markdown="1">
-<summary><svg class="summary-icon-svg" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>Objective and wording</summary>
+<summary><svg class="summary-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>Objective and wording</summary>
 
 <div class="compare" markdown="1">
 <div class="compare-col before" markdown="1">
@@ -191,7 +204,7 @@ In an IDE, you could use matching symbols to debug the assembly's original sourc
 </details>
 
 <details class="template" markdown="1">
-<summary><svg class="summary-icon-svg" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M5 21h14"/><path d="M8 21l-3-9M16 21l3-9"/><path d="M5 12h6M13 12h6"/></svg>Accuracy language: removing guarantees the code cannot make</summary>
+<summary><svg class="summary-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 3v18"/><path d="M5 21h14"/><path d="M8 21l-3-9M16 21l3-9"/><path d="M5 12h6M13 12h6"/></svg>Accuracy language: removing guarantees the code cannot make</summary>
 
 <div class="compare" markdown="1">
 <div class="compare-col before" markdown="1">
