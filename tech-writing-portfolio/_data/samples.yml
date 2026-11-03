@@ -1,0 +1,19 @@
+# Order matches the homepage. Used for the previous and next links on each sample.
+- url: /Pluralsight_Work/ai-lab-review.html
+  title: "Reviewing AI-generated labs: what I catch and why"
+- url: /Pluralsight_Work/before-and-after-lab-edit.html
+  title: "AWS lab edit: 6 clarity fixes before publication"
+- url: /Pluralsight_Work/desktop-labs-vm-assertions.html
+  title: "VM assertions guide: grading lab work with Bash and PowerShell"
+- url: /Pluralsight_Work/lab-guide-terraform-modules.html
+  title: "Terraform lab: from using modules to versioning your own"
+- url: /Pluralsight_Work/author-onboarding-playbook.html
+  title: "Onboarding playbook: standardizing author review across 4 lab types"
+- url: /Content_Design/audience-based-content-display.html
+  title: "Showing the right help to the right user: audience-based content display"
+- url: /API_Documentation/api-end-user-example.html
+  title: "API reference: End User Schema API"
+- url: /Knowledge_Base_Articles/kb-guideflow-flows.html
+  title: "Knowledge base: creating onboarding flows"
+- url: /SOPs/sop-launch-control.html
+  title: "SOP: texting potential leads in Launch Control"

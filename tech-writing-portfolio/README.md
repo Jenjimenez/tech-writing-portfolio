@@ -1,0 +1,29 @@
+# Jennifer Botia: Technical Writing Portfolio
+
+Source for my technical writing portfolio, hosted with GitHub Pages:
+**https://jenjimenez.github.io/tech-writing-portfolio/**
+
+I'm a technical writer and Technical Content Producer at Pluralsight. This repository contains writing samples from my work at Pluralsight and earlier roles.
+
+## How this site is built
+
+This site is docs-as-code, the same workflow many documentation teams use:
+
+- **Written in Markdown.** Each writing sample is a Markdown file.
+- **Versioned in Git.** Every change is a commit, so the full history of each sample is visible in this repository.
+- **Published automatically.** Jekyll and GitHub Pages build the site on every push to `main`.
+
+The layout and styles are custom, in `_layouts/` and `assets/`. For the decisions behind the design, writing, and accessibility, see [How I built this site](how-i-built-this-site.md).
+
+## Contents
+
+| Folder | What's inside |
+| --- | --- |
+| `Pluralsight_Work/` | AI-generated lab review, before-and-after lab edit, VM assertions guide, Terraform lab guide, and author onboarding playbook |
+| `Content_Design/` | Audience-based content display case study |
+| `API_Documentation/` | REST API reference (anonymized) |
+| `Knowledge_Base_Articles/` | Task-based knowledge base article (anonymized) |
+| `SOPs/` | Standard operating procedure for sales lead outreach |
+| `_layouts/`, `assets/`, `_data/` | Site layout, styles, images, and the sample order used for previous and next links |
+
+[Resume](Jennifer_Botia_2026.pdf) · [LinkedIn](https://www.linkedin.com/in/jenniferbotia/) · [Email](mailto:jenjimenezxo@gmail.com)

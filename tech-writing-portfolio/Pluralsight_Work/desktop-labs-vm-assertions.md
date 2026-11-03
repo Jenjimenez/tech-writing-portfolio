@@ -1,0 +1,214 @@
+---
+last_updated: 2026-11-03
+description: "An author-facing guide to VM assertions: shell commands that grade a learner's work inside a lab virtual machine, with Bash and PowerShell examples, testing steps, and troubleshooting."
+---
+# VM assertions guide: grading lab work with Bash and PowerShell
+
+<div class="case-summary">
+  <dl>
+    <div><dt>The challenge</dt><dd>Desktop Labs can grade a learner’s work by running shell commands inside the lab’s virtual machine. Authors needed to know how to write, test, and troubleshoot these checks, but the details existed only as notes from the development team.</dd></div>
+    <div><dt>My contribution</dt><dd>Wrote this author-facing guide from technical notes shared by the development team, and tested the workflow myself in Labs Builder. The development team provided the screenshots.</dd></div>
+    <div><dt>The result</dt><dd>A guide for the lab author kit that explains how assertions pass and fail, with a worked example, Bash and PowerShell commands, a testing procedure, and troubleshooting steps.</dd></div>
+    <div><dt>Audience</dt><dd>Lab authors building Desktop Labs at Pluralsight.</dd></div>
+    <div><dt>The sample</dt><dd>The full guide, below.</dd></div>
+  </dl>
+  <p class="case-note">Internal links have been removed, and identifying details in screenshots have been blurred.</p>
+</div>
+
+VM assertions let you validate a learner's progress from within a Desktop Lab virtual machine (VM). You can use VM assertions to check conditions such as whether:
+
+- A file exists.
+- A process is running.
+- A required firewall port is open.
+- A file contains a specific string.
+
+## How VM assertions work
+
+The VM assertion system connects to a VM by using SSH, runs a command that you specify, and collects the exit code, standard output (stdout), and standard error (stderr). The assertion uses the command's exit code to determine whether the check passes or fails:
+
+- An exit code of `0` means the assertion passes.
+- Any nonzero exit code means the assertion fails.
+
+Learners don't see stdout or stderr. You can see both, which helps you debug your assertion commands.
+
+<div class="callout callout-important">
+<p class="callout-title">Important</p>
+<p>Make sure the VM supports SSH authentication and that the SSH user has permission to run the commands your assertion requires.</p>
+</div>
+
+## Desktop Lab compatibility
+
+Currently, only Desktop Labs support VM assertions. Support for other lab types that use VMs is planned.
+
+Desktop Labs provisioned with the latest compatible version of the lab Terraform template include the VM configuration that VM assertions require.
+
+## Add a VM assertion to your lab
+
+Use a **Custom Shell Script Assertion** to run a shell command against a VM in your Desktop Lab.
+
+To add a VM assertion:
+
+{:.steps}
+1. In **Labs Builder**, open the **Assertions** tab.
+2. Under the objective you want to validate, click **+ Add assertion**.
+3. Select **Custom Shell Script Assertion**.
+4. Enter the required assertion parameters.
+5. Optional: Enter **Failure Feedback** to show learners a message when the assertion fails.
+6. Click **Save Changes**.
+
+<figure class="step-figure">
+<img src="images/vm-assertions-add-assertion-form.png" alt="Assertions tab showing a Custom Shell Script Assertion with Shell Script Content, VM Name, and Failure Feedback fields">
+<figcaption>Custom Shell Script Assertion fields in the Assertions tab.</figcaption>
+</figure>
+
+### Custom Shell Script Assertion parameters
+
+| Parameter | Required | Description |
+| :-- | :-- | :-- |
+| Shell Script Content | Yes | A single shell command that returns exit code `0` when the check succeeds and a nonzero exit code when it fails. |
+| VM Name | Yes | The name of the VM that the command runs on. |
+| Failure Feedback | No | A message shown to the learner when the assertion fails. |
+
+### Write the shell script content
+
+Enter a single, valid shell command in **Shell Script Content**. The command must return an appropriate exit code:
+
+- `0`: The assertion passes.
+- Any nonzero exit code: The assertion fails.
+
+Use commands that are compatible with the VM's operating system and environment. For example, use Bash commands on Linux VMs and PowerShell commands on Windows VMs.
+
+<div class="tabs">
+<div class="tab-list" role="tablist" aria-label="Shell examples">
+<button class="tab-btn" type="button" role="tab" id="tab-bash" aria-controls="panel-bash" aria-selected="true">Bash</button>
+<button class="tab-btn" type="button" role="tab" id="tab-powershell" aria-controls="panel-powershell" aria-selected="false" tabindex="-1">PowerShell</button>
+</div>
+<div class="tab-panel" role="tabpanel" id="panel-bash" aria-labelledby="tab-bash" tabindex="0">
+<h4 id="bash-examples">Bash examples</h4>
+<p>Check whether the <code>/tmp</code> directory exists:</p>
+<pre><code class="language-sh">test -d /tmp</code></pre>
+<p>Check whether a file contains a specific string:</p>
+<pre><code class="language-sh">grep -q "MySpecialString" /path/to/file</code></pre>
+<p>Check whether a file exists and contains valid JSON (requires <code>jq</code> on the VM):</p>
+<pre><code class="language-sh">test -f /path/to/file.json &amp;&amp; jq '.' /path/to/file.json</code></pre>
+<p>Check whether a web server process is running:</p>
+<pre><code class="language-sh">pgrep -x "nginx" || pgrep -x "apache2" || pgrep -x "httpd"</code></pre>
+</div>
+<div class="tab-panel" role="tabpanel" id="panel-powershell" aria-labelledby="tab-powershell" tabindex="0" hidden>
+<h4 id="powershell-examples">PowerShell examples</h4>
+<p>Check whether the Windows directory exists:</p>
+<pre><code class="language-powershell">if (Test-Path "C:\Windows") { exit 0 } else { exit 1 }</code></pre>
+<p>Check whether a process is running:</p>
+<pre><code class="language-powershell">if (Get-Process -Name "notepad" -ErrorAction SilentlyContinue) { exit 0 } else { exit 1 }</code></pre>
+<p>Check whether a file contains valid JSON:</p>
+<pre><code class="language-powershell">try { Get-Content "C:\Users\Administrator\Desktop\config.json" -ErrorAction Stop | ConvertFrom-Json; exit 0 } catch { exit 1 }</code></pre>
+
+<div class="callout callout-note">
+<p class="callout-title">Note</p>
+<p>PowerShell cmdlets usually return objects instead of setting an exit code that reflects the result of a check. When necessary, use <code>exit 0</code> for success and <code>exit 1</code> for failure.</p>
+<p>Because the grader relies only on exit codes, PowerShell assertions can be more verbose than their Bash equivalents. Contact your assigned Technical Content Producer (TCP) for help simplifying a PowerShell assertion.</p>
+</div>
+
+</div>
+</div>
+
+### Specify the VM name
+
+The **VM Name** value must exactly match the name of a VM defined in the lab's Terraform configuration.
+
+<div class="callout callout-warning">
+<p class="callout-title">Warning</p>
+<p>If you rename a VM after you create assertions for it, update the <strong>VM Name</strong> value in every assertion that references that VM. Otherwise, those assertions stop working.</p>
+</div>
+
+## Example: one assertion, start to finish
+
+This example follows a single assertion through both outcomes. The learner’s task is to install Git on the Ubuntu VM.
+
+**Shell Script Content:**
+
+```sh
+which git
+```
+
+**Failure Feedback:** Git isn’t installed yet. Install it, and then check your work again.
+
+The `which` command prints the path to a program and returns exit code `0` if the program is installed. If the program isn’t installed, it prints nothing and returns exit code `1`.
+
+| Learner’s progress | Command output | Exit code | Result |
+| :-- | :-- | :-- | :-- |
+| Hasn’t installed Git yet | Nothing | `1` | The assertion fails, and the learner sees the failure feedback. |
+| Has installed Git | `/usr/bin/git` | `0` | The assertion passes. |
+
+To confirm both outcomes before you add the assertion, run the command on the VM and print its exit code, once before you complete the task and once after:
+
+<div class="code-box">
+<div class="code-box-header"><span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span><span class="code-label">sh: verify both outcomes</span></div>
+<pre><code>which git; echo "exit code: $?"
+# exit code: 1
+
+sudo apt-get install -y git
+
+which git; echo "exit code: $?"
+# /usr/bin/git
+# exit code: 0</code></pre>
+</div>
+
+If the command returns `0` before the task is complete, the assertion would pass for a learner who hasn’t done the work. Choose a more specific check.
+
+## Test VM assertions
+
+Before you publish the lab, test each assertion to confirm that it fails and passes under the expected conditions.
+
+To test your assertions:
+
+{:.steps}
+1. In the **Environment** tab, click **Start Instance**, and wait for setup to finish.
+
+    <figure class="step-figure">
+    <img src="images/vm-assertions-start-instance.png" alt="Environment tab with the Start Instance button showing Instance Running">
+    <figcaption>Start Instance, with the instance running.</figcaption>
+    </figure>
+
+2. Open the **Assertions** tab.
+3. Confirm that the lab has at least one **Custom Shell Script Assertion**.
+4. Select **Enable Lab Grading for Testing**.
+5. Click **Save Changes**.
+6. Click **Check assertions**.
+
+    <figure class="step-figure">
+    <img src="images/vm-assertions-check-assertions.png" alt="Enable Lab Grading for Testing checkbox selected, with the Check assertions button highlighted">
+    <figcaption>Lab grading enabled for testing, with Check assertions highlighted.</figcaption>
+    </figure>
+
+7. Verify that the assertions for tasks you haven't completed fail.
+8. Complete the learner task that should satisfy the first assertion.
+9. Click **Check assertions** again.
+10. Verify that the completed assertion passes and that the assertions for incomplete tasks still fail.
+11. Repeat steps 8 through 10 for each assertion.
+
+When possible, also complete the lab as a learner would. This helps confirm that each assertion passes because the intended task was completed, not because of an unintended condition in the environment.
+
+## Design effective VM assertions
+
+Learners have administrator or root access to Desktop Lab VMs, so don't rely on VM assertions to protect answers or other sensitive information.
+
+- **Verify outcomes:** Check the result of the learner's work instead of exposing an expected answer.
+- **Prevent easy workarounds:** Design checks that are harder to bypass. For example, verify a cryptographic hash of a valid answer instead of checking for a plaintext string in a file.
+- **Validate meaningful state:** When appropriate, validate a system state or computed result instead of a plaintext answer stored in a file.
+- **Provide actionable feedback:** Keep **Failure Feedback** short and specific so learners know what to fix.
+
+## Troubleshoot VM assertions
+
+If an assertion passes or fails unexpectedly:
+
+{:.steps}
+1. Run the assertion command directly on the target VM.
+2. Verify that the command returns exit code `0` for the passing condition.
+3. Verify that the command returns a nonzero exit code for the failing condition.
+4. Confirm that **VM Name** exactly matches the VM name in the Terraform configuration.
+5. Confirm that the SSH user has permission to run the command.
+6. Click **Save Changes**.
+7. Click **Check assertions** again.
+
+If the problem continues, or you see an error you don't understand, contact your assigned TCP or program manager.
