@@ -70,9 +70,10 @@ I wanted the site to work for every reader, not just the ones using a mouse on a
 
 Long technical samples are hard to read on any screen, so each one includes:
 
-- An **On this page** menu that highlights the section you’re reading. On phones, it collapses into a menu at the top.
+- A **hamburger menu** in the top navigation on phones, so the header stays to one line and the links drop down from it.
+- An **On this page** menu that highlights the section you’re reading. On phones, it collapses into a hamburger menu that sticks to the top as you scroll.
 - **Previous and next** links at the end, so readers can keep going without returning to the homepage.
-- A **Back to top** button on long pages, and screenshots that open larger when you select them.
+- A **Back to top** button that appears when you scroll back up, at every screen size, and screenshots that open larger when you select them.
 
 ## Ask for feedback, then decide
 

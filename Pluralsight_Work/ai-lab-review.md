@@ -21,27 +21,37 @@ description: "How I review AI-generated hands-on labs: a triage-first rubric cov
 
 AI output gets a triage pass before anything else. If the lab doesn't work, style notes can wait.
 
+{:.steps}
 1. **Run validation.** Do all tasks and validations pass? Does the solution code contain *only* what the task requests? Immediate issues are raised right away so they get a quick turnaround.
 2. **Review content** once major blockers are resolved, against the rubric below.
 
 ## The rubric
 
-**Outline and instruction alignment**
-
-- Lab instructions cover all key objectives from the lab outline.
-- Content follows internal standards and the Google Developer Documentation Style Guide.
-
-**Relevance and redundancy**
-
-- No repetition or filler.
-- Content is meaningful, with examples that build a clear learning progression.
-
-**Feedback, solution, and validation**
-
-- Feedback to the author is constructive and clear, written so it improves AI prompting, not just this draft.
-- Solution code contains only the changes the task requests.
-- Validation passes with properly marked solutions.
-- AI-generated content is marked as such for learners.
+<div class="card-grid">
+<div class="info-card">
+<h3>Outline and instruction alignment</h3>
+<ul>
+<li>Lab instructions cover all key objectives from the lab outline.</li>
+<li>Content follows internal standards and the Google Developer Documentation Style Guide.</li>
+</ul>
+</div>
+<div class="info-card">
+<h3>Relevance and redundancy</h3>
+<ul>
+<li>No repetition or filler.</li>
+<li>Content is meaningful, with examples that build a clear learning progression.</li>
+</ul>
+</div>
+<div class="info-card">
+<h3>Feedback, solution, and validation</h3>
+<ul>
+<li>Feedback to the author is constructive and clear, written so it improves AI prompting, not just this draft.</li>
+<li>Solution code contains only the changes the task requests.</li>
+<li>Validation passes with properly marked solutions.</li>
+<li>AI-generated content is marked as such for learners.</li>
+</ul>
+</div>
+</div>
 
 ## In practice: a C# debugging lab
 

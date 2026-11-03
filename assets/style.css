@@ -67,7 +67,7 @@ a { color: var(--link); text-underline-offset: 0.18em; text-decoration-thickness
 a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
 
-.wrap { width: min(100% - 2.5rem, 64rem); margin-inline: auto; }
+.wrap { width: min(100% - 2.5rem, 72rem); margin-inline: auto; }
 
 .skip { position: absolute; left: -999px; top: 0; padding: 0.5rem 1rem; background: var(--surface); }
 .skip:focus { left: 1rem; top: 1rem; z-index: 10; }
@@ -75,6 +75,29 @@ a:hover { text-decoration-thickness: 2px; }
 /* Header and footer */
 .site-header { border-bottom: 1px solid var(--rule); background: var(--surface); }
 .header-inner { display: flex; flex-wrap: wrap; gap: 0.75rem 2rem; align-items: center; justify-content: space-between; padding-block: 1rem; }
+.nav-menu { margin-left: auto; }
+.nav-menu > summary { display: none; }
+
+/* Hamburger menu for the top navigation on phones: the links drop down
+   from the header instead of wrapping across the page. On wider screens
+   the summary stays hidden and the links show inline as before. */
+@media (max-width: 760px) {
+  .header-inner { flex-wrap: nowrap; gap: 0.5rem 0.75rem; }
+  .wordmark { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  /* The theme switch stays in the header bar on phones, as an icon-only
+     button, so it is reachable without opening the menu. Its label is
+     still announced: the script sets an aria-label on the button. */
+  .theme-toggle { flex: none; padding: 0.55rem 0.65rem; }
+  .theme-toggle .theme-label { display: none; }
+  .nav-menu { position: relative; margin-left: 0; flex: none; }
+  .nav-menu > summary { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; padding: 0.55rem 0.85rem; border: 1px solid var(--rule); border-radius: 999px; background: var(--surface); font-weight: 600; font-size: 0.95rem; list-style: none; }
+  .nav-menu > summary::-webkit-details-marker { display: none; }
+  .nav-burger { font-size: 1.05rem; line-height: 1; flex: none; }
+  .nav-menu:not([open]) nav { display: none; }
+  .nav-menu[open] nav { display: flex; flex-direction: column; align-items: stretch; gap: 0; position: absolute; top: calc(100% + 0.5rem); right: 0; z-index: 40; min-width: 13rem; padding: 0.5rem; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; box-shadow: 0 12px 28px -12px rgba(0,0,0,0.35); }
+  .nav-menu[open] nav a { padding: 0.6rem 0.75rem; border-radius: 4px; }
+  .nav-menu[open] nav a:hover { background: var(--code-bg); }
+}
 .wordmark { font-family: var(--heading); font-weight: 600; font-size: 1.25rem; color: var(--ink); text-decoration: none; }
 .site-header nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
 .site-header nav a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.975rem; }
@@ -162,7 +185,7 @@ a:hover { text-decoration-thickness: 2px; }
 .back { font-weight: 500; font-size: 0.95rem; }
 .back::before { content: "\2190\00a0"; }
 
-.doc { max-width: var(--measure); margin-top: 1.75rem; }
+.doc { max-width: 52rem; margin-top: 1.75rem; }
 .doc h1 { font-family: var(--heading); font-weight: 600; font-size: clamp(2rem, 4.5vw, 2.75rem); line-height: 1.15; margin: 0 0 1.5rem; }
 .doc h2 { font-family: var(--heading); font-weight: 600; font-size: 1.6rem; line-height: 1.25; margin: 3rem 0 0.75rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); }
 .doc h3 { font-size: 1.2rem; font-weight: 600; margin: 2.25rem 0 0.5rem; }
@@ -186,9 +209,9 @@ a:hover { text-decoration-thickness: 2px; }
 .doc th, .doc td { text-align: left; vertical-align: top; padding: 0.55rem 0.9rem 0.55rem 0; border-bottom: 1px solid var(--rule); }
 .doc th { border-bottom: 2px solid var(--ink); font-weight: 600; }
 
-.doc code { font-family: var(--mono); font-size: 0.86em; background: var(--code-bg); padding: 0.1em 0.35em; border-radius: 3px; }
+.doc code { font-family: var(--mono); font-size: 0.86em; background: var(--code-bg); padding: 0.15em 0.4em; border: 1px solid var(--rule); border-radius: 4px; }
 .doc pre { font-family: var(--mono); font-size: 0.85rem; line-height: 1.55; background: var(--code-bg); border: 1px solid var(--rule); border-radius: 4px; padding: 0.9rem 1rem; overflow-x: auto; }
-.doc pre code { background: none; padding: 0; font-size: inherit; }
+.doc pre code { background: none; padding: 0; border: 0; font-size: inherit; }
 .doc .highlighter-rouge { margin-block: 0.75rem; }
 
 .doc-end { max-width: var(--measure); margin-top: 3.5rem; padding-top: 1.5rem; border-top: 2px solid var(--ink); }
@@ -220,7 +243,7 @@ a:hover { text-decoration-thickness: 2px; }
 
 
 /* Sample page layout with "On this page" navigation */
-.doc-grid { display: grid; grid-template-columns: minmax(0, var(--measure)) 14rem; gap: 4rem; align-items: start; }
+.doc-grid { display: grid; grid-template-columns: minmax(0, 1fr) 15rem; gap: 3rem; align-items: start; }
 .toc { position: sticky; top: 1.5rem; margin-top: 2.25rem; font-size: 0.9rem; border-left: 1px solid var(--rule); padding-left: 1rem; }
 .toc-title { font-weight: 600; margin: 0 0 0.5rem; }
 .toc ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
@@ -229,6 +252,7 @@ a:hover { text-decoration-thickness: 2px; }
 .doc h2[id] { scroll-margin-top: 1.5rem; }
 @media (max-width: 1000px) {
   .doc-grid { grid-template-columns: minmax(0, 1fr); }
+  .doc { max-width: none; }
   .toc { display: none; }
 }
 .toc li.sub { padding-left: 0.85rem; font-size: 0.85rem; }
@@ -354,10 +378,10 @@ a:hover { text-decoration-thickness: 2px; }
   .about { grid-template-columns: 1fr; gap: 1.25rem; }
   .about-photo { width: 8rem; }
 }
-.doc-grid.wide { grid-template-columns: minmax(0, 54rem) 11rem; gap: 3rem; }
+.doc-grid.wide { grid-template-columns: minmax(0, 1fr) 13rem; gap: 3rem; }
 .doc-grid.wide .doc { max-width: none; }
-.doc-grid.wide .doc > p, .doc-grid.wide .doc > blockquote, .doc-grid.wide .doc > h1 { max-width: var(--measure); }
-@media (max-width: 1000px) { .doc-grid.wide { grid-template-columns: minmax(0, 1fr); } }
+.doc-grid.wide .doc > p, .doc-grid.wide .doc > blockquote, .doc-grid.wide .doc > h1 { max-width: 52rem; }
+@media (max-width: 1000px) { .doc-grid.wide { grid-template-columns: minmax(0, 1fr); } .doc-grid.wide .doc > p, .doc-grid.wide .doc > blockquote, .doc-grid.wide .doc > h1 { max-width: none; } }
 
 /* Resume page */
 .resume-page h1 { font-family: var(--heading); font-weight: 600; font-size: clamp(2.25rem, 5vw, 3rem); line-height: 1.1; margin: 0 0 1rem; }
@@ -402,7 +426,7 @@ a:hover { text-decoration-thickness: 2px; }
   .doc h2 { font-size: 15pt; margin-top: 1.6rem; break-after: avoid; }
   .doc h3, .doc h4 { break-after: avoid; }
   .doc pre { white-space: pre-wrap; word-break: break-word; font-size: 8.5pt; }
-  .doc pre, .doc table, .doc blockquote, .doc img, .doc .compare, .doc details.template, .p-card, .sample { break-inside: avoid; }
+  .doc pre, .doc table, .doc blockquote, .doc img, .doc .compare, .doc details.template, .doc .info-card, .doc .code-box, .doc ol.steps > li, .p-card, .sample { break-inside: avoid; }
   .doc table { display: table; }
   .doc a { text-decoration: underline; }
   .doc a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8.5pt; color: #333; word-break: break-all; }
@@ -566,13 +590,23 @@ a.tag:hover .tag-where { color: var(--link); }
 .toc li { position: relative; }
 .toc li:has(a[aria-current="location"])::before { content: ""; position: absolute; left: -1.05rem; top: 0.15rem; bottom: 0.15rem; width: 2px; background: var(--insert); }
 
-/* Collapsible "On this page" menu on phones */
-.toc-mobile { display: none; margin: 1.25rem 0 1.75rem; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); }
-.toc-mobile summary { cursor: pointer; padding: 0.7rem 1rem; font-weight: 600; font-size: 0.95rem; }
+/* Collapsible "On this page" menu on phones. The sticky positioning sits
+   on a plain wrapper div, not on the details element, so the bar is not
+   clipped while scrolling; the list itself scrolls if it is taller than
+   the screen, so every link stays reachable. */
+.toc-mobile { display: none; margin: 0 0 1.75rem; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); }
+.toc-mobile summary { cursor: pointer; padding: 0.6rem 1rem; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 0.6rem; list-style: none; }
+.toc-mobile summary::-webkit-details-marker { display: none; }
+.toc-burger { font-size: 1.1rem; line-height: 1; flex: none; }
 .toc-mobile ul { list-style: none; margin: 0; padding: 0 1rem 0.9rem; display: grid; gap: 0.5rem; font-size: 0.95rem; }
 .toc-mobile li.sub { padding-left: 0.9rem; font-size: 0.9rem; }
 .toc-mobile a { text-decoration: none; }
-@media (max-width: 1000px) { .toc-mobile { display: block; } }
+@media (max-width: 1000px) {
+  .toc-mobile-wrap { position: sticky; top: 0; z-index: 20; }
+  .toc-mobile { display: block; box-shadow: 0 6px 18px -12px rgba(0,0,0,0.35); }
+  .toc-mobile ul { max-height: calc(100svh - 5rem); overflow-y: auto; }
+  .doc h2[id], .doc h3[id] { scroll-margin-top: 3.75rem; }
+}
 .doc .inline-toc { display: none; }
 
 /* Previous and next sample */
@@ -592,7 +626,7 @@ a.tag:hover .tag-where { color: var(--link); }
 
 /* Back to top */
 .to-top {
-  position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 30;
+  position: fixed; right: 1.25rem; bottom: calc(1.25rem + env(safe-area-inset-bottom)); z-index: 30;
   padding: 0.6rem 1rem; border-radius: 999px;
   background: var(--ink); color: var(--paper);
   font-weight: 600; font-size: 0.875rem; text-decoration: none;
@@ -746,6 +780,41 @@ a.tag:hover .tag-where { color: var(--link); }
 :root[data-theme="dark"] .doc .callout-key { background: #232a35; }
 :root[data-theme="dark"] .doc .callout-tip { background: #14281a; }
 :root[data-theme="dark"] .doc .callout-tip .callout-title, :root[data-theme="dark"] .doc .callout-tip::before { color: #7fd79a; }
+
+/* Card grid and info cards: bordered boxes that organize a set of related
+   items, such as the rubric categories. One column on narrow screens. */
+.doc .card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.doc .info-card { border: 1px solid var(--rule); border-radius: 8px; background: var(--surface); padding: 1.1rem 1.25rem; }
+.doc .info-card h3 { margin: 0 0 0.6rem; font-size: 1.05rem; }
+.doc .info-card ul { list-style: none; padding-left: 0; margin: 0; display: grid; gap: 0.55rem; }
+.doc .info-card li { position: relative; padding-left: 1.5rem; margin-block: 0; }
+.doc .info-card li::before { content: "\2713"; position: absolute; left: 0; top: 0; color: var(--insert); font-weight: 700; }
+@media (max-width: 900px) { .doc .card-grid { grid-template-columns: 1fr; } }
+
+/* Steps: numbered procedures with circled numbers and a connecting line.
+   Apply with {:.steps} on its own line directly above an ordered list. */
+.doc ol.steps { list-style: none; padding-left: 0; counter-reset: step; margin: 1.5rem 0; }
+.doc ol.steps > li { position: relative; padding-left: 3.25rem; margin: 0 0 1.5rem; counter-increment: step; }
+.doc ol.steps > li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 2rem; height: 2rem; border-radius: 50%; background: var(--ink); color: var(--paper); display: grid; place-items: center; font-weight: 600; font-size: 0.95rem; line-height: 1; }
+.doc ol.steps > li::after { content: ""; position: absolute; left: 1rem; top: 2.35rem; bottom: -1.25rem; width: 2px; background: var(--rule); }
+.doc ol.steps > li:last-child::after { display: none; }
+.doc ol.steps > li > p:first-child { margin-top: 0.25rem; }
+
+/* Code boxes: a dark, window-style box for important code. The header dots
+   and label are part of the markup, so the box reads as a callout, not as
+   an ordinary code block. Highlight colors inside the box use the light
+   palette so code stays readable on the dark background. */
+.doc .code-box { margin: 1.5rem 0; border: 1px solid var(--ink); border-radius: 8px; overflow: hidden; background: #1b2433; }
+.doc .code-box-header { display: flex; align-items: center; gap: 0.5rem; padding: 0.55rem 0.9rem; background: #232f42; color: #e5e8ed; font-family: var(--mono); font-size: 0.8rem; }
+.doc .code-box-header .code-dot { width: 0.65rem; height: 0.65rem; border-radius: 50%; background: #8a94a3; flex: none; }
+.doc .code-box-header .code-label { margin-left: 0.35rem; }
+.doc .code-box pre { margin: 0; border: 0; border-radius: 0; background: transparent; color: #eef2f5; }
+.doc .code-box pre code { color: inherit; }
+.doc .code-box .highlight .c, .doc .code-box .highlight .c1, .doc .code-box .highlight .cm, .doc .code-box .highlight .cs { color: #a3acba; font-style: italic; }
+.doc .code-box .highlight .k, .doc .code-box .highlight .kd, .doc .code-box .highlight .kn, .doc .code-box .highlight .kc, .doc .code-box .highlight .nb { color: #c8a2f5; }
+.doc .code-box .highlight .s, .doc .code-box .highlight .s1, .doc .code-box .highlight .s2, .doc .code-box .highlight .sd, .doc .code-box .highlight .si { color: #8fd6a4; }
+.doc .code-box .highlight .mi, .doc .code-box .highlight .mf, .doc .code-box .highlight .m { color: #f2b273; }
+.doc .code-box .highlight .nf, .doc .code-box .highlight .nc, .doc .code-box .highlight .na { color: #8ab8ff; }
 
 /* Heading anchor links: visible on hover or keyboard focus, hidden in print. */
 .doc h2[id] .heading-anchor, .doc h3[id] .heading-anchor { margin-left: 0.4rem; font-size: 0.8em; font-weight: 400; color: var(--muted); text-decoration: none; opacity: 0; }

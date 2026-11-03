@@ -62,16 +62,19 @@ layout: default
     });
     toc.hidden = false;
 
+    var wrap = document.createElement('div');
+    wrap.className = 'toc-mobile-wrap';
     var mobile = document.createElement('details');
     mobile.className = 'toc-mobile';
-    mobile.innerHTML = '<summary>On this page</summary>';
+    mobile.innerHTML = '<summary><span class="toc-burger" aria-hidden="true">☰</span>On this page</summary>';
+    wrap.appendChild(mobile);
     var mlist = list.cloneNode(true);
     mobile.appendChild(mlist);
     mlist.addEventListener('click', function (e) { if (e.target.tagName === 'A') mobile.open = false; });
     var title = document.querySelector('.doc h1');
     var sib = title && title.nextElementSibling;
     var after = sib && (sib.tagName === 'BLOCKQUOTE' || sib.classList.contains('case-summary')) ? sib : title;
-    if (after) after.after(mobile);
+    if (after) after.after(wrap);
 
     if (inline) {
       inline.classList.add('inline-toc');

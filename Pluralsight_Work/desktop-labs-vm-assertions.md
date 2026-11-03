@@ -47,6 +47,7 @@ Use a **Custom Shell Script Assertion** to run a shell command against a VM in y
 
 To add a VM assertion:
 
+{:.steps}
 1. In **Labs Builder**, open the **Assertions** tab.
 2. Under the objective you want to validate, click **+ Add assertion**.
 3. Select **Custom Shell Script Assertion**.
@@ -140,16 +141,17 @@ The `which` command prints the path to a program and returns exit code `0` if th
 
 To confirm both outcomes before you add the assertion, run the command on the VM and print its exit code, once before you complete the task and once after:
 
-```sh
-which git; echo "exit code: $?"
+<div class="code-box">
+<div class="code-box-header"><span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span><span class="code-label">sh: verify both outcomes</span></div>
+<pre><code>which git; echo "exit code: $?"
 # exit code: 1
 
 sudo apt-get install -y git
 
 which git; echo "exit code: $?"
 # /usr/bin/git
-# exit code: 0
-```
+# exit code: 0</code></pre>
+</div>
 
 If the command returns `0` before the task is complete, the assertion would pass for a learner who hasn’t done the work. Choose a more specific check.
 
@@ -159,6 +161,7 @@ Before you publish the lab, test each assertion to confirm that it fails and pas
 
 To test your assertions:
 
+{:.steps}
 1. In the **Environment** tab, click **Start Instance**, and wait for setup to finish.
 
     <figure class="step-figure">
@@ -198,6 +201,7 @@ Learners have administrator or root access to Desktop Lab VMs, so don't rely on 
 
 If an assertion passes or fails unexpectedly:
 
+{:.steps}
 1. Run the assertion command directly on the target VM.
 2. Verify that the command returns exit code `0` for the passing condition.
 3. Verify that the command returns a nonzero exit code for the failing condition.
