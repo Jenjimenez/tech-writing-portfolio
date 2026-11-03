@@ -1,8 +1,8 @@
 ---
-last_updated: 2026-10-15
+last_updated: 2026-11-03
 description: "How I planned, wrote, and tested this portfolio, with the decisions I made for clarity and accessibility."
 ---
-# How I Built This Site
+# How I built this site
 
 <div class="case-summary">
   <dl>
@@ -22,7 +22,7 @@ The people reading this site are hiring managers and recruiters, and most of the
 
 That led to a few rules:
 
-- **Lead with the best evidence.** My before-and-after lab edit is the first sample, and a preview of it sits next to the headline.
+- **Lead with the best evidence.** My Pluralsight review and editing work comes first, and a preview of my before-and-after lab edit sits next to the headline.
 - **Say what I did.** Every sample lists my role, such as *wrote*, *edited*, or *tested*, so no one has to guess what was mine.
 - **Let readers narrow the list.** Filters group the samples by skill, like *Technical editing* or *Developer documentation*, while keeping my Pluralsight work separate from earlier roles.
 - **Keep the focus on writing.** Extras like my career timeline and photo sit lower on the page, after the samples.

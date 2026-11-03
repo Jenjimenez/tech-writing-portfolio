@@ -1,19 +1,19 @@
-- url: /Pluralsight_Work/ai-lab-review.html
-  title: "Reviewing AI-Generated Labs: What I Catch and Why"
 # Order matches the homepage. Used for the previous and next links on each sample.
+- url: /Pluralsight_Work/ai-lab-review.html
+  title: "Reviewing AI-generated labs: what I catch and why"
 - url: /Pluralsight_Work/before-and-after-lab-edit.html
-  title: "AWS Lab Edit: 6 accuracy fixes before publish"
+  title: "AWS lab edit: 6 clarity fixes before publication"
 - url: /Pluralsight_Work/desktop-labs-vm-assertions.html
-  title: "VM Assertions Guide: grading lab work with Bash and PowerShell"
+  title: "VM assertions guide: grading lab work with Bash and PowerShell"
 - url: /Pluralsight_Work/lab-guide-terraform-modules.html
-  title: "Terraform Lab: from using modules to versioning your own"
+  title: "Terraform lab: from using modules to versioning your own"
 - url: /Pluralsight_Work/author-onboarding-playbook.html
-  title: "Onboarding Playbook: standardizing author review across 4 lab types"
+  title: "Onboarding playbook: standardizing author review across 4 lab types"
 - url: /Content_Design/audience-based-content-display.html
-  title: "Showing the Right Help to the Right User: Audience-Based Content Display"
+  title: "Showing the right help to the right user: audience-based content display"
 - url: /API_Documentation/api-end-user-example.html
-  title: "API Reference: End User Schema API"
+  title: "API reference: End User Schema API"
 - url: /Knowledge_Base_Articles/kb-guideflow-flows.html
-  title: "Knowledge Base: Creating Onboarding Flows"
+  title: "Knowledge base: creating onboarding flows"
 - url: /SOPs/sop-launch-control.html
-  title: "SOP: Texting Potential Leads in Launch Control"
+  title: "SOP: texting potential leads in Launch Control"

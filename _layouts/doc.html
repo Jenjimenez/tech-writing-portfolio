@@ -138,7 +138,22 @@ layout: default
         });
       });
       if (tabs.length) select(tabs[0], false);
+      group.selectFromHash = function () {
+        var id = decodeURIComponent(location.hash.slice(1));
+        var target = id && document.getElementById(id);
+        var panel = target && target.closest('[role="tabpanel"]');
+        if (!panel || panels.indexOf(panel) < 0) return;
+        var tab = tabs.filter(function (t) { return t.getAttribute('aria-controls') === panel.id; })[0];
+        if (tab) { select(tab, false); target.scrollIntoView(); }
+      };
     });
+
+    // Open the right tab when a link points into a hidden tab panel, such as #powershell-examples.
+    function openTabFromHash() {
+      document.querySelectorAll('.doc .tabs').forEach(function (g) { if (g.selectFromHash) g.selectFromHash(); });
+    }
+    openTabFromHash();
+    window.addEventListener('hashchange', openTabFromHash);
   })();
 </script>
 <script>

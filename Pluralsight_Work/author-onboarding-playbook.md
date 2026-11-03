@@ -1,7 +1,8 @@
 ---
-last_updated: 2026-10-14
+last_updated: 2026-11-03
+description: "A playbook I led and wrote to standardize how Pluralsight Technical Content Producers onboard authors across four lab types: message templates, review checklists, and a publication workflow."
 ---
-# Onboarding Playbook: standardizing author review across 4 lab types
+# Onboarding playbook: standardizing author review across 4 lab types
 
 <div class="case-summary">
   <dl>
@@ -12,12 +13,12 @@ last_updated: 2026-10-14
     <div><dt>Audience</dt><dd>TCPs and project managers on Pluralsight’s hands-on content team. It’s an internal document.</dd></div>
     <div><dt>The sample</dt><dd>The full playbook, below.</dd></div>
   </dl>
-  <p class="case-note">Internal links and identifiers have been removed.</p>
+  <p class="case-note">Originally published in Confluence. Internal links and identifiers have been removed.</p>
 </div>
 
 ## Intro and purpose
 
-This page provides standardized onboarding message templates and information for the Hands-on Technical Content Production (TCP) team. The goal is to create a consistent, professional, and supportive author experience across all lab types.
+This page provides standardized onboarding message templates and information for the Hands-on Technical Content Producer (TCP) team. The goal is to create a consistent, professional, and supportive author experience across all lab types.
 
 These templates are designed to be high-level and flexible.
 
@@ -27,6 +28,7 @@ These templates are designed to be high-level and flexible.
 - **Use a friendly tone:** Keep communication supportive and encouraging.
 - **Keep content concise:** Avoid long paragraphs. Use lists for readability.
 - **Be proactive:** Send follow-ups and check in if progress stalls.
+- **Fill every placeholder:** Placeholders appear in curly braces, such as `{author}`. Replace each one, including the braces, before you send the message.
 
 ### Handy resources
 
@@ -40,21 +42,21 @@ These templates are designed to be high-level and flexible.
 
 ## Publication message template
 
-Use the publication template when notifying the author that their content has published. You can share the external link upon publication. See [External link structure examples](#external-link-structure-examples).
+Use the publication template when notifying the author that their content has been published. You can share the public link on publication day. See [External link structure](#external-link-structure).
 
 <details class="template" markdown="1">
 <summary>Message template</summary>
 
 ```text
-<@author>, thank you for all your hard work! The lab is now published! 🎉
+@{author}, thank you for all your hard work! The lab is now published! 🎉
 
 Here’s the information for your lab:
 
-Published Lab
+Published lab
 
-Lab: The lab-title w/ www hyperlink embedded (external link)
-Feedback Sheet: Feedback sheet URL
-CC: <@PC>
+Lab: {lab_title, linked to the public lab URL}
+Feedback sheet: {feedback_sheet_link}
+CC: @{PC}
 
 Action Items
 
@@ -63,11 +65,17 @@ I’ve noted a few suggestions you can keep in mind for your next lab. You can f
 
 </details>
 
-### External link structure examples
+### External link structure
 
-Upon publication, external-facing links are not immediately generated. The following patterns allow you to share links with authors upon publication. Some discrepancies are noted below.
+Public links aren't generated right away when a lab is published. You can build the link from the lab title instead:
 
-### Exceptions to note
+```text
+https://www.pluralsight.com/labs/{platform}/{lab-title-in-lowercase-with-hyphens}
+```
+
+For example, **Develop and Reuse Terraform Modules** becomes `https://www.pluralsight.com/labs/aws/develop-and-reuse-terraform-modules`.
+
+#### Exceptions to note
 
 When a lab title has punctuation, the punctuation is excluded from the URL. This includes:
 
@@ -92,21 +100,21 @@ Hi @{author}, nice to meet you!
 
 I’d like to set up an onboarding call to walk through our tooling and answer any questions you may have.
 
-My availability is as follows {start_time}–{end_time} {timezone}, Monday–Friday.
+My availability is {start_time}–{end_time} {time_zone}, Monday–Friday.
 
 Or feel free to choose a slot on my calendar: {calendar_link}.
 
 Before the call, please review the following resources:
 
 - Hands-on content standards
-- [INSERT SPECIFIC LAB TYPE STANDARDS]
+- {lab_type_standards}
 
 I look forward to working with you!
 ```
 
 </details>
 
-### New author: Post-onboarding call
+### New author: post-onboarding call
 
 After the initial onboarding call, share resources, expectations, and next steps.
 
@@ -118,8 +126,8 @@ Hi @{author}, it was great meeting with you! Here are the resources to help you 
 
 - Hands-on content standards
 - Example Labs:
-  - [add relevant links]
-- [Relevant documentation link]
+  - {example_lab_links}
+- {documentation_link}
 
 I’ll check in with you next week to see how things are going. In the meantime, let me know if you need any help!
 ```
@@ -137,7 +145,7 @@ If the author has previously built a lab of this type, you may skip the tooling 
 Hi @{author}, welcome back! Since you’re already familiar with the lab environment, here are some resources for your reference during this project:
 
 - Hands-on content standards
-- [Link specific lab type standards]
+- {lab_type_standards}
 
 If you’d like examples or additional resources, let me know and I’ll share them. I look forward to working with you!
 ```
@@ -160,11 +168,11 @@ I wanted to check in on your lab progress. If you need help, please let me know!
 </details>
 
 
-## Desktop labs
+## Desktop Labs
 
 ### Important information to share with authors
 
-- Restrict authors from accessing the lab when it is under review to prevent saving issues.
+- Ask authors not to open the lab while it's under review, to prevent saving issues.
 - Bring attention to banners authors might see when a lab is not published. Let them know they can still work on the lab.
 - Remind authors that we have a single slide deck to be used for all content.
 
@@ -175,7 +183,7 @@ I wanted to check in on your lab progress. If you need help, please let me know!
 - **Environment setup**
   - Inspect the `.zip` files to confirm no credentials or proxy information remain and that Springtail services are not commented out.
 - **Checklist compliance**
-  - Check that the author completed all items on the Desktop Labs Checklist.
+  - Check that the author completed all items on the Desktop Labs checklist.
 - **Testing**
   - Test the lab as a learner.
 
@@ -187,7 +195,7 @@ I wanted to check in on your lab progress. If you need help, please let me know!
 <summary>Message template</summary>
 
 ```text
-Hi <@author>, welcome to Desktop Labs! I’m excited to be working with you. I’ll be assisting you throughout the production of this lab.
+Hi @{author}, welcome to Desktop Labs! I’m excited to be working with you. I’ll be assisting you throughout the production of this lab.
 
 To begin, I’ll share a couple of resources and sample labs to help you get familiar with Pluralsight’s hands-on content standards and the lab tooling. Once you’ve had a chance to review, we can schedule a Zoom call to walk through the tooling and answer any questions you may have.
 
@@ -199,16 +207,16 @@ Things to keep in mind:
 Review prior to introduction call:
 
 - Hands-on content standards
-- Desktop labs standards
+- Desktop Labs standards
 
 Action items:
 
 - Provide a GitHub username so I can give you access to the Terrarium, the template you’ll use to configure the lab environment.
 - Schedule an onboarding call. Send a time that works for you, or choose a slot on my calendar: {calendar_link}.
 
-Here is my availability: [list times and time zone].
+Here is my availability: {availability}.
 
-Please feel free to reach out with any questions in the meantime. My office hours are Monday–Friday, [insert hours and timezone].
+Please feel free to reach out with any questions in the meantime. My office hours are Monday–Friday, {office_hours}.
 ```
 
 </details>
@@ -219,20 +227,20 @@ Please feel free to reach out with any questions in the meantime. My office hour
 <summary>Message template</summary>
 
 ```text
-Hi <@author>, I’m excited to be working with you again!
+Hi @{author}, I’m excited to be working with you again!
 
 Please provide your GitHub repository username if you’ll need to host resources for this lab. If you have any questions or need assistance throughout the lab production, don’t hesitate to reach out.
 
 Resources:
 
-- Desktop labs checklist
-- Desktop lab standards
+- Desktop Labs checklist
+- Desktop Labs standards
 ```
 
 </details>
 
 
-## Code labs
+## Code Labs
 
 ### Important information to share with authors
 
@@ -260,13 +268,13 @@ Resources:
 ```text
 Hi @{author}, it’s great to meet you! I’d like to set up an onboarding call to walk through the Code Labs tooling and answer your questions.
 
-I’m generally available <insert availability>. Let me know a time that works for you, or choose a slot on my calendar: <calendar_link>.
+I’m generally available {availability}. Let me know a time that works for you, or choose a slot on my calendar: {calendar_link}.
 
 Before the call, please review the following resources:
 
 - Universal standards
-- Code lab standards
-- Code lab onboarding doc
+- Code Labs standards
+- Code Labs onboarding guide
 
 I look forward to working with you!
 ```
@@ -283,7 +291,7 @@ Hi @{author}, it was great meeting with you! Here are the resources we discussed
 
 - Hands-on content standards
 - Example Code Labs:
-  - [add relevant links]
+  - {example_lab_links}
 - Guided pattern doc (only for Developer labs)
 - Semgrep documentation [if applicable]
 
@@ -300,8 +308,8 @@ I’ll check in with you next week to see how things are going. In the meantime,
 ```text
 Hi @{author}, welcome back! Since you’re already familiar with the Code Labs environment, here are the key resources for this project:
 
-- Universal Standards
-- Code Lab Standards
+- Universal standards
+- Code Labs standards
 
 If you’d like examples or additional resources, let me know and I’ll share them.
 
@@ -314,10 +322,10 @@ I look forward to working with you!
 
 - Guided labs pattern doc
 - Semgrep documentation: a lightweight validation option
-- Code lab onboarding doc
+- Code Labs onboarding guide
 
 
-## Hands-on cloud labs
+## Hands-on Cloud Labs
 
 ### Important information to share with authors
 
@@ -335,7 +343,7 @@ I look forward to working with you!
   - Slides or lab diagram must be reviewed before recording the intro video.
   - Must include the Pluralsight watermark.
 - **Learning objectives**
-  - Include 2 to 5 objectives based on those listed in the lab Outline.
+  - Include two to five objectives based on those listed in the lab Outline.
   - Keep objectives short and written in full sentences.
   - Objectives should not be specific step-by-step instructions or include code.
 - **Guide**
@@ -357,7 +365,7 @@ I look forward to working with you!
 <summary>Message template</summary>
 
 ```text
-Hi {@author}, nice to meet you!
+Hi @{author}, nice to meet you!
 
 Before you get started, please note the following:
 
@@ -373,8 +381,8 @@ Standards and expectations:
 
 When creating slides, videos, and Guide, please follow these guidelines:
 
-- Hands-on Universal Standards
-- Hands-on Cloud Labs Standards
+- Hands-on universal standards
+- Hands-on Cloud Labs standards
 
 Additional guidance:
 
@@ -397,7 +405,7 @@ Please reach out with any questions and make sure to @ me so that I’m notified
 
 Excited to work with you!
 
-Thanks @PC!
+CC: @{PC}
 ```
 
 </details>
@@ -408,7 +416,7 @@ Thanks @PC!
 <summary>Message template</summary>
 
 ```text
-Hi @Author, I’m looking forward to working with you on this lab!
+Hi @{author}, I’m looking forward to working with you on this lab!
 
 Before you get started, please review the following:
 
@@ -425,7 +433,7 @@ Once things are working in your dev shell, @ me and I’ll LIM the existing lab 
 When creating your slides, videos, and Guide, please follow these guidelines:
 
 - Hands-on content standards
-- Hands-on cloud labs standards
+- Hands-on Cloud Labs standards
 
 Some callouts from these standards:
 
@@ -460,26 +468,26 @@ Hi @{author}, looking forward to the lab! Here's the starter info:
 Standards to follow:
 
 - Universal standards
-- Cloud lab standards
+- Hands-on Cloud Labs standards
 
 Some exceptions:
 
-- Don't have any videos.
-- There won't be any screenshots.
+- There are no videos.
+- There are no screenshots.
 - Do explain things well, including having explicit expected results from commands so learners know they're on the right track.
 - Follow all feedback from past labs of this type.
 
 Some callouts from our standards:
 
 - Adhere to the outline for this lab.
-- Each Objective's description should be 1 to 3 sentences and can be a bulleted list. They are not to be specific step-by-step instructions.
+- Each Objective's description should be one to three sentences and can be a bulleted list. They are not to be specific step-by-step instructions.
 - All titles, including the Objective titles, section headings, and Lab Diagram title, are to be in sentence case.
 - Use the recently updated slide deck.
 
 Some important tips to follow:
 
 - Please post your slide here for the Lab Diagram so I can review it.
-- Use recent, stable operating systems, such as Ubuntu 24 or Amazon Linux 2023, and the latest stable versions explicitly for anything else you install.
+- Use recent, stable operating systems, such as Ubuntu 24.04 or Amazon Linux 2023, and the latest stable versions explicitly for anything else you install.
 - When creating your lab environment, be sure to follow the correct limitations: AWS sandbox.
 - Use a non-empty AWS CloudFormation template, and use PS-managed AMIs only.
 
@@ -510,12 +518,12 @@ Hi @{author}, so glad to have you join us! Here’s some info to get you started
 
 For slides, videos, and Lab Guide, please follow these guidelines:
 
-- Hands-on Universal Standards
-- Hands-on Cloud Labs Standards
+- Hands-on universal standards
+- Hands-on Cloud Labs standards
 
 Some callouts from these standards:
 
-- Each Objective description should be 1-3 sentences and can be a bulleted list. They should not be specific step-by-step instructions.
+- Each Objective description should be one to three sentences and can be a bulleted list. They should not be specific step-by-step instructions.
 - Your Lab Guide should be all of the written instructions from your video, provided as short, numbered steps.
 
 Some important tips to follow:
@@ -565,7 +573,7 @@ Author Kit Links:
 Workflow:
 
 1. Start with your lab diagram, and send it in chat to get it reviewed.
-2. Move on to your intro, upload it to the lab, and @ me for review.
+2. Record your intro video, upload it to the lab, and @ me for review.
 3. Upload your solution video and @ me for review.
 4. Use your solution video as a reference for your Guide.
 
@@ -578,8 +586,8 @@ Video content:
 Branding notes:
 
 - Use only Pluralsight Author Brand colors in your content. The primary colors should be the dominant colors in your slides and used before any tint.
-- Downloads page
-- You may notice that we are currently transitioning to new branding. Since you are going to be downloading the newest template, please follow the new branding, not the branding seen in the example I included.
+- Download the newest slide template from the Downloads page.
+- We’re transitioning to new branding. Follow the new branding in the newest template, not the branding in the example lab below.
 
 Example lab for your reference:
 
@@ -592,7 +600,7 @@ Example lab for your reference:
 
 - Slides standards and guidelines
 - Video content standards
-- Hands-on cloud lab standards
+- Hands-on Cloud Labs standards
 
 
 ## AI-generated labs
@@ -636,13 +644,13 @@ Follow these steps to review an AI-generated lab:
 
 ## Resources
 
-### Desktop labs
+### Desktop Labs
 
-- Desktop Labs Checklist
+- Desktop Labs checklist
 
-### Code labs
+### Code Labs
 
-- Code Labs Onboarding Guide
+- Code Labs onboarding guide
 
 ### Forge AI-generated labs
 

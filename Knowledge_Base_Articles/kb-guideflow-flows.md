@@ -1,7 +1,8 @@
 ---
-last_updated: 2026-10-14
+last_updated: 2026-11-03
+description: "A task-based help article on building an onboarding walkthrough, with best practices and troubleshooting."
 ---
-# Knowledge Base: Creating Onboarding Flows
+# Knowledge base: creating onboarding flows
 
 > **About this sample**
 >
@@ -9,7 +10,7 @@ last_updated: 2026-10-14
 > - **Audience:** Content creators building their first onboarding flow
 > - **My role:** Wrote the article to support customers during platform rollout
 >
-> This sample is based on documentation I wrote for a digital adoption platform. Product names, URLs, and identifiers have been replaced with a fictional product, *GuideFlow*, to protect client and employer confidentiality.
+> This sample is based on documentation I wrote for a digital adoption platform. Product names, URLs, and identifiers have been replaced with a fictional product, *GuideFlow*, to protect client confidentiality.
 
 An onboarding flow is a short, interactive walkthrough that shows new users how to complete key tasks in your application. This article explains how to build one in GuideFlow, how to keep it effective, and what to check if it doesn't work as expected.
 
@@ -29,7 +30,6 @@ Each step uses one of these elements:
 
 - **Tooltip:** A small message that points to a specific button, field, or link.
 - **Spotlight:** A highlight that dims the rest of the page to draw attention to one area.
-- **Checklist:** A list of tasks that users can complete in any order.
 
 ## Create an onboarding flow
 

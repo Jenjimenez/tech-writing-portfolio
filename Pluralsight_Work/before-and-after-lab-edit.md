@@ -2,10 +2,10 @@
 wide: true
 image: /assets/og-before-after.png
 image_alt: "Before and after: editing a hands-on AWS lab. A tracked change from the lab with a reviewer comment."
-last_updated: 2026-10-14
+last_updated: 2026-11-03
 description: "Six edits from my review of a published Pluralsight AWS lab, each showing the original step, my revision, and why I changed it."
 ---
-# AWS Lab Edit: 6 accuracy fixes before publish
+# AWS lab edit: 6 clarity fixes before publication
 
 <div class="case-summary">
   <dl>

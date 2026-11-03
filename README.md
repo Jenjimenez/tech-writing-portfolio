@@ -13,17 +13,17 @@ This site is docs-as-code, the same workflow many documentation teams use:
 - **Versioned in Git.** Every change is a commit, so the full history of each sample is visible in this repository.
 - **Published automatically.** Jekyll and GitHub Pages build the site on every push to `main`.
 
-The layout and styles are custom, in `_layouts/` and `assets/`. For the decisions behind the design, writing, and accessibility, see [How I Built This Site](how-i-built-this-site.md).
+The layout and styles are custom, in `_layouts/` and `assets/`. For the decisions behind the design, writing, and accessibility, see [How I built this site](how-i-built-this-site.md).
 
 ## Contents
 
 | Folder | What's inside |
 | --- | --- |
-| `Pluralsight_Work/` | AI Generated Labs Review, Before-and-after lab edit, VM assertions reference guide, Terraform lab guide, and author onboarding playbook case study |
-| `Content_Design/` | Audience based content display |
+| `Pluralsight_Work/` | AI-generated lab review, before-and-after lab edit, VM assertions guide, Terraform lab guide, and author onboarding playbook |
+| `Content_Design/` | Audience-based content display case study |
 | `API_Documentation/` | REST API reference (anonymized) |
 | `Knowledge_Base_Articles/` | Task-based knowledge base article (anonymized) |
-| `SOPs/` | Standard operating procedure |
-| `_layouts/`, `assets/` | Site layout, styles, and images |
+| `SOPs/` | Standard operating procedure for sales lead outreach |
+| `_layouts/`, `assets/`, `_data/` | Site layout, styles, images, and the sample order used for previous and next links |
 
 [Resume](Jennifer_Botia_2026.pdf) · [LinkedIn](https://www.linkedin.com/in/jenniferbotia/) · [Email](mailto:jenjimenezxo@gmail.com)

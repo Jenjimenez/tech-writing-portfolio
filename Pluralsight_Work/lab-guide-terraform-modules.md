@@ -1,7 +1,8 @@
 ---
-last_updated: 2026-10-14
+last_updated: 2026-11-03
+description: "A hands-on AWS lab guide I reviewed, tested, and revised: from using a public Terraform module to building and versioning your own."
 ---
-# Terraform Lab: from using modules to versioning your own
+# Terraform lab: from using modules to versioning your own
 
 <div class="case-summary">
   <dl>
@@ -49,7 +50,7 @@ The site loads, and VS Code opens in your browser.
 3. Type `New Terminal`.
 4. Click **Terminal: Create New Terminal**.
 
-    This will launch a shell **TERMINAL** at the bottom of VS Code, which is running commands directly on the EC2 instance.
+    A **TERMINAL** opens at the bottom of VS Code. Commands you run there run directly on the EC2 instance.
 
 5. In the **TERMINAL**, type the following command and press **Enter** to scaffold a directory structure for your solution files.
 
@@ -144,7 +145,7 @@ The site loads, and VS Code opens in your browser.
     }
     ```
 
-    > **Note:** When defining the bucket name, you used the `random_id` resource defined earlier to ensure the bucket name is unique. The hex property of the `random_id` resource gives a hexadecimal value of the id and will always return twice as many characters as the specified byte length. In this example it will be an eight-character suffix.
+    > **Note:** The bucket name uses the `random_id` resource you defined earlier, so the name is unique. The `hex` attribute of `random_id` returns a hexadecimal value with twice as many characters as the byte length. In this example, that's an eight-character suffix.
     > 
     > The `aws_caller_identity` data source identifies the principal running Terraform. The `aws_iam_policy_document` data source creates a bucket policy that allows that principal, which is the EC2 instance in this lab, to read from and write to the S3 bucket.
 
@@ -155,19 +156,19 @@ The site loads, and VS Code opens in your browser.
     cd terraform
     ```
 
-    Then run the following command to initialize Terraform and download the configured providers:
+8. Run the following command to initialize Terraform and download the configured providers:
 
     ```bash
     terraform init
     ```
 
-    You will see output describing, finding, and installing the `hashicorp/random` and `hashicorp/aws` providers. When Terraform is finished initializing, you will see the following message:
+    The output shows Terraform finding and installing the `hashicorp/random` and `hashicorp/aws` providers. When initialization finishes, Terraform displays the following message:
 
     ```text
     Terraform has been successfully initialized!
     ```
 
-8. In the **TERMINAL**, run the following command to preview what actions Terraform will take.
+9. In the **TERMINAL**, run the following command to preview the actions Terraform takes when you apply the configuration:
 
     ```bash
     terraform plan
@@ -181,24 +182,24 @@ The site loads, and VS Code opens in your browser.
     Plan: 5 to add, 0 to change, 0 to destroy.
     ```
 
-9. Run the following command to provision the resources specified in `main.tf`:
+10. Run the following command to provision the resources specified in `main.tf`:
 
     ```bash
     terraform apply
     ```
 
-10. Terraform will run another `plan` before prompting you with `Do you want to perform these actions?`. Enter `yes` and Terraform will begin provisioning the resources.
+11. Terraform runs another `plan` and then prompts `Do you want to perform these actions?`. Enter `yes` to start provisioning the resources.
 
-    Once the resources are provisioned, you will see a message saying:
+    When provisioning finishes, Terraform displays:
 
     ```text
     Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
     ```
 
-11. Go to the browser tab that contains the AWS console **EC2** page.
-12. In the search bar, type `S3`, and then select **S3**.
-13. Verify that the bucket name begins with `ps-tf-bucket-` and ends with the random eight-character suffix.
-14. Return to VS Code.
+12. Go to the browser tab that contains the AWS console **EC2** page.
+13. In the search bar, type `S3`, and then select **S3**.
+14. Verify that the bucket name begins with `ps-tf-bucket-` and ends with the random eight-character suffix.
+15. Return to VS Code.
 
 ### Provision a Lambda function
 
@@ -279,15 +280,15 @@ The site loads, and VS Code opens in your browser.
     Plan: 4 to add, 0 to change, 0 to destroy.
     ```
 
-7. When prompted with `Do you want to perform these actions?`, enter `yes`, and Terraform will begin provisioning the resources. A `Deprecated Attribute` warning might appear. You can safely ignore it.
+7. When prompted with `Do you want to perform these actions?`, enter `yes` to start provisioning the resources. A `Deprecated Attribute` warning might appear. You can safely ignore it.
 
-    Once the resources are provisioned, you will see a message saying:
+    When provisioning finishes, Terraform displays:
 
     ```text
     Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
     ```
 
-8. Return to the AWS Console.
+8. Return to the AWS console.
 9. In the search bar, type `Lambda`, and then select **Lambda**.
 10. Select **s3_handler_lambda_function**.
 11. Verify the `handler.py` file shows in the file explorer, and the code matches what you created earlier.
@@ -359,14 +360,14 @@ The site loads, and VS Code opens in your browser.
 
     Make sure the command has the full bucket name, for example `ps-tf-bucket-d475529f`, and does not include the placeholder `<random-id>`.
 
-11. Run the following AWS CLI command to copy a file to S3 and trigger the Lambda:
+11. Run the following AWS CLI command to copy a file to S3 and trigger the Lambda function:
 
     ```bash
     aws s3 cp ../lambda/handler.py s3://$BUCKET_NAME
     ```
 
-12. Return to the AWS Console **ps-tf-bucket-** page.
-13. Click the **Refresh Objects** icon, and verify the `handler.py` file is uploaded.
+12. Return to the S3 console page for your **ps-tf-bucket-** bucket.
+13. Click the **Refresh Objects** button, and verify that the `handler.py` file is uploaded.
 14. Return to the Lambda console page for **s3_handler_lambda_function**.
 15. Select the **Monitor** tab and verify that the **Invocations** graph shows an invocation.
 16. Click **View CloudWatch logs**. The function's logs open in a new browser tab.
@@ -378,7 +379,7 @@ The site loads, and VS Code opens in your browser.
 ### Create an S3 notification module
 
 1. Switch back to the browser tab containing VS Code.
-2. In the **EXPLORER** on the left, click the **terraform** folder, and then click the icon for **New Folder...**. Name the folder `modules`.
+2. In the **Explorer** on the left, click the **terraform** folder, and then click the icon for **New Folder...**. Name the folder `modules`.
 3. Create another new folder within the **modules** folder called `s3_notification`.
 4. Within the **s3_notification** folder, create two files: `main.tf` and `variables.tf`.
 5. Copy the `aws_lambda_permission` and `aws_s3_bucket_notification` resources from your existing `main.tf` file into the new `modules/s3_notification/main.tf` file. Use the following Terraform code for reference:
@@ -430,7 +431,7 @@ The site loads, and VS Code opens in your browser.
     }
     ```
 
-8. In `modules/s3_notification/main.tf`, modify the Terraform configuration to use the variables, rather than hard coding the values:
+8. In `modules/s3_notification/main.tf`, modify the Terraform configuration to use the variables, rather than hardcoding the values:
 
     In the `aws_lambda_permission` resource:
 
@@ -488,7 +489,7 @@ The site loads, and VS Code opens in your browser.
     aws s3 cp modules/s3_notification/s3_notification.zip s3://$BUCKET_NAME/modules/
     ```
 
-11. Run the following command to print the name of your bucket. You will use the full name in the next step:
+11. Run the following command to print the name of your bucket. You use the full name in the next step:
 
     ```bash
     echo "$BUCKET_NAME"
@@ -556,7 +557,7 @@ The site loads, and VS Code opens in your browser.
     terraform apply --auto-approve
     ```
 
-    Terraform will complete the move of the resources and output:
+    Terraform completes the move and displays:
 
     ```text
     Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
@@ -564,7 +565,7 @@ The site loads, and VS Code opens in your browser.
 
 ### Use module versioning
 
-You will modify the module to use lists of notification configurations, creating a new module version.
+In this section, you change the module to accept lists of notification configurations, which creates a new module version.
 
 1. In the `variables.tf` file, change the `lambda_notification` variable to:
 
@@ -640,35 +641,33 @@ You will modify the module to use lists of notification configurations, creating
     }
     ```
 
-5. In the **TERMINAL**, run:
+5. In the **TERMINAL**, run the following command to remove the previous package:
 
     ```bash
     cd modules/s3_notification && rm s3_notification.zip
     ```
 
-    Then run:
+6. Run the following command to package the updated module:
 
     ```bash
     zip -r s3_notification.zip . && cd ../../
     ```
 
-    These commands will create a new version of the module package.
-
-6. Run the following command to upload the package to S3:
+7. Run the following command to upload the package to S3:
 
     ```bash
     aws s3 cp modules/s3_notification/s3_notification.zip s3://$BUCKET_NAME/modules/
     ```
 
-7. Return to the AWS Console S3 **ps-tf-bucket-** browser tab, click the **Refresh Objects** button, then click `modules/`.
-8. Click `s3_notification.zip`, and then select the **Versions** tab.
+8. Return to the S3 console tab for your **ps-tf-bucket-** bucket, click the **Refresh Objects** button, and then click `modules/`.
+9. Click `s3_notification.zip`, and then select the **Versions** tab.
 
     You should see two versions of the module. The first is the version you created earlier, and the latest version supports a `list` and SQS notifications.
 
-9. Click the link for the older version. It's the only version with a link.
-10. Copy the query string that begins with `?versionId=` from the **Object URL**.
-11. Return to VS Code.
-12. In the `main.tf` file of your infrastructure, modify the `source` property of the `s3_notification` module:
+10. Click the link for the older version. It's the only version with a link.
+11. Copy the query string that begins with `?versionId=` from the **Object URL**.
+12. Return to VS Code.
+13. In the `main.tf` file of your infrastructure, modify the `source` property of the `s3_notification` module:
 
     ```hcl
     source = "s3::https://ps-tf-bucket-<random-id>.s3.us-east-1.amazonaws.com/modules/s3_notification.zip?versionId=<version-id>"
@@ -676,7 +675,7 @@ You will modify the module to use lists of notification configurations, creating
 
     Replace `<random-id>` and `<version-id>` with the values from your environment.
 
-13. In the **TERMINAL**, run the following command to reinitialize Terraform:
+14. In the **TERMINAL**, run the following command to reinitialize Terraform:
 
     ```bash
     terraform init

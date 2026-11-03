@@ -1,15 +1,14 @@
 ---
-last_updated: 2026-10-14
+last_updated: 2026-11-03
+description: "A standard operating procedure that takes real estate sales staff from sending a batch of texts in Launch Control to qualifying leads and handing the best ones off to the CRM."
 ---
-# SOP: Texting Potential Leads in Launch Control
+# SOP: texting potential leads in Launch Control
 
 > **About this sample**
 >
 > - **Type:** Standard operating procedure
 > - **Audience:** Sales representatives and acquisitions managers at a real estate company
-> - **My role:** Wrote this procedure as a freelance technical writer
-
-_Last updated: January 19, 2025_
+> - **My role:** Wrote this procedure as a freelance technical writer, in January 2025
 
 ## Table of contents
 

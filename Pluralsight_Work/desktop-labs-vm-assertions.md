@@ -1,7 +1,8 @@
 ---
-last_updated: 2026-10-14
+last_updated: 2026-11-03
+description: "An author-facing guide to VM assertions: shell commands that grade a learner's work inside a lab virtual machine, with Bash and PowerShell examples, testing steps, and troubleshooting."
 ---
-# VM Assertions Guide: grading lab work with Bash and PowerShell
+# VM assertions guide: grading lab work with Bash and PowerShell
 
 <div class="case-summary">
   <dl>
@@ -83,18 +84,18 @@ Use commands that are compatible with the VM's operating system and environment.
 <button class="tab-btn" type="button" role="tab" id="tab-powershell" aria-controls="panel-powershell" aria-selected="false" tabindex="-1">PowerShell</button>
 </div>
 <div class="tab-panel" role="tabpanel" id="panel-bash" aria-labelledby="tab-bash" tabindex="0">
-<h4>Bash examples</h4>
+<h4 id="bash-examples">Bash examples</h4>
 <p>Check whether the <code>/tmp</code> directory exists:</p>
 <pre><code class="language-sh">test -d /tmp</code></pre>
 <p>Check whether a file contains a specific string:</p>
 <pre><code class="language-sh">grep -q "MySpecialString" /path/to/file</code></pre>
-<p>Check whether a file exists and contains valid JSON:</p>
+<p>Check whether a file exists and contains valid JSON (requires <code>jq</code> on the VM):</p>
 <pre><code class="language-sh">test -f /path/to/file.json &amp;&amp; jq '.' /path/to/file.json</code></pre>
 <p>Check whether a web server process is running:</p>
-<pre><code class="language-sh">pgrep -x "nginx" || pgrep -x "apache" || pgrep -x "httpd"</code></pre>
+<pre><code class="language-sh">pgrep -x "nginx" || pgrep -x "apache2" || pgrep -x "httpd"</code></pre>
 </div>
 <div class="tab-panel" role="tabpanel" id="panel-powershell" aria-labelledby="tab-powershell" tabindex="0" hidden>
-<h4>PowerShell examples</h4>
+<h4 id="powershell-examples">PowerShell examples</h4>
 <p>Check whether the Windows directory exists:</p>
 <pre><code class="language-powershell">if (Test-Path "C:\Windows") { exit 0 } else { exit 1 }</code></pre>
 <p>Check whether a process is running:</p>
@@ -207,7 +208,7 @@ If an assertion passes or fails unexpectedly:
 3. Verify that the command returns a nonzero exit code for the failing condition.
 4. Confirm that **VM Name** exactly matches the VM name in the Terraform configuration.
 5. Confirm that the SSH user has permission to run the command.
-6. Save the lab.
+6. Click **Save Changes**.
 7. Click **Check assertions** again.
 
 If the problem continues, or you see an error you don't understand, contact your assigned TCP or program manager.

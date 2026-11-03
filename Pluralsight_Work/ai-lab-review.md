@@ -2,17 +2,17 @@
 wide: true
 image: /assets/og-ai-lab-review.png
 image_alt: "Reviewing AI-generated labs: what I catch and why. A rubric checklist with validation items checked off."
-last_updated: 2026-10-19
+last_updated: 2026-11-03
 description: "How I review AI-generated hands-on labs: a triage-first rubric covering validation, solution hygiene, alignment, and style, with feedback written to improve the prompting, not just the draft."
 ---
 
-# Reviewing AI-Generated Labs: What I Catch and Why
+# Reviewing AI-generated labs: what I catch and why
 
 <div class="case-summary">
   <dl>
     <div><dt>The challenge</dt><dd>AI-generated labs read fluently but hide accuracy gaps: solutions that do more than the task asks, validation that doesn't actually pass, instructions that drift from the lab outline, or describe tools the lab environment doesn't have.</dd></div>
-    <div><dt>My contribution</dt><dd>Review AI-generated software-development labs against a structured rubric: validation and solution hygiene first, then alignment, relevance, and style, with feedback written to be constructive and clear enough to improve the AI prompting itself.</dd></div>
-    <div><dt>The result</dt><dd>On one C# debugging lab: 7 issues flagged across 5 steps (4 required fixes, 3 suggested improvements), caught in review before learners ever saw them.</dd></div>
+    <div><dt>My contribution</dt><dd>Reviewed 22 AI-generated software-development labs against a structured rubric: validation and solution hygiene first, then alignment, relevance, and style, with feedback written to be constructive and clear enough to improve the AI prompting itself.</dd></div>
+    <div><dt>The result</dt><dd>On the C# debugging lab shown below: 7 issues flagged across 5 steps (4 required fixes, 3 suggested improvements), caught in review before learners ever saw them.</dd></div>
     <div><dt>Audience</dt><dd>Pluralsight learners, who get labs that work, and lab authors, who get feedback they can act on in one pass.</dd></div>
   </dl>
 </div>
@@ -27,9 +27,20 @@ AI output gets a triage pass before anything else. If the lab doesn't work, styl
 
 ## The rubric
 
+The cards follow the order I review in: validation first, then alignment and style, then relevance.
+
 <div class="card-grid">
 <div class="info-card">
-<h3>Outline and instruction alignment</h3>
+<h3>Validation, solution, and feedback</h3>
+<ul>
+<li>Solution code contains only the changes the task requests.</li>
+<li>Validation passes with properly marked solutions.</li>
+<li>AI-generated content is marked as such for learners.</li>
+<li>Feedback to the author is constructive and clear, written so it improves AI prompting, not just this draft.</li>
+</ul>
+</div>
+<div class="info-card">
+<h3>Alignment and style</h3>
 <ul>
 <li>Lab instructions cover all key objectives from the lab outline.</li>
 <li>Content follows internal standards and the Google Developer Documentation Style Guide.</li>
@@ -40,15 +51,6 @@ AI output gets a triage pass before anything else. If the lab doesn't work, styl
 <ul>
 <li>No repetition or filler.</li>
 <li>Content is meaningful, with examples that build a clear learning progression.</li>
-</ul>
-</div>
-<div class="info-card">
-<h3>Feedback, solution, and validation</h3>
-<ul>
-<li>Feedback to the author is constructive and clear, written so it improves AI prompting, not just this draft.</li>
-<li>Solution code contains only the changes the task requests.</li>
-<li>Validation passes with properly marked solutions.</li>
-<li>AI-generated content is marked as such for learners.</li>
 </ul>
 </div>
 </div>
@@ -122,6 +124,6 @@ Learners would spend the lab implementing functionality from scratch instead of 
 | What I flagged | Severity |
 |---|---|
 | Task 5.1 asked learners to correct a tax calculation instead of investigating an external assembly; the activity had drifted from its learning objective. | Required |
-| Tasks 5.2–5.3 had no workflow for reproducing a race condition and verifying the fix with Hot Reload, which tested successfully in the lab environment. | Required |
+| Tasks 5.2–5.3 had no workflow for reproducing a race condition and verifying the fix. I suggested using Hot Reload, which I confirmed works in the lab environment. | Required |
 | The lab never asked learners to run the application first; suggested introducing a run at the beginning and checkpoints throughout, so learners observe an issue, make changes, and compare results before validating. | Suggested |
 | <code>dotnet run</code> displayed all 10 tasks at once; suggested letting learners run individual scenarios so they can focus on the issue they're investigating. | Suggested |
