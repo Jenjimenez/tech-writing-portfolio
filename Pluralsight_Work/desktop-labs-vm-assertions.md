@@ -14,7 +14,7 @@ last_updated: 2026-10-14
   <p class="case-note">Internal links have been removed, and identifying details in screenshots have been blurred.</p>
 </div>
 
-VM assertions let you validate a learner's progress from within a Desktop Lab virtual machine (VM). These checks are how a lab proves itself before publication, in the same way a docs pipeline proves a page before deploy. You can use VM assertions to check conditions such as whether:
+VM assertions let you validate a learner's progress from within a Desktop Lab virtual machine (VM). You can use VM assertions to check conditions such as whether:
 
 - A file exists.
 - A process is running.
@@ -30,7 +30,10 @@ The VM assertion system connects to a VM by using SSH, runs a command that you s
 
 Learners don't see stdout or stderr. You can see both, which helps you debug your assertion commands.
 
-> **Important:** Make sure the VM supports SSH authentication and that the SSH user has permission to run the commands your assertion requires.
+<div class="callout callout-important">
+<p class="callout-title">Important</p>
+<p>Make sure the VM supports SSH authentication and that the SSH user has permission to run the commands your assertion requires.</p>
+</div>
 
 ## Desktop Lab compatibility
 
@@ -51,7 +54,10 @@ To add a VM assertion:
 5. Optional: Enter **Failure Feedback** to show learners a message when the assertion fails.
 6. Click **Save Changes**.
 
-![Assertions tab showing a Custom Shell Script Assertion with Shell Script Content, VM Name, and Failure Feedback fields](images/vm-assertions-add-assertion-form.png)
+<figure class="step-figure">
+<img src="images/vm-assertions-add-assertion-form.png" alt="Assertions tab showing a Custom Shell Script Assertion with Shell Script Content, VM Name, and Failure Feedback fields">
+<figcaption>Custom Shell Script Assertion fields in the Assertions tab.</figcaption>
+</figure>
 
 ### Custom Shell Script Assertion parameters
 
@@ -70,61 +76,48 @@ Enter a single, valid shell command in **Shell Script Content**. The command mus
 
 Use commands that are compatible with the VM's operating system and environment. For example, use Bash commands on Linux VMs and PowerShell commands on Windows VMs.
 
-#### Bash examples
+<div class="tabs">
+<div class="tab-list" role="tablist" aria-label="Shell examples">
+<button class="tab-btn" type="button" role="tab" id="tab-bash" aria-controls="panel-bash" aria-selected="true">Bash</button>
+<button class="tab-btn" type="button" role="tab" id="tab-powershell" aria-controls="panel-powershell" aria-selected="false" tabindex="-1">PowerShell</button>
+</div>
+<div class="tab-panel" role="tabpanel" id="panel-bash" aria-labelledby="tab-bash" tabindex="0">
+<h4>Bash examples</h4>
+<p>Check whether the <code>/tmp</code> directory exists:</p>
+<pre><code class="language-sh">test -d /tmp</code></pre>
+<p>Check whether a file contains a specific string:</p>
+<pre><code class="language-sh">grep -q "MySpecialString" /path/to/file</code></pre>
+<p>Check whether a file exists and contains valid JSON:</p>
+<pre><code class="language-sh">test -f /path/to/file.json &amp;&amp; jq '.' /path/to/file.json</code></pre>
+<p>Check whether a web server process is running:</p>
+<pre><code class="language-sh">pgrep -x "nginx" || pgrep -x "apache" || pgrep -x "httpd"</code></pre>
+</div>
+<div class="tab-panel" role="tabpanel" id="panel-powershell" aria-labelledby="tab-powershell" tabindex="0" hidden>
+<h4>PowerShell examples</h4>
+<p>Check whether the Windows directory exists:</p>
+<pre><code class="language-powershell">if (Test-Path "C:\Windows") { exit 0 } else { exit 1 }</code></pre>
+<p>Check whether a process is running:</p>
+<pre><code class="language-powershell">if (Get-Process -Name "notepad" -ErrorAction SilentlyContinue) { exit 0 } else { exit 1 }</code></pre>
+<p>Check whether a file contains valid JSON:</p>
+<pre><code class="language-powershell">try { Get-Content "C:\Users\Administrator\Desktop\config.json" -ErrorAction Stop | ConvertFrom-Json; exit 0 } catch { exit 1 }</code></pre>
 
-Check whether the `/tmp` directory exists:
+<div class="callout callout-note">
+<p class="callout-title">Note</p>
+<p>PowerShell cmdlets usually return objects instead of setting an exit code that reflects the result of a check. When necessary, use <code>exit 0</code> for success and <code>exit 1</code> for failure.</p>
+<p>Because the grader relies only on exit codes, PowerShell assertions can be more verbose than their Bash equivalents. Contact your assigned Technical Content Producer (TCP) for help simplifying a PowerShell assertion.</p>
+</div>
 
-```sh
-test -d /tmp
-```
-
-Check whether a file contains a specific string:
-
-```sh
-grep -q "MySpecialString" /path/to/file
-```
-
-Check whether a file exists and contains valid JSON:
-
-```sh
-test -f /path/to/file.json && jq '.' /path/to/file.json
-```
-
-Check whether a web server process is running:
-
-```sh
-pgrep -x "nginx" || pgrep -x "apache" || pgrep -x "httpd"
-```
-
-#### PowerShell examples
-
-Check whether the Windows directory exists:
-
-```powershell
-if (Test-Path "C:\Windows") { exit 0 } else { exit 1 }
-```
-
-Check whether a process is running:
-
-```powershell
-if (Get-Process -Name "notepad" -ErrorAction SilentlyContinue) { exit 0 } else { exit 1 }
-```
-
-Check whether a file contains valid JSON:
-
-```powershell
-try { Get-Content "C:\Users\Administrator\Desktop\config.json" -ErrorAction Stop | ConvertFrom-Json; exit 0 } catch { exit 1 }
-```
-
-> **Note:** PowerShell cmdlets usually return objects instead of setting an exit code that reflects the result of a check. When necessary, use `exit 0` for success and `exit 1` for failure.
->
-> Because the grader relies only on exit codes, PowerShell assertions can be more verbose than their Bash equivalents. Contact your assigned Technical Content Producer (TCP) for help simplifying a PowerShell assertion.
+</div>
+</div>
 
 ### Specify the VM name
 
 The **VM Name** value must exactly match the name of a VM defined in the lab's Terraform configuration.
 
-> **Warning:** If you rename a VM after you create assertions for it, update the **VM Name** value in every assertion that references that VM. Otherwise, those assertions stop working.
+<div class="callout callout-warning">
+<p class="callout-title">Warning</p>
+<p>If you rename a VM after you create assertions for it, update the <strong>VM Name</strong> value in every assertion that references that VM. Otherwise, those assertions stop working.</p>
+</div>
 
 ## Example: one assertion, start to finish
 
@@ -168,7 +161,10 @@ To test your assertions:
 
 1. In the **Environment** tab, click **Start Instance**, and wait for setup to finish.
 
-    ![Environment tab with the Start Instance button showing Instance Running](images/vm-assertions-start-instance.png)
+    <figure class="step-figure">
+    <img src="images/vm-assertions-start-instance.png" alt="Environment tab with the Start Instance button showing Instance Running">
+    <figcaption>Start Instance, with the instance running.</figcaption>
+    </figure>
 
 2. Open the **Assertions** tab.
 3. Confirm that the lab has at least one **Custom Shell Script Assertion**.
@@ -176,7 +172,10 @@ To test your assertions:
 5. Click **Save Changes**.
 6. Click **Check assertions**.
 
-    ![Enable Lab Grading for Testing checkbox selected, with the Check assertions button highlighted](images/vm-assertions-check-assertions.png)
+    <figure class="step-figure">
+    <img src="images/vm-assertions-check-assertions.png" alt="Enable Lab Grading for Testing checkbox selected, with the Check assertions button highlighted">
+    <figcaption>Lab grading enabled for testing, with Check assertions highlighted.</figcaption>
+    </figure>
 
 7. Verify that the assertions for tasks you haven't completed fail.
 8. Complete the learner task that should satisfy the first assertion.

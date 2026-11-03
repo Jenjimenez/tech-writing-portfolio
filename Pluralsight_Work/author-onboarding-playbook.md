@@ -15,8 +15,6 @@ last_updated: 2026-10-14
   <p class="case-note">Internal links and identifiers have been removed.</p>
 </div>
 
-This is content operations and standards work, not just a team document: standardized review across 4 lab types, with reusable templates and checklists, so every author gets the same experience and no critical setup step is missed.
-
 ## Intro and purpose
 
 This page provides standardized onboarding message templates and information for the Hands-on Technical Content Production (TCP) team. The goal is to create a consistent, professional, and supportive author experience across all lab types.
@@ -630,7 +628,10 @@ Follow these steps to review an AI-generated lab:
 5. Note mismatches or unclear validations for AI prompt improvements.
 6. Before making content improvements, share this feedback with the author.
 
-> **Note:** Share feedback with the author before making content improvements because authors often go back to the tooling and re-upload the lab, which can wipe out content changes and improvements.
+<div class="callout callout-note">
+<p class="callout-title">Note</p>
+<p>Share feedback with the author before making content improvements because authors often go back to the tooling and re-upload the lab, which can wipe out content changes and improvements.</p>
+</div>
 
 
 ## Resources

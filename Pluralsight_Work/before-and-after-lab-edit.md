@@ -82,9 +82,11 @@ The final line starts the loop in the background and immediately saves its proce
 <div class="compare-col after" markdown="1">
 <p class="compare-label">Revised</p>
 
-> **Note:** This loop runs in the background and saves its process ID so you can inspect the results later. It repeatedly invokes the production `prod` alias, allowing the 10-percent canary to route some requests to version 2. Each request records the executed version and any function error in `/home/cloud_user/lab/output/canary-traffic.log`.
->
-> With 120 requests, you should normally see multiple version 2 failures while remaining within the 30-minute canary window.
+<div class="callout callout-note">
+<p class="callout-title">Note</p>
+<p>This loop runs in the background and saves its process ID so you can inspect the results later. It repeatedly invokes the production <code>prod</code> alias, allowing the 10-percent canary to route some requests to version 2. Each request records the executed version and any function error in <code>/home/cloud_user/lab/output/canary-traffic.log</code>.</p>
+<p>With 120 requests, you should normally see multiple version 2 failures while remaining within the 30-minute canary window.</p>
+</div>
 
 </div>
 </div>
@@ -157,7 +159,10 @@ The final line starts the loop in the background and immediately saves its proce
 <div class="compare-col after" markdown="1">
 <p class="compare-label">Revised</p>
 
-> **Note:** During this lab, your workstation session might disconnect. If this happens, return to CloudShell and repeat the SSH connection steps in this section to reconnect to the workstation.
+<div class="callout callout-note">
+<p class="callout-title">Note</p>
+<p>During this lab, your workstation session might disconnect. If this happens, return to CloudShell and repeat the SSH connection steps in this section to reconnect to the workstation.</p>
+</div>
 
 </div>
 </div>

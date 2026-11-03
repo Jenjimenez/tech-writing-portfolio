@@ -41,8 +41,6 @@ Each step uses one of these elements:
 1. Repeat steps 3 through 5 for each action in the task.
 1. Click **Save**.
 
-For detailed instructions, including display rules and deployment, see [User Guide: Getting Started with GuideFlow on Web](../User_Guides/web-user-guide.md).
-
 ## Best practices
 
 ### Keep flows short
@@ -69,7 +67,7 @@ Start a flow when the user needs it, such as right after they sign up or when th
 
 **Cause:** CSS or JavaScript on the page conflicts with the flow, or the step runs before the element it points to has loaded.
 
-**Solution:** Check the page's CSS and JavaScript for conflicts, and adjust the timing or placement of the step. For more troubleshooting steps, see [Troubleshoot common issues](../User_Guides/web-user-guide.md#troubleshoot-common-issues).
+**Solution:** Check the page's CSS and JavaScript for conflicts, and adjust the timing or placement of the step.
 
 ## Additional resources
 

@@ -47,7 +47,10 @@ Every request needs two headers:
 
 If either header is missing or invalid, the API returns `401 Unauthorized`.
 
-> **Important:** Treat your integration key like a password. Don't commit it to source control or include it in client-side code.
+<div class="callout callout-important">
+<p class="callout-title">Important</p>
+<p>Treat your integration key like a password. Don't commit it to source control or include it in client-side code.</p>
+</div>
 
 ## Data types
 
@@ -273,12 +276,3 @@ curl https://api.example.com/v1/accounts/acme-123/endUserSchema/department \
   }
 }
 ```
-
-## Appendix: how this reference stays trustworthy
-
-This sample shows the endpoints, authentication, data types, error handling, and example requests and responses. Before publishing a reference like this as a live page, I would add, in this order:
-
-- **Changelog and versioning:** what changed, when, and which version of the API the page describes, so a reader can tell whether an example is current.
-- **Consistent terminology:** the same field name everywhere it appears, with a note where a name changed, so search results and code samples do not contradict each other.
-- **Tested examples:** every example request run, and every error reproduced, including the 404 example above, so the page shows what the API actually returns, not what it should return.
-- **Findable structure:** one heading per endpoint and per concept, with the field name in the heading where possible, so search and AI retrieval can cite the right section instead of a whole page.

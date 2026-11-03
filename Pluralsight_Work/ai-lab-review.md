@@ -2,7 +2,7 @@
 wide: true
 image: /assets/og-ai-lab-review.png
 image_alt: "Reviewing AI-generated labs: what I catch and why. A rubric checklist with validation items checked off."
-last_updated: 2026-10-25
+last_updated: 2026-10-19
 description: "How I review AI-generated hands-on labs: a triage-first rubric covering validation, solution hygiene, alignment, and style, with feedback written to improve the prompting, not just the draft."
 ---
 
@@ -12,31 +12,9 @@ description: "How I review AI-generated hands-on labs: a triage-first rubric cov
   <dl>
     <div><dt>The challenge</dt><dd>AI-generated labs read fluently but hide accuracy gaps: solutions that do more than the task asks, validation that doesn't actually pass, instructions that drift from the lab outline, or describe tools the lab environment doesn't have.</dd></div>
     <div><dt>My contribution</dt><dd>Review AI-generated software-development labs against a structured rubric: validation and solution hygiene first, then alignment, relevance, and style, with feedback written to be constructive and clear enough to improve the AI prompting itself.</dd></div>
-    <div><dt>The result</dt><dd>On one C# debugging lab: 7 issues flagged across 5 steps in the first round (4 required fixes, 3 suggested improvements), caught in review before learners ever saw them. After a second round of review and code testing, all of the suggested and required changes were implemented, and the lab is now published.</dd></div>
+    <div><dt>The result</dt><dd>On one C# debugging lab: 7 issues flagged across 5 steps (4 required fixes, 3 suggested improvements), caught in review before learners ever saw them.</dd></div>
     <div><dt>Audience</dt><dd>Pluralsight learners, who get labs that work, and lab authors, who get feedback they can act on in one pass.</dd></div>
   </dl>
-</div>
-
-**How to read this page, in 2 minutes:** process below, then 3 worked examples, then the published outcome. Expand any section for the full before and after.
-
-<style>
-.doc .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0; }
-.doc .process > div { background: var(--surface); border: 1px solid var(--rule); border-top: 3px solid var(--insert); border-radius: 6px; padding: 1.1rem 1.1rem 1.25rem; min-width: 0; }
-.doc .process-top { display: flex; align-items: center; justify-content: flex-start; gap: 0.5rem; margin-bottom: 0.9rem; background: transparent; border: none; padding: 0; }
-.doc .process-top .icon-svg { margin: 0; flex-shrink: 0; }
-.doc .step-num { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--muted); }
-.doc .process h3 { margin: 0 0 0.35rem; font-size: 1.15rem; }
-.doc .process p { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
-.doc .icon-svg { width: 28px; height: 28px; stroke: var(--insert); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; display: block; }
-.doc .summary-icon-svg { width: 20px; height: 20px; stroke: var(--insert); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
-@media (max-width: 760px) { .doc .process { grid-template-columns: 1fr 1fr; } }
-</style>
-
-<div class="process">
-<div><div class="process-top"><svg class="icon-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span class="step-num">01</span></div><h3>Triage</h3><p>Does the lab work at all?</p></div>
-<div><div class="process-top"><svg class="icon-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M4 22V4"/><path d="M4 4h13l-2.5 4L17 12H4"/></svg><span class="step-num">02</span></div><h3>First round</h3><p>7 flags, 4 required and 3 suggested</p></div>
-<div><div class="process-top"><svg class="icon-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M10 2h4"/><path d="M10 2v6l-5 12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2L14 8V2"/><path d="M8 15h8"/></svg><span class="step-num">03</span></div><h3>Second round</h3><p>Code testing, standards, wording</p></div>
-<div><div class="process-top"><svg class="icon-svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span class="step-num">04</span></div><h3>Published</h3><p>All changes implemented, lab published</p></div>
 </div>
 
 ## How I review: blockers first, content second
@@ -84,7 +62,10 @@ A debugging lab where the bug doesn't exist. The task is uncompletable as writte
 </div>
 </div>
 
-> **Why it matters:** Learners can't practice debugging if there's nothing to debug.
+<div class="callout callout-key">
+<p class="callout-title">Why it matters</p>
+<p>Learners can't practice debugging if there's nothing to debug.</p>
+</div>
 
 ### Instructions for an editor the learners don't have <span class="flag flag-required">Required fix</span>
 
@@ -101,7 +82,10 @@ The AI described the platonic ideal of Visual Studio debugging, not the environm
 </div>
 </div>
 
-> **Why it matters:** Instructions that reference unavailable tools do more than confuse. They erode trust in every step that follows.
+<div class="callout callout-key">
+<p class="callout-title">Why it matters</p>
+<p>Instructions that reference unavailable tools do more than confuse. They erode trust in every step that follows.</p>
+</div>
 
 ### Placeholder code in a debugging lab <span class="flag flag-suggested">Suggested fix</span>
 
@@ -118,141 +102,10 @@ Learners would spend the lab implementing functionality from scratch instead of 
 </div>
 </div>
 
-> **Why it matters:** Every minute spent writing boilerplate is a minute not spent on the skill the lab promises to teach. This became a principle I now apply everywhere: in a debugging lab, starter code should be mostly working with intentional bugs, never empty placeholders.
-
-
-<details class="template" markdown="1">
-<summary><svg class="summary-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 3L22 20H2L12 3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg>Error taxonomy: how I grade what I find</summary>
-
-Not every flag is equal. Required means the lab does not work, teaches the wrong thing, or misleads a learner. Suggested means the lab works, but a change would help learners focus or trust the steps.
-
-| Category | Severity | Example from this lab |
-|---|---|---|
-| Validation failure | Required | A debugging task where the starter code does not throw an exception, so there is nothing to debug. |
-| Environment mismatch | Required | Steps that use DataTips, Watch windows, and tracepoints that are not available in the lab editor. |
-| Instruction drift from the objective | Required | A task that asks learners to correct a tax calculation instead of investigating an external assembly. |
-| Solution hygiene | Required | Starter methods that return placeholder values such as 0 or false, instead of mostly working code with an intentional bug. |
-| Workflow gap | Required | No workflow for reproducing a race condition and verifying the fix with Hot Reload. |
-| Style and standards | Required | Code font, spacing, and wording that do not follow the Google Developer Documentation Style Guide, or language that guarantees behavior the code cannot guarantee. |
-| Learner focus | Suggested | Learners see all 10 tasks at once, or start without running the application first, so they cannot observe an issue, change it, and compare results. |
-
-</details>
-
-## How I work with AI
-
-- I use AI output as a first draft to review, not as a finished lab to publish.
-- I never let AI output go unchecked on validation, code, or safety steps. If I did not test it, I do not publish it.
-- I write feedback so the next draft improves, not just this draft. That means naming the exact step, the exact wording or code to change, and why it matters for the learner.
-- I do not claim prompt engineering expertise beyond that structured feedback. My skill is evaluation: testing, judging accuracy, and writing feedback an author, or a prompting loop, can act on in one pass.
-
-## What happened next: second round, code testing, and publication
-
-After the first round, I reviewed the lab again and tested the code. The second round was mostly standards, wording, and learner setup, not new blockers. All of these changes were implemented, and the lab is now published. Expand a section for the before and after.
-
-<details class="template" markdown="1">
-<summary><svg class="summary-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg>Learner setup</summary>
-
-- Kept these files open for learners on startup: `src/OrderLineParser.cs`, `src/DefectClassifier.cs`, and `src/Probe.cs`, so learners start in the code they will debug instead of searching for it.
-- Kept **Checkpoint** as a step, but bolded it and capitalized the first letter of the sentence. Example: "4. Checkpoint: Move the `Probe.Watch` line to just after your reset and rerun. It reads 0 for every order, and all five orders match their expected totals. Then remove the `Probe.Watch` line."
-
-</details>
-
-<details class="template" markdown="1">
-<summary><svg class="summary-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M14 6l4 4"/></svg>Readability and standards</summary>
-
-- Added spacing where needed to break up large blocks of text.
-- Updated and added code font where needed to align with Google style conventions.
-
-</details>
-
-<details class="template" markdown="1">
-<summary><svg class="summary-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>Objective and wording</summary>
-
-<div class="compare" markdown="1">
-<div class="compare-col before" markdown="1">
-<p class="compare-label">Before: objective title</p>
-Debug into an external assembly via its symbols and IL
+<div class="callout callout-key">
+<p class="callout-title">Why it matters</p>
+<p>Every minute spent writing boilerplate is a minute not spent on the skill the lab promises to teach. This became a principle I now apply everywhere: in a debugging lab, starter code should be mostly working with intentional bugs, never empty placeholders.</p>
 </div>
-<div class="compare-col after" markdown="1">
-<p class="compare-label">After: objective title</p>
-Investigate an external .NET assembly using IL and stack traces
-</div>
-</div>
-
-<div class="compare" markdown="1">
-<div class="compare-col before" markdown="1">
-<p class="compare-label">Before: Hot Reload fallback</p>
-If `dotnet watch` ever says it can't apply a change in place and asks to restart, answer `y`. The soak starts again with your change.
-</div>
-<div class="compare-col after" markdown="1">
-<p class="compare-label">After: Hot Reload fallback</p>
-If `dotnet watch` can't apply a change without restarting, follow the prompt to restart the application. However, the goal of this exercise is to apply and verify the fix in the same running process using Hot Reload.
-</div>
-</div>
-
-<div class="compare" markdown="1">
-<div class="compare-col before" markdown="1">
-<p class="compare-label">Before: external assembly explanation</p>
-In an IDE you'd load symbols for the assembly and step into its decompiled source. The `inspect` command shows you the same information from the terminal:
-</div>
-<div class="compare-col after" markdown="1">
-<p class="compare-label">After: external assembly explanation</p>
-In an IDE, you could use matching symbols to debug the assembly's original source or decompilation to investigate code without the source. In this lab, the `inspect` command provides assembly information, IL, and runtime evidence from the terminal:
-</div>
-</div>
-
-</details>
-
-<details class="template" markdown="1">
-<summary><svg class="summary-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 3v18"/><path d="M5 21h14"/><path d="M8 21l-3-9M16 21l3-9"/><path d="M5 12h6M13 12h6"/></svg>Accuracy language: removing guarantees the code cannot make</summary>
-
-<div class="compare" markdown="1">
-<div class="compare-col before" markdown="1">
-<p class="compare-label">Before: performance claim</p>
-Summing tens of thousands of decimals takes **well under a millisecond**, so the parallel loop isn't buying anything.
-</div>
-<div class="compare-col after" markdown="1">
-<p class="compare-label">After: performance claim</p>
-A sequential loop is **sufficient** for this workload, so the parallel loop isn't necessary.
-</div>
-</div>
-
-<div class="compare" markdown="1">
-<div class="compare-col before" markdown="1">
-<p class="compare-label">Before: state leaking</p>
-That **shape** (correct at first, wrong later) **means** state is leaking between calls.
-</div>
-<div class="compare-col after" markdown="1">
-<p class="compare-label">After: state leaking</p>
-That **pattern** (correct at first, wrong later) **suggests** state **may be** leaking between calls.
-</div>
-</div>
-
-<div class="compare" markdown="1">
-<div class="compare-col before" markdown="1">
-<p class="compare-label">Before: below expected</p>
-It's **below the expected figure** and **different every round**...
-</div>
-<div class="compare-col after" markdown="1">
-<p class="compare-label">After: below expected</p>
-It **can fall below** the expected figure and **vary between rounds**...
-</div>
-</div>
-
-<div class="compare" markdown="1">
-<div class="compare-col before" markdown="1">
-<p class="compare-label">Before: race conditions</p>
-**Races reproduce under load**, not by inspection, and they're **different on every run**
-</div>
-<div class="compare-col after" markdown="1">
-<p class="compare-label">After: race conditions</p>
-Race conditions **can be difficult to reproduce** because their behavior depends on execution timing. Running the application under load **can help reveal** them.
-</div>
-</div>
-
-</details>
-
-That second round is why the feedback loop matters. The first round caught whether the lab worked at all. The second round caught whether the language was accurate, consistent, and easy to follow, and whether learners started in the right place.
 
 ## The rest of the review
 
