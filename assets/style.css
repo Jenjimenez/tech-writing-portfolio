@@ -75,28 +75,31 @@ a:hover { text-decoration-thickness: 2px; }
 /* Header and footer */
 .site-header { border-bottom: 1px solid var(--rule); background: var(--surface); }
 .header-inner { display: flex; flex-wrap: wrap; gap: 0.75rem 2rem; align-items: center; justify-content: space-between; padding-block: 1rem; }
-.nav-menu { margin-left: auto; }
-.nav-menu > summary { display: none; }
+/* The phone menu button stays hidden on wider screens, where the
+   navigation links show inline. */
+.nav-toggle { display: none; }
 
 /* Hamburger menu for the top navigation on phones: the links drop down
    from the header instead of wrapping across the page. On wider screens
-   the summary stays hidden and the links show inline as before. */
+   the button stays hidden and the links show inline as before. */
 @media (max-width: 760px) {
-  .header-inner { flex-wrap: nowrap; gap: 0.5rem 0.75rem; }
+  .header-inner { flex-wrap: nowrap; gap: 0.5rem 0.75rem; position: relative; }
   .wordmark { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   /* The theme switch stays in the header bar on phones, as an icon-only
      button, so it is reachable without opening the menu. Its label is
      still announced: the script sets an aria-label on the button. */
   .theme-toggle { flex: none; padding: 0.55rem 0.65rem; }
   .theme-toggle .theme-label { display: none; }
-  .nav-menu { position: relative; margin-left: 0; flex: none; }
-  .nav-menu > summary { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; padding: 0.55rem 0.85rem; border: 1px solid var(--rule); border-radius: 999px; background: var(--surface); font-weight: 600; font-size: 0.95rem; list-style: none; }
-  .nav-menu > summary::-webkit-details-marker { display: none; }
+  .nav-toggle { display: flex; align-items: center; gap: 0.5rem; flex: none; cursor: pointer; padding: 0.55rem 0.85rem; border: 1px solid var(--rule); border-radius: 999px; background: var(--surface); color: var(--ink); font: inherit; font-weight: 600; font-size: 0.95rem; }
   .nav-burger { font-size: 1.05rem; line-height: 1; flex: none; }
-  .nav-menu:not([open]) nav { display: none; }
-  .nav-menu[open] nav { display: flex; flex-direction: column; align-items: stretch; gap: 0; position: absolute; top: calc(100% + 0.5rem); right: 0; z-index: 40; min-width: 13rem; padding: 0.5rem; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; box-shadow: 0 12px 28px -12px rgba(0,0,0,0.35); }
-  .nav-menu[open] nav a { padding: 0.6rem 0.75rem; border-radius: 4px; }
-  .nav-menu[open] nav a:hover { background: var(--code-bg); }
+  /* Extra specificity (.header-inner) so this hide rule beats the
+     later base rule that sets the navigation to flex on wider screens.
+     With equal specificity the later rule won, and the links showed
+     on phones next to the Menu button. */
+  .site-header .header-inner nav { display: none; }
+  .site-header.nav-open .header-inner nav { display: flex; flex-direction: column; align-items: stretch; gap: 0; position: absolute; top: calc(100% + 0.5rem); right: 0; z-index: 40; min-width: 13rem; padding: 0.5rem; background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; box-shadow: 0 12px 28px -12px rgba(0,0,0,0.35); }
+  .site-header.nav-open .header-inner nav a { padding: 0.6rem 0.75rem; border-radius: 4px; }
+  .site-header.nav-open .header-inner nav a:hover { background: var(--code-bg); }
 }
 .wordmark { font-family: var(--heading); font-weight: 600; font-size: 1.25rem; color: var(--ink); text-decoration: none; }
 .site-header nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; }
@@ -688,9 +691,9 @@ a.tag:hover .tag-where { color: var(--link); }
 .theme-toggle .icon-sun { display: none; }
 :root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
-@media print { .theme-toggle { display: none !important; } }
+@media print { .theme-toggle, .nav-toggle { display: none !important; } }
 .theme-toggle[hidden] { display: none; }
-.site-header nav { align-items: center; }
+.site-header nav { align-items: center; margin-left: auto; }
 
 /* Review mode */
 .review-switch { margin-top: 1.25rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.9rem; }
