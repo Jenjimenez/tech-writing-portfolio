@@ -25,6 +25,16 @@ The content itself was already planned: system updates, new features, warnings a
 
 That decision shaped everything after it. Instead of one undifferentiated library of help, the deployment treated audience as the organizing principle. A flow written for claims adjusters appeared for claims adjusters, and stayed hidden from everyone else.
 
+<figure class="flow-diagram" aria-labelledby="flow-caption">
+<ol class="flow-steps">
+<li><span class="flow-num" aria-hidden="true">1</span><strong>User signs in</strong><span>The customer's app passes user-identifying information to the help layer.</span></li>
+<li><span class="flow-num" aria-hidden="true">2</span><strong>Role is identified</strong><span>Claims adjuster, customer representative, or support.</span></li>
+<li><span class="flow-num" aria-hidden="true">3</span><strong>Display rules match</strong><span>Each flow and beacon has a rule for the audience it was written for.</span></li>
+<li><span class="flow-num" aria-hidden="true">4</span><strong>Only relevant help appears</strong><span>An adjuster on a call sees the policy guidance for that call, and nothing else.</span></li>
+</ol>
+<figcaption id="flow-caption">How audience-based display decides what each user sees. Step 1 is the part that needed the customer's agreement first.</figcaption>
+</figure>
+
 ## The blocker: no identity, no targeting
 
 Audience-based display depends on knowing who the end user is. That information did not exist in the deployment when the work started, and nothing could be built until the customer exposed user-identifying information.

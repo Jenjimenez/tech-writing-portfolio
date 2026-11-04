@@ -7,12 +7,12 @@ layout: default
 <div class="wrap doc-wrap">
   <a class="back" href="{{ '/' | relative_url }}#work">All writing samples</a>
   <p class="print-only">From the writing portfolio of Jennifer Botia: {{ page.url | absolute_url }}</p>
-  {%- if page.last_updated %}
-  <p class="doc-updated">Last updated <time datetime="{{ page.last_updated | date: '%Y-%m-%d' }}">{{ page.last_updated | date: '%B %-d, %Y' }}</time></p>
-  {%- endif %}
   <div class="doc-grid{% if page.wide %} wide{% endif %}">
     <article class="doc">
       {{ content }}
+      {%- if page.last_updated %}
+      <p class="doc-updated doc-updated-end">Last updated <time datetime="{{ page.last_updated | date: '%Y-%m-%d' }}">{{ page.last_updated | date: '%B %-d, %Y' }}</time></p>
+      {%- endif %}
     </article>
     <nav class="toc" aria-label="On this page" hidden>
       <p class="toc-title">On this page</p>
@@ -57,7 +57,10 @@ layout: default
     heads.forEach(function (h) {
       var li = document.createElement('li'), a = document.createElement('a');
       if (h.tagName === 'H3') li.className = 'sub';
-      a.href = '#' + h.id; a.textContent = h.textContent;
+      // Copy the heading text without badges such as "Required fix".
+      var label = h.cloneNode(true);
+      label.querySelectorAll('.flag, .new-badge').forEach(function (b) { b.remove(); });
+      a.href = '#' + h.id; a.textContent = label.textContent.trim();
       li.appendChild(a); list.appendChild(li);
     });
     toc.hidden = false;

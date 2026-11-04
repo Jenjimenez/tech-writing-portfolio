@@ -4,11 +4,13 @@ description: "A standard operating procedure that takes real estate sales staff 
 ---
 # SOP: texting potential leads in Launch Control
 
-> **About this sample**
->
-> - **Type:** Standard operating procedure
-> - **Audience:** Sales representatives and acquisitions managers at a real estate company
-> - **My role:** Wrote this procedure as a freelance technical writer, in January 2025
+<div class="case-summary">
+  <dl>
+    <div><dt>The sample</dt><dd>A standard operating procedure for texting and qualifying sales leads.</dd></div>
+    <div><dt>Audience</dt><dd>Sales representatives and acquisitions managers at a real estate company.</dd></div>
+    <div><dt>My role</dt><dd>Wrote this procedure as a freelance technical writer, in January 2025.</dd></div>
+  </dl>
+</div>
 
 ## Table of contents
 

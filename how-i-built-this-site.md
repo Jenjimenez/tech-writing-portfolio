@@ -22,9 +22,9 @@ The people reading this site are hiring managers and recruiters, and most of the
 
 That led to a few rules:
 
-- **Lead with the best evidence.** My Pluralsight review and editing work comes first, and a preview of my before-and-after lab edit sits next to the headline.
+- **Lead with the best evidence.** A row of numbers sits under the introduction, a preview of my before-and-after lab edit sits next to the headline, and three "Start here" samples come first.
 - **Say what I did.** Every sample lists my role, such as *wrote*, *edited*, or *tested*, so no one has to guess what was mine.
-- **Let readers narrow the list.** Filters group the samples by skill, like *Technical editing* or *Developer documentation*, while keeping my Pluralsight work separate from earlier roles.
+- **Group the rest by kind of work.** The remaining samples sit in short groups, like *Lab guides and editing* or *Developer and user docs*, with my role, employer, and topics on one line.
 - **Keep the focus on writing.** Extras like my career timeline and photo sit lower on the page, after the samples.
 
 ## Give the site one clear idea
@@ -60,8 +60,8 @@ A portfolio is a writing sample too, so I edited it the way I’d edit an author
 I wanted the site to work for every reader, not just the ones using a mouse on a large screen.
 
 - **Contrast:** I check every page with an automated accessibility tool, in both light and dark mode, including color contrast.
-- **Keyboard access:** Every link, button, and filter works with a keyboard and shows a visible focus outline. Wide code blocks and tables can also be scrolled with the keyboard.
-- **Screen readers:** Images have descriptions. Switches and filters announce their state, such as “Showing 2 samples.” The tracked changes in my edit examples include hidden “Deleted” and “Inserted” labels, so they make sense when read aloud.
+- **Keyboard access:** Every link and button works with a keyboard and shows a visible focus outline. Wide code blocks and tables can also be scrolled with the keyboard.
+- **Screen readers:** Images have descriptions, and switches announce their state. The tracked changes in my edit examples include hidden “Deleted” and “Inserted” labels, so they make sense when read aloud.
 - **Light and dark mode:** The site follows each visitor’s device setting, and a switch in the menu lets them choose the other mode if it’s easier to read.
 - **Reduced motion:** Smooth scrolling and small animations turn off for visitors who have reduced motion turned on in their device settings.
 - **Phones and print:** Every page adapts to small screens, and printed samples drop the menus and buttons and show the full web address of each link.

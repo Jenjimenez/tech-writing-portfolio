@@ -4,13 +4,14 @@ description: "REST API reference for managing custom user fields, with authentic
 ---
 # API reference: End User Schema API
 
-> **About this sample**
->
-> - **Type:** REST API reference
-> - **Audience:** Developers integrating their user data with GuideFlow
-> - **My role:** Documented the API while building and testing customer integrations with Postman
->
-> This sample is based on documentation I wrote for a digital adoption platform. Product names, URLs, identifiers, and example data have been replaced with a fictional product, *GuideFlow*, to protect client confidentiality. Example requests and responses are illustrative.
+<div class="case-summary">
+  <dl>
+    <div><dt>The sample</dt><dd>A REST API reference for managing the custom fields that describe end users.</dd></div>
+    <div><dt>Audience</dt><dd>Developers integrating their user data with GuideFlow.</dd></div>
+    <div><dt>My role</dt><dd>Documented the API while building and testing customer integrations with Postman.</dd></div>
+  </dl>
+  <p class="case-note">Based on documentation I wrote for a digital adoption platform. Product names, URLs, identifiers, and example data are replaced with a fictional product, GuideFlow, to protect client confidentiality. Example requests and responses are illustrative.</p>
+</div>
 
 Use the End User Schema API to manage the custom fields that describe your users, such as their role, department, or start date. GuideFlow uses these fields to decide which users see which content.
 

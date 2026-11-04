@@ -4,13 +4,14 @@ description: "A task-based help article on building an onboarding walkthrough, w
 ---
 # Knowledge base: creating onboarding flows
 
-> **About this sample**
->
-> - **Type:** Task-based knowledge base article
-> - **Audience:** Content creators building their first onboarding flow
-> - **My role:** Wrote the article to support customers during platform rollout
->
-> This sample is based on documentation I wrote for a digital adoption platform. Product names, URLs, and identifiers have been replaced with a fictional product, *GuideFlow*, to protect client confidentiality.
+<div class="case-summary">
+  <dl>
+    <div><dt>The sample</dt><dd>A task-based knowledge base article.</dd></div>
+    <div><dt>Audience</dt><dd>Content creators building their first onboarding flow.</dd></div>
+    <div><dt>My role</dt><dd>Wrote the article to support customers during platform rollout.</dd></div>
+  </dl>
+  <p class="case-note">Based on documentation I wrote for a digital adoption platform. Product names, URLs, and identifiers are replaced with a fictional product, GuideFlow, to protect client confidentiality.</p>
+</div>
 
 An onboarding flow is a short, interactive walkthrough that shows new users how to complete key tasks in your application. This article explains how to build one in GuideFlow, how to keep it effective, and what to check if it doesn't work as expected.
 
